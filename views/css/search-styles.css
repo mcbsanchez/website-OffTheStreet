@@ -1,0 +1,22 @@
+.filter-heading {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.choices {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.img-heading {
+    width: 100%;
+}
+
+.price {
+    margin-left: 105px;
+}
+
+.sale {
+    margin-left: 140px;
+    margin-top: 150px;
+}
