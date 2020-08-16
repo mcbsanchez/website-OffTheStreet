@@ -9,12 +9,13 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/home-styles.css">
     <link rel="stylesheet" href="css/search-styles.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg justify-content-center">
+    <nav class="navbar sticky-top navbar-expand-lg justify-content-center">
         <ul class="nav d-flex align-items-center">
             <li class="nav-item">
                 <a class="nav-link navlink" href="home.html">Home</a>
@@ -61,6 +62,7 @@
             <div class="col-1"></div>
             <div class="col-10">
                 <div class="row mt-5">
+                    <!-- filter tab -->
                     <div class="col-3">
                         <!-- upper -->
                         <div class="row">
@@ -107,94 +109,126 @@
                             <label for="bags">BAGS</label>
                         </div>
                     </div>
+                    <!-- content -->
                     <div class="col-9">
                         <img src="images/heading.png" class="img-heading">
-                        
+
                         <div class="col d-flex justify-content-center flex-wrap mt-4">
                             <a class="item">
-                                <div class="card item" style="width: 14rem;height:100%">
-                                    <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                    <div class="price d-flex justify-content-center">
-                                        <h1 class="priceval">100php</h1>
+                                <div class="card">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
-                                    </div>
+                                    <button class="add">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.375 14.625H14.625V21.375H12.375V14.625H5.625V12.375H12.375V5.625H14.625V12.375H21.375V14.625Z" fill="#333333"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </a>
                             <a class="item">
-                                <div class="card item" style="width: 14rem;height:100%">
-                                    <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                    <div class="price d-flex justify-content-center">
-                                        <h1 class="priceval">100php</h1>
+                                <div class="card">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
-                                    </div>
-                                    <div class="sale d-flex justify-content-center">
-                                        <h1 class="salepercent">10%off</h1>
-                                    </div>
+                                    <button class="add">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.375 14.625H14.625V21.375H12.375V14.625H5.625V12.375H12.375V5.625H14.625V12.375H21.375V14.625Z" fill="#333333"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </a>
                             <a class="item">
-                                <div class="card item" style="width: 14rem;height:100%">
-                                    <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                    <div class="price d-flex justify-content-center">
-                                        <h1 class="priceval">100php</h1>
+                                <div class="card">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
-                                    </div>
+                                    <button class="add">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.375 14.625H14.625V21.375H12.375V14.625H5.625V12.375H12.375V5.625H14.625V12.375H21.375V14.625Z" fill="#333333"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </a>
                             <a class="item">
-                                <div class="card item" style="width: 14rem;height:100%">
-                                    <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                    <div class="price d-flex justify-content-center">
-                                        <h1 class="priceval">100php</h1>
+                                <div class="card">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
-                                    </div>
-                                    <div class="sale d-flex justify-content-center">
-                                        <h1 class="salepercent">10%off</h1>
-                                    </div>
+                                    <button class="add">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.375 14.625H14.625V21.375H12.375V14.625H5.625V12.375H12.375V5.625H14.625V12.375H21.375V14.625Z" fill="#333333"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </a>
                             <a class="item">
-                                <div class="card item" style="width: 14rem;height:100%">
-                                    <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                    <div class="price d-flex justify-content-center">
-                                        <h1 class="priceval">100php</h1>
+                                <div class="card">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
-                                    </div>
+                                    <button class="add">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.375 14.625H14.625V21.375H12.375V14.625H5.625V12.375H12.375V5.625H14.625V12.375H21.375V14.625Z" fill="#333333"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </a>
                             <a class="item">
-                                <div class="card item" style="width: 14rem;height:100%">
-                                    <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                    <div class="price d-flex justify-content-center">
-                                        <h1 class="priceval">100php</h1>
+                                <div class="card">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="item">
-                                <div class="card item" style="width: 14rem;height:100%">
-                                    <a href=""><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                    <div class="price d-flex justify-content-center">
-                                        <h1 class="priceval">100php</h1>
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="" class="cardname"><p class="card-text itemname">item name</p></a>
-                                    </div>
-                                    <div class="sale d-flex justify-content-center">
-                                        <h1 class="salepercent">10%off</h1>
-                                    </div>
+                                    <button class="add">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.375 14.625H14.625V21.375H12.375V14.625H5.625V12.375H12.375V5.625H14.625V12.375H21.375V14.625Z" fill="#333333"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </a>
                         </div>
@@ -203,6 +237,31 @@
                 </div>
             </div>
             <div class="col-1"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 footer">
+                <div class="row d-flex justify-content-center">
+                    <h1 class="footerlogo">OFFTHESTREET</h1>
+                </div>
+                <div class="row socials d-flex justify-content-center">
+                    <a href="facebook.com"><img class="social-media" src="images/facebook.png" alt="facebook.com"></a>
+                    <a href="instagram.com"><img class="social-media" src="images/instagram.png" alt="facebook.com"></a>
+                    <a href="twitter.com"><img class="social-media" src="images/twitter.png" alt="facebook.com"></a>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <a href="" class="footerlinks">Privacy Policy</a>
+                    <a href="" class="footerlinks">Terms and Conditions</a>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <h1 id="copyright">Off The Street ©</h1>
+                </div>
+            </div>
+            <div class="col-4"></div>
         </div>
     </div>
 </body>

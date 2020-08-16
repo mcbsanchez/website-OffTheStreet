@@ -26,7 +26,6 @@
     margin-bottom: 40px;
     margin-left: 150px;
     margin-right: 150px;
-
 }
 
 .price{
@@ -59,8 +58,6 @@
     opacity: 0.5;
 }
 
-
-
 .sale{
     position: absolute;
     width:80px; 
@@ -90,4 +87,20 @@
 
 .socials {
     margin-top: 20px;
+}
+
+.add {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-top: 110px;
+    padding: 3px;
+    display: none;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.card:hover .add {
+    display: block;
 }
