@@ -60,6 +60,7 @@
 .summaryselect {
     width: 400px;
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 .summaryselect:focus {   
@@ -73,8 +74,8 @@
 }
 
 .checkoutbtn{
-    margin-top: 15px;
-    margin-left: 55%;
+    margin: 30px;
+    /* margin-left: 55%; */
     background-color: black;
     border-radius: 50px;
     width: 190px;
