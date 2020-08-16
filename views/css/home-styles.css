@@ -94,7 +94,8 @@
     width: 40px;
     height: 40px;
     align-self: center;
-    margin-top: 110px;
+    margin-top: 10px;
+    margin-left: 230px;
     padding: 3px;
     display: none;
     border: 1px solid black;
