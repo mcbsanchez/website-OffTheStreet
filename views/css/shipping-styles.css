@@ -1,0 +1,19 @@
+#ordersummary{
+    margin-top: 10%;
+    font-weight: 700;
+}
+
+.summary{
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+#pcs{
+    font-weight: 400;
+    font-size: 30px;
+}
+
+#price{
+    font-weight: 700;
+    font-size: 30px;
+}

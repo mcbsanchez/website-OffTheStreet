@@ -98,8 +98,6 @@
     margin-left: 230px;
     padding: 3px;
     display: none;
-    border: 1px solid black;
-    border-radius: 3px;
 }
 
 .card:hover .add {
