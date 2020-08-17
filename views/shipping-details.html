@@ -39,7 +39,7 @@
                 <div class="d-flex justify-content-center h-100">
                     <div class="searchbar">
                         <input class="search_input" type="text" name="" placeholder="Search...">
-                        <a href="search.html" class="search_icon">
+                        <a href="search.html" class="search_icon" id="searchbtn">
                             <svg width="16" height="16" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7965 16.9215C19.7558 15.5864 20.3188 13.9521 20.3188 12.1937C20.3188 7.70622 16.6813 4.06873 12.1938 4.06873C7.70626 4.06873 4.06876 7.70622 4.06876 12.1937C4.06876 16.6812 7.70626 20.3187 12.1938 20.3187C13.9521 20.3187 15.5864 19.7557 16.9215 18.7965L24.0688 25.9312L25.9313 24.0687L18.7965 16.9215ZM6.56876 12.1937C6.56876 15.3062 9.08126 17.8187 12.1938 17.8187C15.3063 17.8187 17.8188 15.3062 17.8188 12.1937C17.8188 9.08123 15.3063 6.56873 12.1938 6.56873C9.08126 6.56873 6.56876 9.08123 6.56876 12.1937Z" fill="#F2F2F2"/>
                             </svg>
@@ -47,11 +47,16 @@
                     </div>
                 </div>
             </li>
+            <script type="text/javascript">
+                document.getElementById("searchbtn").onclick = function () {
+                    location.href = "search.html";
+                };
+            </script>
             <li class="nav-item">
                 <a class="nav-link navlink" href="#">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navlink" href="#">Cart</a>
+                <a class="nav-link navlink" href="shopping-cart.html">Cart</a>
             </li>
         </ul>
     </nav>
@@ -71,53 +76,59 @@
         </div>
         
         <div class="address">
-            <form>
+            <form method="get" action="home.html">
                 <div class="form-group row">
                     <div class="col-6">
                         <label for="firstname">First name</label>
-                        <input type="text" class="form-control" id="firstname">
+                        <input type="text" class="form-control" id="firstname" required>
                     </div>
                     <div class="col-6">
                         <label for="lastname">Last name</label>
-                        <input type="text" class="form-control" id="lastname">
+                        <input type="text" class="form-control" id="lastname" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col">
                         <label for="phonenumber">Phone Number</label>
-                        <input type="text" class="form-control" id="phonenumber">
+                        <input type="text" class="form-control" id="phonenumber" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-6">
                         <label for="postalcode">Postal Code</label>
-                        <input type="text" class="form-control" id="postalcode">
+                        <input type="text" class="form-control" id="postalcode" required>
                     </div>
                     <div class="col-6">
                         <label for="province">Province</label>
-                        <input type="text" class="form-control" id="province">
+                        <input type="text" class="form-control" id="province" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-6">
                         <label for="city">City</label>
-                        <input type="number" class="form-control" id="city">
+                        <input type="text" class="form-control" id="city" required>
                     </div>
                     <div class="col-sm-6">
                         <label for="barangay">Barangay</label>
-                        <input type="text" class="form-control" id="barangay">
+                        <input type="text" class="form-control" id="barangay" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="street">Unit, Building Name, Street, Block, Lot</label>
+                        <input type="text" class="form-control" id="street" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col">
                         <label for="points">Apply Points</label>
                         <input type="text" class="form-control" id="inputWebsite">
-                        <label>Available Points</label>
+                        <label>Available Points: 100</label>
                     </div>
                 </div>
-                <div class="row">
+                <div class="form-group row">
                     <div class="col d-flex justify-content-end">
-                        <button class="btn btn-dark checkoutbtn">checkout</button>
+                        <button type="submit" class="btn btn-dark checkoutbtn" id="myButton">checkout</button>
                     </div>
                 </div>
             </form>
