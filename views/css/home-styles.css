@@ -89,6 +89,17 @@
     margin-top: 20px;
 }
 
+.wishlist {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 140px;
+    padding: 3px;
+    display: none;
+}
+
 .add {
     position: absolute;
     width: 40px;
@@ -100,6 +111,6 @@
     display: none;
 }
 
-.card:hover .add {
+.card:hover .add, .card:hover .wishlist {
     display: block;
 }
