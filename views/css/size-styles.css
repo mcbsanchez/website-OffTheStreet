@@ -1,0 +1,12 @@
+.heading {
+    font-size: 34px;
+    margin-top: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
