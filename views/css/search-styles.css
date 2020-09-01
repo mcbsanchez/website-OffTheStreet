@@ -36,6 +36,17 @@
     font-size: 16px;
 }
 
+.wishlist {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 85px;
+    padding: 3px;
+    display: none;
+}
+
 .add {
     position: absolute;
     width: 40px;
@@ -46,10 +57,9 @@
     margin-left: 170px;
     padding: 3px;
     display: none;
-    border-radius: 3px;
 }
 
 
-.card:hover .add {
+.card:hover .add, .card:hover .wishlist {
     display: block;
 }
