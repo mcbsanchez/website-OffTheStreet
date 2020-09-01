@@ -98,6 +98,11 @@
     margin-left: 140px;
     padding: 3px;
     display: none;
+    border-width: 0px;
+}
+
+.wishlist:hover {
+    color: rgb(168, 105, 105);
 }
 
 .add {
@@ -109,7 +114,13 @@
     margin-left: 230px;
     padding: 3px;
     display: none;
+    border-width: 0px;
 }
+
+.add:hover {
+    color: rgb(109, 109, 109);
+}
+
 
 .card:hover .add, .card:hover .wishlist {
     display: block;

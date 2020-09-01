@@ -4,6 +4,7 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -11,7 +12,15 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/home-styles.css">
-
+    
+    <!-- Animation-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $( document ).ready(function() {
+            AOS.init()
+        });
+    </script>
 </head>
 <body>
     <!-- Navbar -->
@@ -69,10 +78,10 @@
         <div class="row branding">
             <div class="col-1"></div>
             <div class="col-4">
-                <h1 class = "logo">OFF<br>THE<br>STREET</h1>
+                <h1 class = "logo" data-aos="fade-right" data-aos-duration="500">OFF<br>THE<br>STREET</h1>
             </div>
             <div class="col-6 text-right">
-                <P class = "desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</P>
+                <p class = "desc" data-aos="fade-left" data-aos-duration="500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</P>
             </div>
             <div class="col-1"></div>
         </div>
@@ -114,9 +123,28 @@
         
         <div class="row">
             <div class="col-1"></div>
-            <div class="col d-flex justify-content-center flex-wrap col-10">
+            <div class="col d-flex justify-content-center flex-wrap col-10" >
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
+                        <div class="card item" style="width: 18rem;" >
+                            <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                            <div class="price d-flex justify-content-center">
+                                <h1 class="priceval">100php</h1>
+                            </div>
+                            <div class="card-body">
+                                <a href="product-details.html" class="cardname"><p class="card-text itemname">item name</p></a>
+                            </div>
+                        </div>
+                        <button class="wishlist" title="add to wishlist">
+                            <li class="fa fa-heart"></li>
+                        </button>
+                        <button class="add" title="add to cart">
+                            <li class="fa fa-plus"></li>
+                        </button>
+                    </div>
+                </a>
+                <a class="item">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -135,7 +163,7 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -154,7 +182,7 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -173,48 +201,7 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="product-details.html" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                        </div>
-                        <button class="wishlist" title="add to wishlist">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" title="add to cart">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="product-details.html" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                            <div class="sale d-flex justify-content-center">
-                                <h1 class="salepercent">10%off</h1>
-                            </div>
-                        </div>
-                        <button class="wishlist" title="add to wishlist">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" title="add to cart">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -236,7 +223,29 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
+                        <div class="card item" style="width: 18rem;">
+                            <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                            <div class="price d-flex justify-content-center">
+                                <h1 class="priceval">100php</h1>
+                            </div>
+                            <div class="card-body">
+                                <a href="product-details.html" class="cardname"><p class="card-text itemname">item name</p></a>
+                            </div>
+                            <div class="sale d-flex justify-content-center">
+                                <h1 class="salepercent">10%off</h1>
+                            </div>
+                        </div>
+                        <button class="wishlist" title="add to wishlist">
+                            <li class="fa fa-heart"></li>
+                        </button>
+                        <button class="add" title="add to cart">
+                            <li class="fa fa-plus"></li>
+                        </button>
+                    </div>
+                </a>
+                <a class="item">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -272,7 +281,7 @@
             <div class="col-1"></div>
             <div class="col d-flex justify-content-center flex-wrap">
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -291,7 +300,7 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -310,7 +319,7 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -329,29 +338,7 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="product-details.html" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                            <div class="sale d-flex justify-content-center">
-                                <h1 class="salepercent">10%off</h1>
-                            </div>
-                        </div>
-                        <button class="wishlist" title="add to wishlist">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" title="add to cart">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -373,7 +360,7 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
@@ -395,7 +382,29 @@
                     </div>
                 </a>
                 <a class="item">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
+                        <div class="card item" style="width: 18rem;">
+                            <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                            <div class="price d-flex justify-content-center">
+                                <h1 class="priceval">100php</h1>
+                            </div>
+                            <div class="card-body">
+                                <a href="product-details.html" class="cardname"><p class="card-text itemname">item name</p></a>
+                            </div>
+                            <div class="sale d-flex justify-content-center">
+                                <h1 class="salepercent">10%off</h1>
+                            </div>
+                        </div>
+                        <button class="wishlist" title="add to wishlist">
+                            <li class="fa fa-heart"></li>
+                        </button>
+                        <button class="add" title="add to cart">
+                            <li class="fa fa-plus"></li>
+                        </button>
+                    </div>
+                </a>
+                <a class="item">
+                    <div class="card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card item" style="width: 18rem;">
                             <a href="product-details.html"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
