@@ -82,3 +82,11 @@ button:visited{
 	max-width: 250px;
 	
 }
+
+.pagination>li>span {
+	border: 1px solid purple;
+  }
+.pagination>li.active>a {
+	background: purple;
+	color: #fff;
+}
