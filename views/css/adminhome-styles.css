@@ -5,7 +5,7 @@ body{
 
 .sidebar{
 	height: 100vh;
-	background-color: #202225;
+	background-color: #000000;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -17,7 +17,7 @@ body{
 }
 
 .top-navbar{
-	background-color: #2F3136;
+	background-color: #000000;
 }
 
 .sidebar-link{
@@ -29,14 +29,13 @@ body{
 	border-radius: 5px;
 }
 .current{
-	background-color: #055ff0;
+	background-color: #111212;
 	border-radius: 7px;
-	box-shadow: 2px 5px 10px #111;
 	transition: all .3s;
 }
 
 .current:hover {
-	background-color: #4e8ef5;
+	background-color: #444;
 	border-radius: 7px;
 	box-shadow: 2px 5px 20px #111;
 	transform: translateY(-1px);
@@ -53,28 +52,33 @@ body{
   }
 }
 
-button{
-	height: 30px;
-	width: 75%;
-	font-size: 11px;
-	border: none;
-	outline: none;
-	color: white ;
-	background-color: #f03c3c;
-	margin: 5px;
-	padding: 10px 20px;
-	border-radius: 5px;
-}
+
 button:visited{
 	background-color: green;
 }
 
 .btn-danger{
 	
-	width:75%;
+	width: 75%;
+	height: 40px;
 }
 
 .btn-success{
 	
 	width: 75%;
+}
+
+.btn-primary{
+	width: 180px;
+    height: 40px;
+    
+}
+
+.img-logo{
+	
+	height: auto;
+	width: auto;
+	max-height: 100px;
+	max-width: 250px;
+	
 }
