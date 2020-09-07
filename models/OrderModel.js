@@ -1,21 +1,61 @@
 var mongoose = require('mongoose');
 
 var OrderSchema = new mongoose.Schema({
-    //put variables, i only put samples to be followed
-    listingOwner: {
+    numitems: {
+        type: Number,
+        required: true
+    },
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ProductOrders'
+    }],
+    modepayment: {
         type: String,
         required: true
     },
-    productType: {
+    modedelivery: {
         type: String,
-        enum: ['clothes', 'food', 'electronics', 'tickets', 
-                'furniture', 'beauty', 'books', 'hobbies',
-                'sports', 'accessories', 'media', 'music', 'pets'],
+        required: true
+    },
+    address: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Address',
+        required: true
+    },
+    total: {
+        type: Number,
+        required: true
+    },
+    shippingfee: {
+        type: Number,
+        required: true
+    },
+    pointsused: {
+        type: Number,
+        required: true
+    },
+    subtotal: {
+        type: Number,
         required: true
     },
     status: {
         type: String,
-        enum: ['active', 'inactive'],
+        required: true
+    },
+    timeordered: {
+        type: Date,
+        required: true
+    },
+    timecompleted: {
+        type: Date,
+        required: true
+    },
+    timecancelled: {
+        type: Date,
+        required: true
+    },
+    timeconfirmed: {
+        type: Date,
         required: true
     }
 });

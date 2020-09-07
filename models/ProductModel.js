@@ -1,23 +1,38 @@
 var mongoose = require('mongoose');
 
 var ProductSchema = new mongoose.Schema({
-    //put variables, i only put samples to be followed
-    listingOwner: {
+    name: {
         type: String,
         required: true
     },
-    productType: {
+    description: {
         type: String,
-        enum: ['clothes', 'food', 'electronics', 'tickets', 
-                'furniture', 'beauty', 'books', 'hobbies',
-                'sports', 'accessories', 'media', 'music', 'pets'],
         required: true
     },
-    status: {
+    color: {
         type: String,
-        enum: ['active', 'inactive'],
         required: true
-    }
+    },
+    pictures: [{
+        type: String,
+        required: true
+    }],
+    postingdate: {
+        type: Date,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    variations: [{
+        type: String,
+        required: true
+    }]
 });
 
 module.exports = mongoose.model('Product', ProductSchema);

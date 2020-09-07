@@ -1,23 +1,54 @@
 var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
-    //put variables, i only put samples to be followed
-    listingOwner: {
+    firstname: {
         type: String,
         required: true
     },
-    productType: {
+    lsatname: {
         type: String,
-        enum: ['clothes', 'food', 'electronics', 'tickets', 
-                'furniture', 'beauty', 'books', 'hobbies',
-                'sports', 'accessories', 'media', 'music', 'pets'],
         required: true
     },
-    status: {
+    email: {
         type: String,
-        enum: ['active', 'inactive'],
         required: true
-    }
+    },
+    type: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    points: {
+        type: Number,
+        required: false
+    },
+    address: [{
+        address_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Address'
+        }
+    }],
+    orders: [{
+        order_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Order'
+        }
+    }],
+    cart: [{
+        productOrders_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'ProductOrders'
+        }
+    }],
+    wishlist: [{
+        product_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
+        }
+    }]
 });
 
 module.exports = mongoose.model('User', UserSchema);

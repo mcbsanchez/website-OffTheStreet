@@ -1,21 +1,12 @@
 var mongoose = require('mongoose');
 
 var ProductOrdersSchema = new mongoose.Schema({
-    //put variables, i only put samples to be followed
-    listingOwner: {
-        type: String,
+    product: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Product',
         required: true
     },
-    productType: {
-        type: String,
-        enum: ['clothes', 'food', 'electronics', 'tickets', 
-                'furniture', 'beauty', 'books', 'hobbies',
-                'sports', 'accessories', 'media', 'music', 'pets'],
-        required: true
-    },
-    status: {
-        type: String,
-        enum: ['active', 'inactive'],
+    quantity: {
+        type: Number,
         required: true
     }
 });
