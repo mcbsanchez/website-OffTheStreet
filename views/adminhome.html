@@ -28,13 +28,13 @@
 				<div class="row">
 					<!--sidebar-->
 					<div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
-						<a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">off the street LOGO</a>
+						<a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"><img src="images/FINAL_LOGO W- CIRCLE B.png" class="img-logo"></a>
 						<div class="bottom-border pb-3">
 							<img src="images/icon.png" width="50" class="rounded-circle mr-3">
 							<a href="#" class="text-white">Mr. Man</a>
 						</div>
 						<ul class="navbar-nav flex-column mt-4">
-							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
+							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-white fa-lg mr-3"></i>Dashboard</a></li>
 							<li class="nav-item"><a href="admin-product-page.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-box text-light fa-lg mr-3"></i>Product</a></li>
 							<li class="nav-item"><a href="admin-order-page.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a></li>
 							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
@@ -64,7 +64,7 @@
 								<!--COMMENTS AND NOTIF BELL-->
 								<!--<li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-comments text-muted fa-lg"></i></a></li>-->
 								<!--<li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-bell text-white fa-lg"></i></a></li>-->
-								<li class="nav-item ml-md-auto"><a href="#" class="nav-link text-white" data-toggle="modal" data-target="#sign-out">Logout<i class="fas fa-sign-out-alt text-danger fa-lg ml-3"></i></a></li>
+								<li class="nav-item ml-md-auto"><a href="#" class="nav-link text-white" data-toggle="modal" data-target="#sign-out">Logout<i class="fas fa-sign-out-alt text-white fa-lg ml-3"></i></a></li>
 							  </ul>
 							</div>
 						</div>
@@ -81,7 +81,7 @@
 				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
 					<div class="row align-items-center">
 						<div class="col-xl-12 col-12 mt-5">
-							<h3 class="text-muted text-center mb-3">Pending Orders</h3>
+							<h3 class="text-muted text-center mb-3 mt-2">Pending Orders</h3>
 							<table class="table table-dark table-hover text-center">
 								<thead>
 									<tr class="text-muted">
@@ -100,7 +100,20 @@
 									<td>Jeans</td>
 									<td>PHP 2000</td>
 									<td>31/08/2020</td>
-									<td><button id="pending" type="button" class="btn btn-danger">Pending</button><!--<span class="badge badge-danger w-75 py-2">Pending</span></td>-->
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
 									</tr>
 									
 									<tr>
@@ -109,7 +122,20 @@
 									<td>Pants</td>
 									<td>PHP 3000</td>
 									<td>31/08/2020</td>
-									<td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
 									</tr>
 									
 									<tr>
@@ -118,7 +144,20 @@
 									<td>Shirt</td>
 									<td>PHP 4000</td>
 									<td>31/08/2020</td>
-									<td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
 									</tr>
 									
 									<tr>
@@ -127,7 +166,20 @@
 									<td>Shoe</td>
 									<td>PHP 5000</td>
 									<td>31/08/2020</td>
-									<td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
 									</tr>
 									
 									<tr>
@@ -136,7 +188,20 @@
 									<td>Polo</td>
 									<td>PHP 6000</td>
 									<td>31/08/2020</td>
-									<td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
 									</tr>
 									
 									<tr>
@@ -145,7 +210,20 @@
 									<td>Hat</td>
 									<td>PHP 7000</td>
 									<td>31/08/2020</td>
-									<td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
 									</tr>
 									
 								</tbody>
