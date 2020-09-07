@@ -1,0 +1,222 @@
+<html>
+<head>
+    <title>Off The Street</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home-styles.css">
+    <link rel="stylesheet" href="css/search-styles.css">
+
+    <!-- Animation-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $( document ).ready(function() {
+            AOS.init()
+        });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+    
+    <!-- Body -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row mt-5">
+                    <!-- filter tab -->
+                    <div class="col-3">
+                        <!-- upper -->
+                        <div class="row">
+                            <p class="filter-heading mt-4">UPPER</p>
+                        </div>
+                        <div class="row choices">
+                            <input type="checkbox" class="form-check-input" name="tshirts">
+                            <label for="tshirts">T-SHIRTS</label>
+                        </div>
+                        <div class="row choices">
+                            <input type="checkbox" class="form-check-input" name="hoodies">
+                            <label for="hoodies">HOODIES</label>
+                        </div>
+                        <div class="row choices mb-4">
+                            <input type="checkbox" class="form-check-input" name="longsleeves">
+                            <label for="longsleeves">LONG SLEEVES</label>
+                        </div>
+                        <!-- lower -->
+                        <div class="row">
+                            <p class="filter-heading">LOWER</p>
+                        </div>
+                        <div class="row choices">
+                            <input type="checkbox" class="form-check-input" name="shorts">
+                            <label for="shorts">SHORTS</label>
+                        </div>
+                        <div class="row choices mb-4">
+                            <input type="checkbox" class="form-check-input" name="pants">
+                            <label for="pants">PANTS</label>
+                        </div>
+                        <!-- accessories -->
+                        <div class="row">
+                            <p class="filter-heading">ACCESSORIES</p>
+                        </div>
+                        <div class="row choices">
+                            <input type="checkbox" class="form-check-input" name="hats">
+                            <label for="hats">HATS</label>
+                        </div>
+                        <div class="row choices">
+                            <input type="checkbox" class="form-check-input" name="beanies">
+                            <label for="beanies">BEANIES</label>
+                        </div>
+                        <div class="row choices">
+                            <input type="checkbox" class="form-check-input" name="bags">
+                            <label for="bags">BAGS</label>
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <div class="col-9">
+                        <img src="images/heading.png" class="img-heading">
+
+                        <div class="col d-flex justify-content-center flex-wrap mt-4">
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" title="add to wishlist">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" title="add to cart">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" title="add to wishlist">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" title="add to cart">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" title="add to wishlist">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" title="add to cart">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" title="add to wishlist">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" title="add to cart">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" title="add to wishlist">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" title="add to cart">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" title="add to wishlist">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" title="add to cart">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>

@@ -1,0 +1,255 @@
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart-styles.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+
+    <!-- Body -->
+    <div class="container-fluid main">
+        <div class="row mt-5">
+            <div class="col-1"></div>
+            <div class="col-6">
+                <p class="p-2 m-0 heading">CART</p>
+                <div class="item d-flex align-items-center">
+                    <div class="p-2">
+                        <img src="images/icon.png" class="item-pic">
+                    </div>
+                    <div class="p-2  mr-auto">
+                        Item name
+                    </div>
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="input-group align-items-center">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="2" style="width: 40px;">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">Php 100.00</div>
+                    <div class="p-2">
+                        <button class="btn btn-link">
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 0.906429L8.09357 0L4.5 3.59357L0.906429 0L0 0.906429L3.59357 4.5L0 8.09357L0.906429 9L4.5 5.40643L8.09357 9L9 8.09357L5.40643 4.5L9 0.906429Z" fill="black" fill-opacity="0.54"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="item d-flex align-items-center">
+                    <div class="p-2">
+                        <img src="images/icon.png" class="item-pic">
+                    </div>
+                    <div class="p-2  mr-auto">
+                        Item name
+                    </div>
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="input-group align-items-center">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="2" style="width: 40px;">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">Php 100.00</div>
+                    <div class="p-2">
+                        <button class="btn btn-link">
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 0.906429L8.09357 0L4.5 3.59357L0.906429 0L0 0.906429L3.59357 4.5L0 8.09357L0.906429 9L4.5 5.40643L8.09357 9L9 8.09357L5.40643 4.5L9 0.906429Z" fill="black" fill-opacity="0.54"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item d-flex align-items-center">
+                    <div class="p-2">
+                        <img src="images/icon.png" class="item-pic">
+                    </div>
+                    <div class="p-2  mr-auto">
+                        Item name
+                    </div>
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="input-group align-items-center">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="2" style="width: 40px;">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">Php 100.00</div>
+                    <div class="p-2">
+                        <button class="btn btn-link">
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 0.906429L8.09357 0L4.5 3.59357L0.906429 0L0 0.906429L3.59357 4.5L0 8.09357L0.906429 9L4.5 5.40643L8.09357 9L9 8.09357L5.40643 4.5L9 0.906429Z" fill="black" fill-opacity="0.54"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="item d-flex align-items-center">
+                    <div class="p-2">
+                        <img src="images/icon.png" class="item-pic">
+                    </div>
+                    <div class="p-2  mr-auto">
+                        Item name
+                    </div>
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="input-group align-items-center">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="2" style="width: 40px;">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">Php 100.00</div>
+                    <div class="p-2">
+                        <button class="btn btn-link">
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 0.906429L8.09357 0L4.5 3.59357L0.906429 0L0 0.906429L3.59357 4.5L0 8.09357L0.906429 9L4.5 5.40643L8.09357 9L9 8.09357L5.40643 4.5L9 0.906429Z" fill="black" fill-opacity="0.54"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>   
+
+            <div class="col-4">
+                <div class="summary">
+                    <div class="row">
+                        <h1 class="summarytitle">ORDER SUMMARY</h1>
+                    </div>
+                    <div class="summarycontent">
+                        <div class="row">
+                            <div class="col-3">
+                                <h1 class="summarytext">Items</h1>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="summarytext">8</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <h1 class="summarytext">Total</h1>
+                            </div>
+                            <div class="col-9">
+                                <h1 class="summarytext">Php 800.00</h1>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-12"><h1 class="summarytext">Mode of Payment</h1></div>
+                            </div>
+                            <div class="row">
+                                <select class="form-control summaryselect">
+                                    <option>Cash on Delivery</option>
+                                    <option>Bank Transfer</option>
+                                    <option>GCash Transfer</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-12"><h1 class="summarytext">Mode of Delivery</h1></div>
+                            </div>
+                            <div class="row">
+                                <select class="form-control summaryselect">
+                                    <option>Shipment</option>
+                                    <option>Pickup</option>
+                                </select>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-3">
+                                <h1 class="summarytext">Shipping</h1>
+                            </div>
+                            <div class="col-8">
+                                <h1 class="summarytext">Php 200.00</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row subtotalrow">
+                        <div class="col-5">
+                            <h1 class="summarytext">Subtotal</h1>
+                        </div>
+                        <div class="col-7">
+                            <h1 class="summarytext" id="subtotal">Php 1000.00</h1>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-end">
+                        <button class="btn btn-dark checkoutbtn" id="myButton">checkout</button>
+                    </div>
+                    <script type="text/javascript">
+                        document.getElementById("myButton").onclick = function () {
+                            location.href = "shippingDetails";
+                        };
+                    </script>
+                </div>   
+            </div>
+        </div>
+    </div>
+   
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>
