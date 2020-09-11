@@ -277,6 +277,109 @@
 								</li>
 							  </ul>
 							</nav>
+							<!--Add Product Modal Start-->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductModal">Add a New Product</button>
+					<div class="modal fade bd-example-modal-xl" id="newProductModal" tabindex="- 1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-xl">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title h4">Add a New Product</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+								</div>
+
+								<div class="modal-body">
+									<form>
+                                        
+										<div class="form-group">
+											<label for="product-name" class="col-form-label">Name</label>
+											<input type="text" class="form-control">
+											<label for="product-description" class="col-form-label">Description</label>
+											<input type="text" class="form-control">
+											
+                                        </div>
+                                        
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="smallCheck">
+                                            <label class="form-check-label" for="smallCheck">S</label>
+                                            
+                                            <input type="text" class="form-control" id="smallQuantity" type="text">
+                                            
+                            
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="mediumCheck">
+                                            <label class="form-check-label" for="mediumCheck">M</label>
+                                            <input type="text" class="form-control" id="mediumQuantity" type="text">
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="largeCheck">
+                                            <label class="form-check-label" for="largeCheck">L</label>
+                                            <input type="text" class="form-control" id="largeQuantity" type="text">
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="extralargeCheck">
+                                            <label class="form-check-label" for="extralargeCheck">XL</label>
+                                            <input type="text" class="form-control" id="extralargeQuantity" type="text">
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="doubleextralargeCheck">
+                                            <label class="form-check-label" for="doubleextralargeCheck">2XL</label>
+                                            <input type="text" class="form-control" id="doubleextralargeQuantity" type="text">
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="tripleextralargeCheck">
+                                            <label class="form-check-label" for="tripleextralargeCheck">3XL</label>
+                                            <input type="text" class="form-control" id="tripleextralargeQuantity" type="text">
+										</div>
+										<div class="form-row mt-2">
+											<div class="col">
+												<label for="price">Price</label>
+												<input type="text" class="form-control">
+											</div>
+											
+										</div>
+									
+										<div class="container-fluid">
+											<div class="form-group mt-3">
+												<div class="custom-file">
+													<input type="file" class="custom-file-input" id="pro-image" multiple>
+													<label class="custom-file-label" for="pro-image">Choose Images</label>
+												</div>
+											</div>
+											<div class="preview-images-zone">
+												<div class="preview-image preview-show-1">
+													<div class="image-cancel" data-no="1">x</div>
+													<div class="image-zone"><img id="pro-img-1" src="images/heading.png"></div>
+													<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="1" class="btn btn-light btn-edit-image">edit</a></div>-->
+												</div>
+												<div class="preview-image preview-show-2">
+													<div class="image-cancel" data-no="2">x</div>
+													<div class="image-zone"><img id="pro-img-2" src="images/facebook.png"></div>
+													<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="2" class="btn btn-light btn-edit-image">edit</a></div>-->
+												</div>
+												<div class="preview-image preview-show-3">
+													<div class="image-cancel" data-no="3">x</div>
+													<div class="image-zone"><img id="pro-img-3" src="images/instagram.png"></div>
+													<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="3" class="btn btn-light btn-edit-image">edit</a></div>-->
+												</div>
+											</div>
+										</div>
+										
+									
+									</form>
+
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Save changes</button>
+								</div>
+								
+							</div>
+						
+						</div>
+					
+					</div>
+					<!--Add Product Modal End-->
 						</div>
 					</div>
 					
