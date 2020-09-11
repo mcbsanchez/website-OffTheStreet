@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
 
-const AddressModel = require('./AddressModel.js')
+const Address = require('./AddressModel.js')
 const Order = require('./OrderModel.js')
 const Product = require('./ProductModel.js')
-const ProductOrdersModel = require('./ProductOrdersModel.js')
+const ProductOrders = require('./ProductOrdersModel.js')
 const ProductVariation = require('./ProductVariationModel.js')
 const User = require('./UserModel.js')
 
 //connect to database
 
-const url = "mongodb+srv://ots:ots123@offthestreet.xz337.mongodb.net/sample?retryWrites=true&w=majority";
+const url = "mongodb+srv://ots:ots123@offthestreet.xz337.mongodb.net/local_library?retryWrites=true&w=majority";
 
 const options = {
     useUnifiedTopology: true,
