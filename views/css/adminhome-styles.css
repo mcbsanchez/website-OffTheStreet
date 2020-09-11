@@ -65,12 +65,6 @@ button:visited{
 	background-color: green;
 }
 
-.btn-danger{
-	
-	width: 75%;
-	height: 40px;
-}
-
 .btn-success{
 	
 	width: 75%;
@@ -118,11 +112,6 @@ button:visited{
 {
     background-color: #000000 !Important;
     border: solid 1px #000000;
-}
-
-.btn {
-	background-color: black;
-	border-color: black;
 }
 
 .card-body{
