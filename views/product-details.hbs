@@ -20,25 +20,28 @@
 
     <!-- Body -->
     <div class="container">
-        <div class="row product" id="itemId">
+        <div class="row product" id="{{this._id}}">
             <div class="col-6">
                 <img src="/images/icon.png" class="item-pic">
             </div>
             <div class="col-1"></div>
             <div class="col-5">
-                <p class="item-name">Item Name</p>
-                <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p class="item-price">Php 100.00</p>
+                <p class="item-name">{{this.name}}</p>
+                <p class="item-desc">{{this.description}}</p>
+                <p class="item-price">{{this.price}}</p>
 
                 <div class="sizes">
                     <ul>
+                        {{#each sizes}}
                         <li>
                             <label>
-                                <input type="radio" name="size" value="small">
-                                <span class="options">S</span>
+                                <input type="radio" name="size" value="{{this.variations.size}}">
+                                <span class="options">{{this.variations.size}}</span>
                             </label>
                         </li>
-                        <li>
+                        {{/each}}
+
+                        {{!-- <li>
                             <label>
                                 <input type="radio" name="size" value="medium">
                                 <span class="options">M</span>
@@ -49,7 +52,7 @@
                                 <input type="radio" name="size" value="large">
                                 <span class="options">L</span>
                             </label>
-                        </li>
+                        </li> --}}
                     </ul> 
                 </div> 
                 <div>

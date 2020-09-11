@@ -38,6 +38,8 @@ app.get('/orderDelivering', orderDeliveringController.orderDelivering);
 app.get('/orderPending', orderPendingController.orderPending);
 app.get('/privacy', privacyController.privacy);
 app.get('/productDetails', productDetailsController.productDetails);
+// app.post('/addToCart/:id',shoppingCartController.addToCart);
+// app.post('/removeItem/:id',shoppingCartController.removeItem);
 app.get('/search', searchController.search);
 app.get('/shippingDetails', shippingDetailsController.shippingDetails);
 app.get('/shoppingCart', shoppingCartController.shoppingCart);
