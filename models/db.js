@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
 
+const AddressModel = require('./AddressModel.js')
+const Order = require('./OrderModel.js')
+const Product = require('./ProductModel.js')
+const ProductOrdersModel = require('./ProductOrdersModel.js')
+const ProductVariation = require('./ProductVariationModel.js')
+const User = require('./UserModel.js')
+
 //connect to database
 const url = 'mongodb+srv://ots:ots123@offthestreet.xz337.mongodb.net/OTSdb?retryWrites=true&w=majority';
 
@@ -12,8 +19,10 @@ const options = {
 const database = {
     connect: function () {
         mongoose.connect(url, options, function(error) {
-            if(error) throw error;
-            console.log('Connected to: ' + url);
+            if(error) 
+                throw error;
+            else
+                console.log('Connected to: ' + url);
         });
     },
 

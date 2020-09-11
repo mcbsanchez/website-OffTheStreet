@@ -20,12 +20,12 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 
 //Dont forget to do the session
-// app.use(session({
-//     'secret': 'off-the-street-session',
-//     'resave': false,
-//     'saveUninitialized': false,
-//     store: new MongoStore({mongooseConnection: mongoose.connection})
-// }));
+app.use(session({
+    'secret': 'off-the-street-session',
+    'resave': false,
+    'saveUninitialized': false,
+    store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
 
 app.use('/', routes);
 

@@ -1,16 +1,23 @@
-const db = require('../models/db');
-const Product = require('../models/ProductModel')
+const db = require('../models/db.js');
+const Product = require('../models/ProductModel.js')
 
 const productDetailsController = {
 	productDetails: function(req,res){
 		// res.render('product-details');
 
-		var productId = req.params.id;
+		var productId = req.query.id;
+		console.log(productId);
 		var query = {_id: productId};
 		var projection = 'name description color price variations';
+		
+		// res.render('product-details', result);
 
-		db.findOne(Product, query, projection, function(result) {
-		    res.render('product-details', {products: result});
+		db.findMany(Product, null , projection, function(result) {
+			console.log(result)
+			console.log(query)
+			if(result != null){
+				res.render('product-details', result);
+			}
 		});
 	}
 }

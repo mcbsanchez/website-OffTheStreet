@@ -20,23 +20,23 @@
 
     <!-- Body -->
     <div class="container">
-        <div class="row product" id="{{this._id}}">
+        <div class="row product" id="{{_id}}">
             <div class="col-6">
                 <img src="/images/icon.png" class="item-pic">
             </div>
             <div class="col-1"></div>
             <div class="col-5">
-                <p class="item-name">{{this.name}}</p>
-                <p class="item-desc">{{this.description}}</p>
-                <p class="item-price">{{this.price}}</p>
+                <p class="item-name">{{name}}</p>
+                <p class="item-desc">{{description}}</p>
+                <p class="item-price">{{price}}</p>
 
                 <div class="sizes">
                     <ul>
-                        {{#each sizes}}
+                        {{#each variations}}
                         <li>
                             <label>
-                                <input type="radio" name="size" value="{{this.variations.size}}">
-                                <span class="options">{{this.variations.size}}</span>
+                                <input type="radio" name="size" value="{{variations.size}}">
+                                <span class="options">{{variations.size}}</span>
                             </label>
                         </li>
                         {{/each}}
