@@ -38,33 +38,17 @@
 							<a href="#" class="text-white">Mr. Man</a>
 						</div>
 						<ul class="navbar-nav flex-column mt-4">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:views/admin-product-page.html
-							<li class="nav-item"><a href="adminhome.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
-							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-box text-light fa-lg mr-3"></i>Product</a></li>
-							<li class="nav-item"><a href="admin-order-page.html" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a></li>
-							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
-						</ul>
-=======
-=======
->>>>>>> Stashed changes
+
 							<li class="nav-item"><a href="adminHome" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
 							<li class="nav-item"><a href="#collapseProduct" data-toggle="collapse" class="nav-link text-white p-3 mb-2 sidebar-link current" aria-expanded="false" aria-controls="collapseProduct"><i class="fas fa-box text-light fa-lg mr-3"></i>Product</a>
 								<div class="collapse show" id="collapseProduct">
 									<div class="sidebar-sub">
 										<ul class="navbar-nav flex-column">
 											<li class="nav-item">
-<<<<<<< Updated upstream
-												<a class="nav-link text-white sidebar-link sidebar-subtext" href="admin-product-page.html">View All Products</a>
-											</li>
-											<li class="nav-item ">
-												  <a class="nav-link text-white sidebar-link sidebar-subtext current" href="admin-add-product-page.html">Add a New Product</a>
-=======
 												<a class="nav-link text-white sidebar-link sidebar-subtext current" href="admin-product-page.html">View All Products</a>
 											</li>
 											<li class="nav-item ">
 												  <a class="nav-link text-white sidebar-link sidebar-subtext" href="admin-add-product-page.html">Add a New Product</a>
->>>>>>> Stashed changes
 											</li>
 											<li class="nav-item">
 												<a class="nav-link text-white sidebar-link sidebar-subtext" href="admin-edit-product-page.html">Edit a Product Details</a>
@@ -107,10 +91,7 @@
 									</ul>
 								  </div>
 							</li></ul>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes:views/admin-add-product-page.html
-=======
->>>>>>> Stashed changes
+
 					</div>
 					
 					
@@ -247,127 +228,6 @@
 							</nav>
 						</div>
 					</div>
-<<<<<<< Updated upstream
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductModal">Add a New Product</button>
-					<div class="modal fade bd-example-modal-xl" id="newProductModal" tabindex="- 1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-xl">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title h4">Add a New Product</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-								</div>
-
-								<div class="modal-body">
-									<form>
-                                        
-										<div class="form-group">
-											<label for="product-name" class="col-form-label">Name</label>
-											<input type="text" class="form-control">
-											<label for="product-description" class="col-form-label">Description</label>
-											<input type="text" class="form-control">
-											
-                                        </div>
-                                        
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="smallCheck">
-                                            <label class="form-check-label" for="smallCheck">S</label>
-                                            
-                                            <input type="text" class="form-control" id="smallQuantity" type="text">
-                                            
-                            
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="mediumCheck">
-                                            <label class="form-check-label" for="mediumCheck">M</label>
-                                            <input type="text" class="form-control" id="mediumQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="largeCheck">
-                                            <label class="form-check-label" for="largeCheck">L</label>
-                                            <input type="text" class="form-control" id="largeQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="extralargeCheck">
-                                            <label class="form-check-label" for="extralargeCheck">XL</label>
-                                            <input type="text" class="form-control" id="extralargeQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="doubleextralargeCheck">
-                                            <label class="form-check-label" for="doubleextralargeCheck">2XL</label>
-                                            <input type="text" class="form-control" id="doubleextralargeQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="tripleextralargeCheck">
-                                            <label class="form-check-label" for="tripleextralargeCheck">3XL</label>
-                                            <input type="text" class="form-control" id="tripleextralargeQuantity" type="text">
-										</div>
-										<div class="form-row mt-2">
-											<div class="col">
-												<label for="price">Price</label>
-												<input type="text" class="form-control">
-											</div>
-											
-										</div>
-										<div class="form-row mt-3">
-											<div class="col">
-												<div class="form-group">
-													<label for="quantity">Quantity</label>
-													<select class="form-control" id="quantity">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-													<option>6</option>
-													<option>7</option>
-													<option>8</option>
-													<option>9</option>
-													</select>
-												</div>
-											</div>
-										</div>
-										<div class="container-fluid">
-											<div class="form-group mt-3">
-												<div class="custom-file">
-													<input type="file" class="custom-file-input" id="pro-image" multiple>
-													<label class="custom-file-label" for="pro-image">Choose Images</label>
-												</div>
-											</div>
-											<div class="preview-images-zone">
-												<div class="preview-image preview-show-1">
-													<div class="image-cancel" data-no="1">x</div>
-													<div class="image-zone"><img id="pro-img-1" src="images/heading.png"></div>
-													<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="1" class="btn btn-light btn-edit-image">edit</a></div>-->
-												</div>
-												<div class="preview-image preview-show-2">
-													<div class="image-cancel" data-no="2">x</div>
-													<div class="image-zone"><img id="pro-img-2" src="images/facebook.png"></div>
-													<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="2" class="btn btn-light btn-edit-image">edit</a></div>-->
-												</div>
-												<div class="preview-image preview-show-3">
-													<div class="image-cancel" data-no="3">x</div>
-													<div class="image-zone"><img id="pro-img-3" src="images/instagram.png"></div>
-													<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="3" class="btn btn-light btn-edit-image">edit</a></div>-->
-												</div>
-											</div>
-										</div>
-										
-									
-									</form>
-
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
-								</div>
-						</div>
-						
-					</div>
-					
-					</div>
-
-=======
->>>>>>> Stashed changes
 					
 				</div>
 				
