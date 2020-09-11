@@ -1,5 +1,6 @@
 const db = require('../models/db.js');
 const Product = require('../models/ProductModel.js')
+const ProductOrdersModel = require('../models/ProductOrdersModel.js')
 
 const productDetailsController = {
 	productDetails: function(req,res){
@@ -12,7 +13,7 @@ const productDetailsController = {
 		
 		// res.render('product-details', result);
 
-		db.findMany(Product, null , projection, function(result) {
+		db.findOne(Product, null , projection, function(result) {
 			console.log(result)
 			console.log(query)
 			if(result != null){

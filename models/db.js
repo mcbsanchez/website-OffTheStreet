@@ -9,7 +9,8 @@ const ProductVariation = require('./ProductVariationModel.js')
 const User = require('./UserModel.js')
 
 //connect to database
-const url = 'mongodb+srv://ots:ots123@offthestreet.xz337.mongodb.net/OTSdb?retryWrites=true&w=majority';
+
+const url = "mongodb+srv://ots:ots123@offthestreet.xz337.mongodb.net/sample?retryWrites=true&w=majority";
 
 const options = {
     useUnifiedTopology: true,
