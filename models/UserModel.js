@@ -26,28 +26,16 @@ var UserSchema = new mongoose.Schema({
         required: false
     },
     address: [{
-        address_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Address'
-        }
+        type: String
     }],
     orders: [{
-        order_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Order'
-        }
+        type: String
     }],
     cart: [{
-        productOrders_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'ProductOrders'
-        }
+        type: String
     }],
     wishlist: [{
-        product_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        }
+        type: String
     }]
 });
 

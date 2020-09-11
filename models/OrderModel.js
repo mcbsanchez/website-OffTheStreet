@@ -6,8 +6,7 @@ var OrderSchema = new mongoose.Schema({
         required: true
     },
     products: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'ProductOrders'
+        type: String
     }],
     modepayment: {
         type: String,
@@ -17,11 +16,9 @@ var OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    address: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Address',
-        required: true
-    },
+    address: [{
+        type: String
+    }],
     total: {
         type: Number,
         required: true

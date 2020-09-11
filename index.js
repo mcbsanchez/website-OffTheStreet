@@ -33,7 +33,7 @@ app.use(function(req,res) {
     res.render('error')
 });
 
-// db.connect();
+db.connect();
 
 app.listen(port, function() {
     console.log('App listening at port ' + port);

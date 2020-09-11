@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
 
 //connect to database
-const url = '';
+const url = 'mongodb+srv://ots:ots123@offthestreet.xz337.mongodb.net/OTSdb?retryWrites=true&w=majority';
 
 const options = {
     useUnifiedTopology: true,
@@ -13,7 +13,7 @@ const database = {
     connect: function () {
         mongoose.connect(url, options, function(error) {
             if(error) throw error;
-            //console.log('Connected to: ' + url);
+            console.log('Connected to: ' + url);
         });
     },
 
