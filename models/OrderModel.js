@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-const { stringify } = require('querystring');
 
 var OrderSchema = new mongoose.Schema({
     numitems: {
