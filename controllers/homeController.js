@@ -6,7 +6,6 @@ const homeController = {
 		var projection = 'name price'
 
 		db.findMany(Product, null, projection, function(results) {
-			console.log(results)
 			if(results != null) {
 				res.render('home', {products: results})
 			}

@@ -13,7 +13,7 @@ const productDetailsController = {
 		
 		// res.render('product-details', result);
 
-		db.findOne(Product, null , projection, function(result) {
+		db.findOne(Product, query , projection, function(result) {
 			console.log(result)
 			console.log(query)
 			if(result != null){
