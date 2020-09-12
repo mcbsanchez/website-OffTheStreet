@@ -20,6 +20,7 @@ const shippingDetailsController = require('../controllers/shippingDetailsControl
 const shoppingCartController = require('../controllers/shoppingCartController.js');
 const sizeChartController = require('../controllers/sizeChartController.js');
 const termsController = require('../controllers/termsController.js');
+const checkoutController = require('../controllers/checkoutController.js');
 const app = express();
 
 module.exports = app;
@@ -39,7 +40,7 @@ app.get('/orderPending', orderPendingController.orderPending);
 app.get('/privacy', privacyController.privacy);
 app.get('/productDetails', productDetailsController.productDetails);
 app.post('/addToCart',shoppingCartController.addToCart);
-app.post('/checkout', shippingDetailsController.checkout);
+app.post('/checkout', checkoutController.checkout);
 app.post('/postDetails', shoppingCartController.postDetails);
 // app.post('/removeItem/:id',shoppingCartController.removeItem);
 app.get('/search', searchController.search);
@@ -47,3 +48,4 @@ app.get('/shippingDetails', shippingDetailsController.shippingDetails);
 app.get('/shoppingCart', shoppingCartController.shoppingCart);
 app.get('/sizeChart', sizeChartController.sizeChart);
 app.get('/terms', termsController.terms);
+app.get('/confirmation', checkoutController.checkout);
