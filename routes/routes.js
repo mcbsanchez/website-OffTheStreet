@@ -50,4 +50,4 @@ app.get('/terms', termsController.terms);
 
 app.get('/adminOrderPending', adminOrderPendingController.adminOrderPending);
 app.get('/adminOrderConfirmed', adminOrderConfirmedController.adminOrderConfirmed);
-app.get('/adminSettings'), adminSettingsController.adminSettings);
+app.get('/adminSettings', adminSettingsController.adminSettings);
