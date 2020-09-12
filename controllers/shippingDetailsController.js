@@ -77,7 +77,7 @@ const shippingDetailsController = {
 
 			db.insertOne(Order, order, function(result){})
 
-			res.render('/')
+			res.render('home')
 		})
 		console.log(req.body.firstname);
 	}
