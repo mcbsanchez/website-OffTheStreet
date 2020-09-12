@@ -31,7 +31,7 @@ var OrderSchema = new mongoose.Schema({
     },
     shippingfee: {
         type: Number,
-        required: true
+        required: false
     },
     pointsused: {
         type: Number,

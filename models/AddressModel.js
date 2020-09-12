@@ -5,7 +5,7 @@ var AddressSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lsatname: {
+    lastname: {
         type: String,
         required: true
     },
