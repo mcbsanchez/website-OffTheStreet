@@ -25,28 +25,28 @@
             <div class="col-6">
                 <p class="p-2 m-0 heading">CART</p>
 
-                {{!-- {{#if products}}
-                {{#each products}} --}}
+                {{#if products}}
+                {{#each products}}
                 <div class="item d-flex align-items-center" id="5f5b0b4fe1ea7fbc58571833">
                     <div class="p-2">
                         <img src="images/icon.png" class="item-pic">
                     </div>
                     <div class="p-2  mr-auto">
-                        {{this.name}}
+                        {{name}}
                     </div>
                     <div class="p-4">
                         <div class="row">
                             <div class="input-group align-items-center">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="{{this._id}}">
+                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="{{_id}}">
                                         <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
                                         </svg>
                                     </button>
                                 </span>
-                                <input type="text" name="{{this._id}}" class="form-control input-number" value="1" style="width: 40px;">
+                                <input type="text" name="{{_id}}" class="form-control input-number" value={{quantity}} style="width: 40px;">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="{{this._id}}">
+                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="{{_id}}">
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
                                         </svg>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-4">{{this.price}}</div>
+                    <div class="p-4">{{price}}</div>
                     <div class="p-2">
                         <button class="btn btn-link cancel">
                             <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,12 +64,12 @@
                         </button>
                     </div>
                 </div>
-                {{!-- {{/each}}
+                {{/each}}
                 {{else}}
                 <p>No products yet</p>
-                {{/if}} --}}
+                {{/if}}
                 
-                <div class="item d-flex align-items-center" id="item1">
+                {{!-- <div class="item d-flex align-items-center" id="item1">
                     <div class="p-2">
                         <img src="images/icon.png" class="item-pic">
                     </div>
@@ -181,32 +181,32 @@
                             </svg>
                         </button>
                     </div>
-                </div>
+                </div> --}}
             </div>   
 
             <!-- Order Summary -->
             <div class="col-4">
                 <div class="summary">
                     <div class="row">
-                        <h1 class="summarytitle">ORDER SUMMARY</h1>
+                        <h1 class="summarytitle">ORDER DETAILS</h1>
                     </div>
                     <div class="summarycontent">
-                        <div class="row">
+                        {{!-- <div class="row">
                             <div class="col-3">
                                 <h1 class="summarytext">Items</h1>
                             </div>
                             <div class="col-9">
                                 <h1 class="summarytext">8</h1>
                             </div>
-                        </div>
-                        <div class="row">
+                        </div> --}}
+                        {{!-- <div class="row">
                             <div class="col-3">
                                 <h1 class="summarytext">Total</h1>
                             </div>
                             <div class="col-9">
                                 <h1 class="summarytext">Php 800.00</h1>
                             </div>
-                        </div>
+                        </div> --}}
                         <form method="POST" action="/postDetails">
                             <div class="row">
                                 <div class="col-12"><h1 class="summarytext">Mode of Payment</h1></div>
@@ -227,7 +227,7 @@
                                     <option value="Pickup">Pickup</option>
                                 </select>
                             </div>
-                            <div class="row">
+                            {{!-- <div class="row">
                                 <div class="col-3">
                                     <h1 class="summarytext">Shipping</h1>
                                 </div>
@@ -243,7 +243,7 @@
                                 <div class="col-7">
                                     <h1 class="summarytext" id="subtotal">Php 1000.00</h1>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="row d-flex justify-content-end">
                                 <button type="submit" class="btn btn-dark checkoutbtn" id="myButton">checkout</button>
                             </div>

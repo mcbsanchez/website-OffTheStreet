@@ -5,8 +5,32 @@ const UserModel = require("../models/UserModel");
 const ProductVariationModel = require("../models/ProductVariationModel");
 
 const shoppingCartController = {
+	
 	shoppingCart: function(req,res){
-		res.render('shopping-cart');
+		var userId = '5f5cafd29b5a4d5e90534dfa';
+		db.findMany(ProductOrdersModel, {user: userId}, null, function(result){
+			var ids = [];
+			var quantity = [];
+			for (var i = 0 ; i<result.length ; i++){
+				ids.push(result[i].product);
+				quantity.push(result[i].quantity);
+			}
+			db.findMany(ProductModel, {_id: { $in: ids }}, null, function(results){
+				var x = []
+				for(var i = 0; i < results.length ; i++){
+					var y = {
+						name: results[i].name,
+						_id: result[i]._id,
+						quantity: quantity[i],
+						price: results[i].price
+					}
+					console.log(y)
+					x.push(y)
+				}
+				console.log(x)
+				res.render('shopping-cart', {products: x});
+			})
+		})
 	},
 
 	addToCart: function(req,res) {
