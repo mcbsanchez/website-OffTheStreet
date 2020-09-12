@@ -1,3 +1,6 @@
+const db = require("../models/db");
+const ProductModel = require("../models/ProductModel")
+const ProductOrdersModel = require("../models/ProductOrdersModel");
 const UserModel = require("../models/UserModel");
 
 const shoppingCartController = {
@@ -7,38 +10,38 @@ const shoppingCartController = {
 
 	addToCart: function(req,res) {
 		// var userId = req.session.passport.user;
-		// var productId = req.params.id;
 
-		var userId = '5f5b0fece1ea7fbc58571836';
-		var productId = '5f5b0b5be1ea7fbc58571835';
+		var userId = '5f5bbeb79751353c98ee8463';
+		var productId = '5f5bbeb79751353c98ee8461';
 
 		var newProduct = {
 			product: productId,
 			quantity: 1
 		}
+		
+		db.insertOne(ProductOrdersModel, newProduct, function(){});
 
-		UserModel.updateOne(
-			{_id: userId},
-			{$push: {cart: newProduct}},
-			{"$upsert": true},
-			function(err, res) {
-				if(err) throw err
-				else {
-					console.log("successful")
-					// res.send("Successfully added")
-				}
-			}
-		)
+		db.findOne(ProductOrdersModel, {product: productId}, function(res) {
+			db.updateOne(UserModel,
+				{_id:userId},
+				{$push: {cart: res._id}},
+				{"$upsert": true},
+				function(err,result) {
+					if(err) throw err
+					else {
+						console.log("success")
+					}
+				})
+		})
 	},
 
 	removeItem: function(req,res) {
-		var userId = "5f5b0fece1ea7fbc58571836";
-		var productId = req.params.id;
-		var string = '"' + productId + '"';
+		var userId = "5f5bbeb79751353c98ee8463";
+		var productId = "";
 
 		UserModel.updateOne(
 			{_id: userId}, 
-			{$pull: {cart: string}}
+			{$pull: {cart: productId}}
 		)
 	}
 }

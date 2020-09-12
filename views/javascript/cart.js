@@ -27,7 +27,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "/addToCart/"+ id,              
+            url: "/addToCart",              
         }).done(function () {
             $('#cart-modal').modal('toggle');
         })
