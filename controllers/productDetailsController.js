@@ -23,6 +23,7 @@ const productDetailsController = {
 				}
 				console.log(vars)
 				var product = {
+					_id: result._id,
 					pictures: result.pictures,
 					variations: vars,
 					name: result.name,
