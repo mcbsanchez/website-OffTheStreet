@@ -2,10 +2,6 @@ var mongoose = require('mongoose');
 const { stringify } = require('querystring');
 
 var OrderSchema = new mongoose.Schema({
-    address: {
-        type: String,
-        required: true
-    },
     numitems: {
         type: Number,
         required: true
@@ -21,25 +17,17 @@ var OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    address: [{
+    address: {
         type: String,
         required: true
-    }],
+    },
     total: {
         type: Number,
         required: true
     },
-    shippingfee: {
-        type: Number,
-        required: false
-    },
     pointsused: {
         type: Number,
         required: false
-    },
-    subtotal: {
-        type: Number,
-        required: true
     },
     status: {
         type: String,
