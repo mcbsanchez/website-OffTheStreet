@@ -27,13 +27,13 @@ const shippingDetailsController = {
 
 		var id = "5f5c82db6e08ad4f64787110";
 
-		db.findMany(ProductOrdersModel, {user: _id}, null, function(results){
+		db.findMany(ProductOrdersModel, {user: id}, null, function(results){
 			var addressId;
 			var numItems;
 			var total;
 			var status = "pending";
 			var date = new Date();
-			var dateordered = date.now()
+			var dateordered = date.getTime()
 			var products = [];
 
 			var address = {
@@ -52,7 +52,7 @@ const shippingDetailsController = {
 				addressId = result._id
 			})
 
-			for (var i=0; i<result.length; i++) {
+			for (var i=0; i<results.length; i++) {
 				numItems += results[i].quantity
 				products.push(results[i].product)
 				db.findOne(ProductModel, {product: results[i].product}, null, function(product){
