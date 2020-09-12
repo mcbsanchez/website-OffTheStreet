@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/home-styles.css">
+    <script src="javascript/cart.js"></script>
     
     <!-- Animation-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -77,15 +79,16 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col d-flex justify-content-center flex-wrap col-10">
+                {{#each products}}
                 <a class="item">
                     <div class="card">
                         <div class="card item" style="width: 18rem;">
-                            <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                            <a href="/product?id={{_id}}"><img src="images/icon.png" class="card-img-top itemphoto"></a>
                             <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
+                                <h1 class="priceval">{{price}} php</h1>
                             </div>
                             <div class="card-body">
-                                <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                <a href="/product?id={{_id}}" class="cardname"><p class="card-text itemname">{{name}}</p></a>
                             </div>
                         </div>
                         <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
@@ -94,131 +97,10 @@
                         <button class="add" data-toggle="modal" data-target="#cart-modal">
                             <li class="fa fa-plus"></li>
                         </button>
+                        </a>
                     </div>
                 </a>
-                <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                        </div>
-                        <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" data-toggle="modal" data-target="#cart-modal">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                        </div>
-                        <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" data-toggle="modal" data-target="#cart-modal">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                        </div>
-                        <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" data-toggle="modal" data-target="#cart-modal">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                            <div class="sale d-flex justify-content-center">
-                                <h1 class="salepercent">10%off</h1>
-                            </div>
-                        </div>
-                        <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" data-toggle="modal" data-target="#cart-modal">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                            <div class="sale d-flex justify-content-center">
-                                <h1 class="salepercent">10%off</h1>
-                            </div>
-                        </div>
-                        <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" data-toggle="modal" data-target="#cart-modal">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
-                <a class="item">
-                    <div class="card">
-                        <div class="card item" style="width: 18rem;">
-                            <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                            <div class="price d-flex justify-content-center">
-                                <h1 class="priceval">100php</h1>
-                            </div>
-                            <div class="card-body">
-                                <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                            </div>
-                            <div class="sale d-flex justify-content-center">
-                                <h1 class="salepercent">10%off</h1>
-                            </div>
-                        </div>
-                        <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                            <li class="fa fa-heart"></li>
-                        </button>
-                        <button class="add" data-toggle="modal" data-target="#cart-modal">
-                            <li class="fa fa-plus"></li>
-                        </button>
-                    </div>
-                </a>
+                {{/each}}
             </div>
             <div class="col-1"></div>
         </div>

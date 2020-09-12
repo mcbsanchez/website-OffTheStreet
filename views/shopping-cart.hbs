@@ -207,52 +207,47 @@
                                 <h1 class="summarytext">Php 800.00</h1>
                             </div>
                         </div>
-                        <form>
+                        <form method="POST" action="/postDetails">
                             <div class="row">
                                 <div class="col-12"><h1 class="summarytext">Mode of Payment</h1></div>
                             </div>
                             <div class="row">
-                                <select class="form-control summaryselect">
-                                    <option>Cash on Delivery</option>
-                                    <option>Bank Transfer</option>
-                                    <option>GCash Transfer</option>
+                                <select class="form-control summaryselect" name="payment">
+                                    <option value="COD">Cash on Delivery</option>
+                                    <option value="Bank">Bank Transfer</option>
+                                    <option value="GCash">GCash Transfer</option>
                                 </select>
                             </div>
                             <div class="row">
                                 <div class="col-12"><h1 class="summarytext">Mode of Delivery</h1></div>
                             </div>
                             <div class="row">
-                                <select class="form-control summaryselect">
-                                    <option>Shipment</option>
-                                    <option>Pickup</option>
+                                <select class="form-control summaryselect" name="delivery">
+                                    <option value="Shipment">Shipment</option>
+                                    <option value="Pickup">Pickup</option>
                                 </select>
                             </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <h1 class="summarytext">Shipping</h1>
+                                </div>
+                                <div class="col-8">
+                                    <h1 class="summarytext">Php 200.00</h1>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row subtotalrow">
+                                <div class="col-5">
+                                    <h1 class="summarytext">Subtotal</h1>
+                                </div>
+                                <div class="col-7">
+                                    <h1 class="summarytext" id="subtotal">Php 1000.00</h1>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-end">
+                                <button type="submit" class="btn btn-dark checkoutbtn" id="myButton">checkout</button>
+                            </div>
                         </form>
-                        <div class="row">
-                            <div class="col-3">
-                                <h1 class="summarytext">Shipping</h1>
-                            </div>
-                            <div class="col-8">
-                                <h1 class="summarytext">Php 200.00</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row subtotalrow">
-                        <div class="col-5">
-                            <h1 class="summarytext">Subtotal</h1>
-                        </div>
-                        <div class="col-7">
-                            <h1 class="summarytext" id="subtotal">Php 1000.00</h1>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-end">
-                        <button class="btn btn-dark checkoutbtn" id="myButton">checkout</button>
-                    </div>
-                    <script type="text/javascript">
-                        document.getElementById("myButton").onclick = function () {
-                            location.href = "shippingDetails";
-                        };
-                    </script>
                 </div>   
             </div>
         </div>
