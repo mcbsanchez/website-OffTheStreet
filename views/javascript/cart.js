@@ -24,7 +24,7 @@ $(document).ready(function() {
 
     $(".add").click(function() {
         var link = $("#link").val()
-        $.post('/addToCart', {id: link}, function(){
+        $.get('/addToCart', {id: link}, function(){
             $('#cart-modal').modal('toggle');
         })
     });
