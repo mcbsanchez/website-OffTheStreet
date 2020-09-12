@@ -12,8 +12,8 @@ const shoppingCartController = {
 	addToCart: function(req,res) {
 		// var userId = req.session.passport.user;
 
-		var userId = '5f5c82db6e08ad4f64787110';
-		var productId = '5f5c82db6e08ad4f6478710b';
+		var userId = '5f5cafd29b5a4d5e90534dfa';
+		var productId = '5f5caedfa2b57c256cb4889e';
 
 		var newProduct = {
 			product: productId,
@@ -45,8 +45,8 @@ const shoppingCartController = {
 	},
 
 	removeItem: function(req,res) {
-		var userId = "5f5bbeb79751353c98ee8463";
-		var productId = "";
+		var userId = "5f5cafd29b5a4d5e90534dfa";
+		var productId = "5f5caedfa2b57c256cb4889e";
 
 		UserModel.updateOne(
 			{_id: userId}, 

@@ -31,7 +31,7 @@ var whiteShirt = {
     variations: []
 }
 var blueJeans = {
-    name: "blueJeans",
+    name: "Blue Jeans",
     description: "This is a pair of blue jeans.",
     color: "blue",
     pictures: [],

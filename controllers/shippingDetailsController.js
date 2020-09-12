@@ -25,12 +25,12 @@ const shippingDetailsController = {
 		var barangay = req.body.barangay;
 		var street = req.body.street;
 
-		var id = "5f5c82db6e08ad4f64787110";
+		var id = "5f5cafd29b5a4d5e90534dfa";
 
 		db.findMany(ProductOrdersModel, {user: id}, null, function(results){
 			var addressId;
-			var numItems;
-			var total;
+			var numItems = 0;
+			var total = 0;
 			var status = "pending";
 			var date = new Date();
 			var dateordered = date.getTime()
@@ -50,36 +50,42 @@ const shippingDetailsController = {
 
 			db.insertOne(Address, address, function(result) {
 				addressId = result._id
-			})
+				
+				for (var i=0; i<results.length; i++) {
+					numItems += results[i].quantity
+					products.push(results[i].product)
+					db.findOne(ProductModel, {_id: results[i].product}, null, function(product){
+						total += product.price * results[i].quantity
+					})
+				}
+	
+				var order = {
+					numitems: numItems,
+					products: products,
+					modepayment: modeofpayment,
+					modedelivery: modeofdelivery,
+					address: addressId,
+					total: total,
+					pointsused: 0,
+					status: status,
+					timeordered: dateordered,
+					timecompleted: null,
+					timecancelled: null,
+					timeconfirmed: null
+				}
 
-			for (var i=0; i<results.length; i++) {
-				numItems += results[i].quantity
-				products.push(results[i].product)
-				db.findOne(ProductModel, {_id: results[i].product}, null, function(product){
-					total += product.price * results[i].quantity
+				// console.log(order)
+
+				db.insertOne(Order, order, function(result){
+					db.updateOne(UserModel,
+						{_id:id},
+						{$push: {orders: result._id}})
+		
+					res.render('home')
 				})
-			}
-
-			var order = {
-				numitems: numItems,
-				products: products,
-				modepayment: modeofpayment,
-				modedelivery: modeofdelivery,
-				address: addressId,
-				total: total,
-				pointsused: 0,
-				status: status,
-				timeordered: dateordered,
-				timecompleted: null,
-				timecancelled: null,
-				timeconfirmed: null
-			}
-
-			db.insertOne(Order, order, function(result){})
-
-			res.render('home')
+			})
 		})
-		console.log(req.body.firstname);
+		// console.log(req.body.firstname);
 	}
 }
 
