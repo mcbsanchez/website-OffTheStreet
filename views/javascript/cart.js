@@ -24,16 +24,9 @@ $(document).ready(function() {
 
     $(".add").click(function() {
         var link = $("#link").val()
-        $.ajax({
-            type: "POST",
-            url: "/addToCart",              
-        }).done(function () {
-            console.log(link)
+        $.post('/addToCart', {id: link}, function(){
             $('#cart-modal').modal('toggle');
         })
-        .fail(function()  {
-            alert("Sorry. Server unavailable.");
-        });
     });
     
     $(".cancel").click(function(){
