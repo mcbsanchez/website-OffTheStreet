@@ -93,12 +93,12 @@ const checkoutController = {
 							{$push: {orders: result._id}})
 						
 						var toEmail = "offthestreetbusiness@gmail.com";
-						var message = "Name :" + firstname + " " + lastname + "\n";
-						message = message.concat("Email " + email + "\n");
-						message = message.concat("Phone Number " + phonenumber + "\n");
+						var message = "Name: " + firstname + " " + lastname + "\n";
+						message = message.concat("Email: " + email + "\n");
+						message = message.concat("Phone Number: " + phonenumber + "\n");
 						message = message.concat("Number of items: " + numItems + "\n");
 						message = message.concat("Products: " + "\n");
-						message = message.concat(productNamesQ );
+						message = message.concat(productNamesQ);
 						message = message.concat("Mode of Payment: " + modeofpayment + "\n");
 						message = message.concat("Mode of Delivery: " + modeofdelivery + "\n");
 						message = message.concat("Postal Code: " + postalcode + "\n");
@@ -108,7 +108,15 @@ const checkoutController = {
 						message = message.concat("Address Line: " + street + "\n");
 						message = message.concat("Total: " + total + "\n");
 						message = message.concat("Time Ordered: " + dateordered + "\n");
-						
+
+						var values = {
+							numitems: numItems,
+							products: productNamesQ,
+							modeofdelivery: modeofdelivery,
+							modeofpayment: modeofdelivery,
+							total: total
+						}
+						res.render('confirmation', values)
 						var mailOptions = {
 							from: 'offthestreetbusiness@gmail.com',
 							to: toEmail,
@@ -123,7 +131,7 @@ const checkoutController = {
 								res.send(true);
 							}
 						});
-						res.render('confirmation', message)
+						
 					})
 				})				
 			})
