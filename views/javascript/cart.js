@@ -23,8 +23,6 @@ $(document).ready(function() {
     });
 
     $(".add").click(function() {
-        var id = $(this).parent().parent().parent().attr('id')
-
         $.ajax({
             type: "POST",
             url: "/addToCart",              
@@ -34,7 +32,7 @@ $(document).ready(function() {
         .fail(function()  {
             alert("Sorry. Server unavailable.");
         });
-   });
+    });
     
     $(".cancel").click(function(){
         var id = $(this).parent().parent().attr("id")
