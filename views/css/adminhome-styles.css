@@ -117,3 +117,7 @@ button:visited{
 .card-body{
 	background-color: black;
 }
+
+.top-nav-title{
+	font-family: 'Montserrat', sans-serif;;
+}

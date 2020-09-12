@@ -14,6 +14,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" href="css/adminhome-styles.css">
+	<link rel="stylesheet" href="css/admin-product-page.css">
 
 </head>
 
@@ -121,6 +122,131 @@
 			</div>
 		</div>
 	</nav>
+
+	<section>
+		<div class="container-fluid">
+			<div class="row mb-5">
+				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+					<div class="row align-items-center">
+						<div class="col-xl-12 col-12 mt-5">
+							<span style='font-weight: bold;' class="bottom-border">User Account</span>
+							<form>
+								<div class="form-group mt-3 bottom-border">
+								  <label for="exampleInputEmail">Username: example</label>
+								  <button type="button" class="btn btn-warning btn-sm text-white ml-5" data-toggle="modal" data-target="#changeUsernameModal"><i class="fa fa-edit" aria-hidden="true"></i></button>
+							
+								</div>
+								<div class="form-group mt-3 bottom-border">
+									<label for="exampleInputUsername">Email address: example@gmail.com</label>
+								  <button type="button" class="btn btn-warning btn-sm text-white ml-5" data-toggle="modal" data-target="#changeEmailModal"><i class="fa fa-edit" aria-hidden="true"></i></button>
+								</div>
+
+									
+								<a href="#changePasswordModal" data-toggle="modal" data-target="#changePasswordModal">Change my Password</a>
+				
+								<div class="modal fade bd-example-modal-md" id="changeUsernameModal" tabindex="- 1" role="dialog" aria-labelledby="changeUsernameModal" aria-hidden="true">
+									<div class="modal-dialog modal-md">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title h4">Change Username</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+											</div>
+
+											<div class="modal-body">
+												<form>
+                                        
+													<div class="form-group">
+														<label for="new-username" class="col-form-label">New Username:</label>
+														<input type="text" class="form-control" placeholder="example">
+														
+											
+                                       				</div>
+									
+												</form>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary">Save changes</button>
+											</div>
+								
+										</div>
+						
+									</div>
+					
+								</div>
+								<div class="modal fade bd-example-modal-md" id="changeEmailModal" tabindex="- 1" role="dialog" aria-labelledby="changeEmailModal" aria-hidden="true">
+									<div class="modal-dialog modal-md">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title h4">Change Email:</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+											</div>
+
+											<div class="modal-body">
+												<form>
+                                        
+													<div class="form-group">
+														<label for="new-email" class="col-form-label">New Email:</label>
+														<input type="text" class="form-control" placeholder="example@gmail.com">
+														
+											
+                                       				</div>
+									
+												</form>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary">Save changes</button>
+											</div>
+								
+										</div>
+						
+									</div>
+					
+								</div>
+								<div class="modal fade bd-example-modal-md" id="changePasswordModal" tabindex="- 1" role="dialog" aria-labelledby="changePasswordModal" aria-hidden="true" id="changePasswordModal">
+									<div class="modal-dialog modal-md">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title h4">Change Password</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+											</div>
+
+											<div class="modal-body">
+												<form>
+                                        
+													<div class="form-group">
+														<label for="current-password" class="col-form-label">Enter Current Password:</label>
+														<input type="password" class="form-control">
+														<label for="new-password" class="col-form-label">Enter New Password:</label>
+														<input type="password" class="form-control">
+														<label for="confirm-new-password" class="col-form-label">Confirm New Password:</label>
+														<input type="password" class="form-control">
+                                       				</div>
+									
+												</form>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary">Save changes</button>
+											</div>
+								
+										</div>
+						
+									</div>
+					
+								</div>
+							  </form>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
 
 </body>
 </html>
