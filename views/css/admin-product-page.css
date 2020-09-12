@@ -76,3 +76,15 @@
     background-color: black;
     border-color: black;
 }
+
+.delete-button{
+    background-color:#d94a4a;
+    border-color: gray;
+	width: 180px;
+    height: 40px;
+    
+}
+
+.btn-primary{
+    background-color: black;
+}

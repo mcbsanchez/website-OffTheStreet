@@ -38,11 +38,41 @@
 							<a href="#" class="text-white">Mr. Man</a>
 						</div>
 						<ul class="navbar-nav flex-column mt-4">
+
 							<li class="nav-item"><a href="adminHome" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
-							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-box text-light fa-lg mr-3"></i>Product</a></li>
-							<li class="nav-item"><a href="adminOrder" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a></li>
-							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
-						</ul>
+							<li class="nav-item"><a href="admin-product-page.html" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-white fa-lg mr-3"></i>Product</a></li>
+							<li class="nav-item"><a href="#collapseOrder" data-toggle="collapse" class="nav-link text-white p-3 mb-2 sidebar-link" aria-expanded="false" aria-controls="collapseOrder"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a>
+								<div class="collapse" id="collapseOrder">
+									<div class="sidebar-sub">
+									  <ul class="navbar-nav flex-column">
+											<li class="nav-item ">
+												<a class="nav-link text-white sidebar-link sidebar-subtext" href="admin-order-page.html">View All Orders</a>
+											</li>
+										 	 <li class="nav-item">
+												  <a class="nav-link text-white sidebar-link sidebar-subtext" href="admin-pending-order-page.html">View Pending Orders</a>
+											  </li>
+											  <li class="nav-item ">
+												<a class="nav-link text-white sidebar-link sidebar-subtext" href="admin-confirmed-order-page.html">View Confirmed Orders</a>
+											  </li>
+									  </ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item"><a href="#collapseSettings" data-toggle="collapse" class="nav-link text-white p-3 mb-2 sidebar-link" aria-expanded="false" aria-controls="collapseSettings"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a>
+							<div class="collapse" id="collapseSettings">
+								<div class="sidebar-sub">
+									<ul class="navbar-nav flex-column">
+										  <li class="nav-item ">
+											  <a class="nav-link text-white sidebar-link sidebar-subtext" href="settings-account-page.html">Account</a>
+										  </li>
+											<li class="nav-item">
+												<a class="nav-link text-white sidebar-link sidebar-subtext" href="#">Logout</a>
+											</li>
+										
+									</ul>
+								  </div>
+							</li></ul>
+
 					</div>
 					
 					
@@ -86,7 +116,7 @@
 					<div class="row align-items-center">
 						<!--Products-->
 						<div class="col-xl-12 col-12 mt-5">
-							<h3 class="text-muted text-center mb-3 mt-2">All Products</h3>
+							<h4 class="text-black text-center mb-3 mt-2">All Products</h4>
 							<table class="table table-dark table-hover text-center">
 								<thead>
 									<tr class="text-muted">
@@ -94,57 +124,230 @@
 										<th>Name</th>
 										<th>Description</th>
 										<th>Price</th>
-										<th>Stock</th>
+										<th>S</th>
+										<th>M</th>
+										<th>L</th>
+										<th>XL</th>
+										<th>2XL</th>
+										<th>3XL</th>
+										<th>Edit</th>
+										<th>Remove</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 									<th>1</th>
-									<td>Nice Shorts</td>
+									<td><a href="#" class="text-white">Nice</a></td>
 									<td>Very nice</td>
 									<td>PHP 2000</td>
 									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td><button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#editProductModal"><i class="fas fa-edit"></i></button></td>
+									<div class="modal fade bd-example-modal-xl" id="editProductModal" tabindex="- 1" role="dialog" aria-labelledby="editProductModal" aria-hidden="true">
+										<div class="modal-dialog modal-xl">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title h4">Editing Product</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+												</div>
+				
+												<div class="modal-body">
+													<form>
+														
+														<div class="form-group">
+															<label for="product-name" class="col-form-label">Name</label>
+															<input type="text" class="form-control" placeholder="Nice">
+															<label for="product-description" class="col-form-label">Description</label>
+															<input type="text" class="form-control" placeholder="Very Nice">
+															
+														</div>
+														
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="smallCheck">
+															<label class="form-check-label" for="smallCheck">S</label>
+															
+															<input type="text" class="form-control" id="smallQuantity" type="text" placeholder="20">
+															
+											
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="mediumCheck">
+															<label class="form-check-label" for="mediumCheck">M</label>
+															<input type="text" class="form-control" id="mediumQuantity" type="text" placeholder="1">
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="largeCheck">
+															<label class="form-check-label" for="largeCheck">L</label>
+															<input type="text" class="form-control" id="largeQuantity" type="text" placeholder="45">
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="extralargeCheck">
+															<label class="form-check-label" for="extralargeCheck">XL</label>
+															<input type="text" class="form-control" id="extralargeQuantity" type="text" placeholder="5">
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="doubleextralargeCheck">
+															<label class="form-check-label" for="doubleextralargeCheck">2XL</label>
+															<input type="text" class="form-control" id="doubleextralargeQuantity" type="text" placeholder="67">
+														</div>
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="tripleextralargeCheck">
+															<label class="form-check-label" for="tripleextralargeCheck">3XL</label>
+															<input type="text" class="form-control" id="tripleextralargeQuantity" type="text" placeholder="94">
+														</div>
+														<div class="form-row mt-2">
+															<div class="col">
+																<label for="price">Price</label>
+																<input type="text" class="form-control" placeholder="2000">
+															</div>
+															
+														</div>
+													
+														<div class="container-fluid">
+															<div class="form-group mt-3">
+																<div class="custom-file">
+																	<input type="file" class="custom-file-input" id="pro-image" multiple>
+																	<label class="custom-file-label" for="pro-image">Choose Images</label>
+																</div>
+															</div>
+															<div class="preview-images-zone">
+																<div class="preview-image preview-show-1">
+																	<div class="image-cancel" data-no="1">x</div>
+																	<div class="image-zone"><img id="pro-img-1" src="images/heading.png"></div>
+																	<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="1" class="btn btn-light btn-edit-image">edit</a></div>-->
+																</div>
+																<div class="preview-image preview-show-2">
+																	<div class="image-cancel" data-no="2">x</div>
+																	<div class="image-zone"><img id="pro-img-2" src="images/facebook.png"></div>
+																	<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="2" class="btn btn-light btn-edit-image">edit</a></div>-->
+																</div>
+																<div class="preview-image preview-show-3">
+																	<div class="image-cancel" data-no="3">x</div>
+																	<div class="image-zone"><img id="pro-img-3" src="images/instagram.png"></div>
+																	<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="3" class="btn btn-light btn-edit-image">edit</a></div>-->
+																</div>
+															</div>
+														</div>
+														
+													
+													</form>
+				
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													<button type="button" class="btn btn-primary">Save changes</button>
+												</div>
+												
+											</div>
+										
+										</div>
+									
+									</div>
+									<td><button type="button" class="btn btn-danger text-white" data-toggle="modal" data-target="#removeProductModal"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+									<div class="modal fade bd-example-modal-md" id="removeProductModal" tabindex="- 1" role="dialog" aria-labelledby="removeProductModal" aria-hidden="true">
+										<div class="modal-dialog modal-md">
+											<div class="modal-content">
+												<div class="modal-header flex-column">
+													<h5 class="modal-title h4">Are you sure?</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+												</div>
+				
+												<div class="modal-body">
+													<p>Are you sure you want to delete this record? This cannot be undone.</p>
+												</div>
+													
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+													<button type="button" class="btn btn-danger delete-button">Delete</button>
+												</div>
+												
+											</div>
+										
+										</div>
+									
+									</div>
 									</tr>
 									
 									<tr>
 									<th>2</th>
-									<td>Comfy Shoe</td>
+									<td><a href="#" class="text-white">Nice</a></td>
 									<td>Comfortable</td>
 									<td>PHP 3000</td>
 									<td>1</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
+									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 									</tr>
 									
 									<tr>
 									<th>3</th>
-									<td>Cool Shirt</td>
+									<td><a href="#" class="text-white">Nice</a></td>
 									<td>Very cool</td>
 									<td>PHP 4000</td>
 									<td>45</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
+									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 									</tr>
 									
 									<tr>
 									<th>4</th>
-									<td>Good Polo</td>
+									<td><a href="#" class="text-white">Nice</a></td>
 									<td>Super good</td>
 									<td>PHP 5000</td>
 									<td>55</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
+									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 									</tr>
 									
 									<tr>
 									<th>5</th>
-									<td>Inspiring Hat</td>
+									<td><a href="#" class="text-white">Nice</a></td>
 									<td>Motivational</td>
 									<td>PHP 6000</td>
 									<td>67</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
+									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 									</tr>
 									
 									<tr>
 									<th>6</th>
-									<td>Interesting Jeans</td>
+									<td><a href="#" class="text-white">Nice</a></td>
 									<td>Hmmmm..</td>
 									<td>PHP 7000</td>
 									<td>9</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td>20</td>
+									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
+									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 									</tr>
+
+									
 									
 								</tbody>
 							</table>
@@ -177,8 +380,7 @@
 								</li>
 							  </ul>
 							</nav>
-						</div>
-					</div>
+							<!--Add Product Modal Start-->
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductModal">Add a New Product</button>
 					<div class="modal fade bd-example-modal-xl" id="newProductModal" tabindex="- 1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-xl">
@@ -190,36 +392,47 @@
 
 								<div class="modal-body">
 									<form>
+                                        
 										<div class="form-group">
 											<label for="product-name" class="col-form-label">Name</label>
 											<input type="text" class="form-control">
 											<label for="product-description" class="col-form-label">Description</label>
 											<input type="text" class="form-control">
 											
-										</div>
+                                        </div>
+                                        
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value="" id="smallCheck">
-											<label class="form-check-label" for="smallCheck">S</label>
+                                            <label class="form-check-label" for="smallCheck">S</label>
+                                            
+                                            <input type="text" class="form-control" id="smallQuantity" type="text">
+                                            
+                            
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value="" id="mediumCheck">
-											<label class="form-check-label" for="mediumCheck">M</label>
+                                            <label class="form-check-label" for="mediumCheck">M</label>
+                                            <input type="text" class="form-control" id="mediumQuantity" type="text">
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value="" id="largeCheck">
-											<label class="form-check-label" for="largeCheck">L</label>
+                                            <label class="form-check-label" for="largeCheck">L</label>
+                                            <input type="text" class="form-control" id="largeQuantity" type="text">
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value="" id="extralargeCheck">
-											<label class="form-check-label" for="extralargeCheck">XL</label>
+                                            <label class="form-check-label" for="extralargeCheck">XL</label>
+                                            <input type="text" class="form-control" id="extralargeQuantity" type="text">
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value="" id="doubleextralargeCheck">
-											<label class="form-check-label" for="doubleextralargeCheck">2XL</label>
+                                            <label class="form-check-label" for="doubleextralargeCheck">2XL</label>
+                                            <input type="text" class="form-control" id="doubleextralargeQuantity" type="text">
 										</div>
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value="" id="tripleextralargeCheck">
-											<label class="form-check-label" for="tripleextralargeCheck">3XL</label>
+                                            <label class="form-check-label" for="tripleextralargeCheck">3XL</label>
+                                            <input type="text" class="form-control" id="tripleextralargeQuantity" type="text">
 										</div>
 										<div class="form-row mt-2">
 											<div class="col">
@@ -228,24 +441,7 @@
 											</div>
 											
 										</div>
-										<div class="form-row mt-3">
-											<div class="col">
-												<div class="form-group">
-													<label for="quantity">Quantity</label>
-													<select class="form-control" id="quantity">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-													<option>6</option>
-													<option>7</option>
-													<option>8</option>
-													<option>9</option>
-													</select>
-												</div>
-											</div>
-										</div>
+									
 										<div class="container-fluid">
 											<div class="form-group mt-3">
 												<div class="custom-file">
@@ -280,20 +476,16 @@
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 									<button type="button" class="btn btn-primary">Save changes</button>
 								</div>
-						</div>
+								
+							</div>
 						
-					</div>
+						</div>
 					
 					</div>
-
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProductModal">Edit Product</button>
-					<div class="modal fade bd-example-modal-xl" id="editProductModal" tabindex="- 1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-
+					<!--Add Product Modal End-->
+						</div>
 					</div>
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeProductModal">Remove Product</button>
-					<div class="modal fade bd-example-modal-xl" id="removeProductModal" tabindex="- 1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-						
-					</div>
+					
 				</div>
 				
 			</div>
