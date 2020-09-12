@@ -26,7 +26,7 @@ const shoppingCartController = {
 			db.updateOne(UserModel,
 				{_id:userId},
 				{$push: {cart: res._id}})
-			console.log('hello')
+			
 		})
 	},
 

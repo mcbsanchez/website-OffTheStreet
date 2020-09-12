@@ -38,6 +38,7 @@ var address = {
 db.insertOne(Address, address, function(flag){});
 
 var order = {
+    address: "test",
     numitems: 1,
     products: "test",
     modepayment: "test",

@@ -1,6 +1,11 @@
 var mongoose = require('mongoose');
+const { stringify } = require('querystring');
 
 var OrderSchema = new mongoose.Schema({
+    address: {
+        type: String,
+        required: true
+    },
     numitems: {
         type: Number,
         required: true
@@ -17,7 +22,8 @@ var OrderSchema = new mongoose.Schema({
         required: true
     },
     address: [{
-        type: String
+        type: String,
+        required: true
     }],
     total: {
         type: Number,
@@ -29,7 +35,7 @@ var OrderSchema = new mongoose.Schema({
     },
     pointsused: {
         type: Number,
-        required: true
+        required: false
     },
     subtotal: {
         type: Number,
@@ -41,19 +47,19 @@ var OrderSchema = new mongoose.Schema({
     },
     timeordered: {
         type: Date,
-        required: true
+        required: false
     },
     timecompleted: {
         type: Date,
-        required: true
+        required: false
     },
     timecancelled: {
         type: Date,
-        required: true
+        required: false
     },
     timeconfirmed: {
         type: Date,
-        required: true
+        required: false
     }
 });
 
