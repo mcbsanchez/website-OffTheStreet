@@ -55,7 +55,7 @@ const shippingDetailsController = {
 			for (var i=0; i<results.length; i++) {
 				numItems += results[i].quantity
 				products.push(results[i].product)
-				db.findOne(ProductModel, {product: results[i].product}, null, function(product){
+				db.findOne(ProductModel, {_id: results[i].product}, null, function(product){
 					total += product.price * results[i].quantity
 				})
 			}
