@@ -37,22 +37,33 @@ const shoppingCartController = {
 		// var userId = req.session.passport.user;
 
 		var userId = '5f5cafd29b5a4d5e90534dfa';
-		var productId = '5f5caedfa2b57c256cb4889e';
+		var productId = req.query.id;
 
+		console.log(productId)
 		var newProduct = {
 			product: productId,
 			user: userId,
 			quantity: 1
 		}
-		
-		db.insertOne(ProductOrdersModel, newProduct, function(){});
 
 		db.findOne(ProductOrdersModel, ({product: productId}, {user: userId}), null, function(res) {
-			console.log('hello')
-			db.updateOne(UserModel,
-				{_id:userId},
-				{$push: {cart: res._id}})
-			
+			if(res != null) {
+				// update quantity
+				var quantity = res.quantity + 1;
+				
+				db.updateOne(ProductOrdersModel,
+					{_id:res._id},
+					{quantity: quantity})
+			}
+			else {
+				// create product order
+				db.insertOne(ProductOrdersModel, newProduct, function(result) {
+					// add to user's cart
+					db.updateOne(UserModel,
+						{_id:userId},
+						{$push: {cart: result._id}})
+				});
+			}
 		})
 	},
 

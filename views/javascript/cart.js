@@ -23,10 +23,12 @@ $(document).ready(function() {
     });
 
     $(".add").click(function() {
+        var link = $("#link").val()
         $.ajax({
             type: "POST",
             url: "/addToCart",              
         }).done(function () {
+            console.log(link)
             $('#cart-modal').modal('toggle');
         })
         .fail(function()  {
