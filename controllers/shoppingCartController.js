@@ -21,17 +21,12 @@ const shoppingCartController = {
 		
 		db.insertOne(ProductOrdersModel, newProduct, function(){});
 
-		db.findOne(ProductOrdersModel, {product: productId}, function(res) {
+		db.findOne(ProductOrdersModel, {product: productId}, null, function(res) {
+			console.log('hello')
 			db.updateOne(UserModel,
 				{_id:userId},
-				{$push: {cart: res._id}},
-				{"$upsert": true},
-				function(err,result) {
-					if(err) throw err
-					else {
-						console.log("success")
-					}
-				})
+				{$push: {cart: res._id}})
+			console.log('hello')
 		})
 	},
 

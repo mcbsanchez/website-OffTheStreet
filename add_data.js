@@ -58,6 +58,7 @@ db.insertOne(Order, order, function(flag){});
 
 var productOrders = {
     product: "test",
+    user:"test",
     quantity: 12
 }
 
