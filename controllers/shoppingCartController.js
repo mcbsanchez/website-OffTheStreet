@@ -37,16 +37,17 @@ const shoppingCartController = {
 		// var userId = req.session.passport.user;
 
 		var userId = '5f5cafd29b5a4d5e90534dfa';
-		var productId = req.query.id;
+		var productId = req.body.id;
 
-		console.log(productId)
+		// console.log(productId)
 		var newProduct = {
 			product: productId,
 			user: userId,
 			quantity: 1
 		}
 
-		db.findOne(ProductOrdersModel, ({product: productId}, {user: userId}), null, function(res) {
+		db.findOne(ProductOrdersModel, {product: productId, user: userId}, null, function(res) {
+			console.log(res)
 			if(res != null) {
 				// update quantity
 				var quantity = res.quantity + 1;
