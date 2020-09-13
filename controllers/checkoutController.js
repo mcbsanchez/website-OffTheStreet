@@ -53,23 +53,20 @@ const checkoutController = {
 			}
 			db.insertOne(Address, address, function(result) {
 				addressId = result._id
-				console.log(results.length)
 
 				var quantity = []
 				var productids = []
 				for(var i=0; i<results.length ; i++){
-					console.log(results[i])
 					numItems += results[i].quantity
 					products.push(results[i].product)
 					quantity.push(results[i].quantity)
 				}	
-				console.log("productsids"+ productids)
+				
 				db.findMany(ProductModel, {_id: { $in: products }}, null, function(productsres){
 					var total = 0;
-					console.log("products " + productsres)
+					
 					for(var i=0; i< productsres.length ; i++) {
 						total += productsres[i].price * quantity[i]
-						console.log("total: "+ total + " quantity: " + quantity[i])
 						productNamesQ.push(productsres[i].name + ": " + quantity[i] + " pcs\n")
 					}
 					var order = {
@@ -86,7 +83,7 @@ const checkoutController = {
 						timecancelled: null,
 						timeconfirmed: null
 					}
-					console.log(order + " order")
+					
 					db.insertOne(Order, order, function(result){
 						db.updateOne(UserModel,
 							{_id:id},

@@ -24,10 +24,8 @@ const shoppingCartController = {
 						quantity: quantity[i],
 						price: results[i].price
 					}
-					console.log(y)
 					x.push(y)
 				}
-				console.log(x)
 				res.render('shopping-cart', {products: x});
 			})
 		})
@@ -39,7 +37,6 @@ const shoppingCartController = {
 		var userId = '5f5cafd29b5a4d5e90534dfa';
 		var productId = req.body.id;
 
-		// console.log(productId)
 		var newProduct = {
 			product: productId,
 			user: userId,
@@ -47,7 +44,6 @@ const shoppingCartController = {
 		}
 
 		db.findOne(ProductOrdersModel, {product: productId, user: userId}, null, function(res) {
-			console.log(res)
 			if(res != null) {
 				// update quantity
 				var quantity = res.quantity + 1;
