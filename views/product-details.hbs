@@ -30,24 +30,22 @@
                 <p class="item-name">{{name}}</p>
                 <p class="item-desc">{{description}}</p>
                 <p class="item-price">Php {{price}}</p>
-                <form method="post" action="/addToCart">
-                    <div class="sizes">
-                        <ul>
-                            {{#each variations}}
-                            <li>
-                                <label>
-                                    <input type="radio" name="size" value={{this}}>
-                                    <span class="options">{{this}}</span>
-                                </label>
-                            </li>
-                            {{/each}} 
-                        </ul> 
-                    </div> 
-                    <div>
-                        <input type="hidden" name="id" value={{_id}} id="link">
-                        <button type="submit" class="add" id="add-to-cart">add to cart</button>
-                    </div>
-                </form>
+                <div class="sizes">
+                    <ul>
+                        {{#each variations}}
+                        <li>
+                            <label>
+                                <input type="radio" name="size" value={{this}}>
+                                <span class="options">{{this}}</span>
+                            </label>
+                        </li>
+                        {{/each}} 
+                    </ul> 
+                </div> 
+                <div>
+                    <input type="hidden" name="id" value={{_id}} id="link">
+                    <button type="submit" class="add" id="add-to-cart" value={{_id}} data-toggle="modal" data-target="#cart-modal">add to cart</button>
+                </div>
             </div>
         </div>
     </div>
@@ -61,7 +59,7 @@
                         <p class="pt-3 pr-2">Added to Cart</p>
                     </div>
                     <div class="row d-flex justify-content-center align-items-center">
-                        <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok</a>
+                        <a type="button" class="btn btn-outline-dark" data-dismiss="modal">Ok</a>
                     </div>
                 </div>
             </div>

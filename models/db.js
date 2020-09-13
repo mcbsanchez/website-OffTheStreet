@@ -85,9 +85,9 @@ const database = {
 
     deleteMany: function(model, conditions) {
         model.deleteMany(conditions, function (error, result) {
-            if(error) return callback(false);
+            if(error) return result
             //console.log('Document deleted: ' + result.deletedCount);
-            return callback(true);
+            return result
         });
     }
 };

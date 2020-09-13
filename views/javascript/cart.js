@@ -22,12 +22,12 @@ $(document).ready(function() {
         }
     });
 
-    // $(".add").click(function() {
-    //     var link = $("#link").val()
-    //     $.get('/addToCart', {id: link}, function(){
-    //         $('#cart-modal').modal('toggle');
-    //     })
-    // });
+    $(".add").click(function() {
+        var link = $(this).val()
+        $.post('/addToCart', {id: link}, function(){
+            $('#cart-modal').modal('toggle');
+        })
+    });
     
     $(".cancel").click(function(){
         var id = $(this).parent().parent().attr("id")

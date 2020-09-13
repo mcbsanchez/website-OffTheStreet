@@ -91,7 +91,7 @@ const checkoutController = {
 						db.updateOne(UserModel,
 							{_id:id},
 							{$push: {orders: result._id}})
-						
+						db.deleteMany(ProductOrdersModel, {user: id})
 						var toEmail = "offthestreetbusiness@gmail.com";
 						var message = "Name: " + firstname + " " + lastname + "\n";
 						message = message.concat("Email: " + email + "\n");
