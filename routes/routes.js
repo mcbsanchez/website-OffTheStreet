@@ -21,6 +21,11 @@ const shoppingCartController = require('../controllers/shoppingCartController.js
 const sizeChartController = require('../controllers/sizeChartController.js');
 const termsController = require('../controllers/termsController.js');
 const checkoutController = require('../controllers/checkoutController.js');
+
+
+const adminOrderPendingController = require('../controllers/adminOrderPendingController.js');
+const adminOrderConfirmedController = require('../controllers/adminOrderConfirmedController.js');
+const adminSettingsController = require('../controllers/adminSettingsController.js');
 const app = express();
 
 module.exports = app;
@@ -48,3 +53,7 @@ app.get('/shoppingCart', shoppingCartController.shoppingCart);
 app.get('/sizeChart', sizeChartController.sizeChart);
 app.get('/terms', termsController.terms);
 app.post('/confirmation', checkoutController.checkout);
+
+app.get('/adminOrderPending', adminOrderPendingController.adminOrderPending);
+app.get('/adminOrderConfirmed', adminOrderConfirmedController.adminOrderConfirmed);
+app.get('/adminSettings', adminSettingsController.adminSettings);

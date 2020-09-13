@@ -10,6 +10,14 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
 	box-shadow: 5px 7px 25px #999;
+	overflow-y: auto;
+}
+.sidebar-sub{
+	height: auto;
+}
+
+.sidebar-subtext{
+	text-indent: 20%;
 }
 
 .bottom-border{
@@ -57,22 +65,12 @@ button:visited{
 	background-color: green;
 }
 
-.btn-danger{
-	
-	width: 75%;
-	height: 40px;
-}
-
 .btn-success{
 	
 	width: 75%;
 }
 
-.btn-primary{
-	width: 180px;
-    height: 40px;
-    
-}
+
 
 .img-logo{
 	
@@ -112,7 +110,10 @@ button:visited{
     border: solid 1px #000000;
 }
 
-.btn {
+.card-body{
 	background-color: black;
-	border-color: black;
+}
+
+.top-nav-title{
+	font-family: 'Montserrat', sans-serif;;
 }

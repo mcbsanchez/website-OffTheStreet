@@ -1,77 +1,109 @@
-body {
-    font-family: "Lato", sans-serif;
+
+html,body{
+    background-image: url(../images/mockup\ 1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-fluid{
+    height: 100%;
+    align-content: center;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 22%;
+    width: 400px;
+    background-color: rgba(0,0,0,0.95) !important;
+    opacity: 1;
+}
+
+.card-header h3{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #000;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
 }
 
 
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
 
-.main-head{
-    height: 150px;
-    background: #FFF;
-   
+.login_btn{
+color: white;
+background-color: #000;
+border-color:white;
+width: 100px;
+}
+
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
 }
 
 .sidenav {
     height: 100%;
     background-color: #000;
     overflow-x: hidden;
-    padding-top: 20px;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
 	
 }
 
-
-.main {
-    padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-}
-
-@media screen and (max-width: 450px) {
-    .login-form{
-        margin-top: 10%;
-    }
-
-    .register-form{
-        margin-top: 10%;
-    }
-}
-
-@media screen and (min-width: 768px){
-    .main{
-        margin-left: 40%; 
-    }
-
-    .sidenav{
-        width: 20%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-    }
-
-    .login-form{
-        margin-top: 50%;
-
-    }
-
-    .register-form{
-        margin-top: 20%;
-    }
-}
-
-
 .login-main-text{
-    margin-top: 40%;
-    padding: 60px;
+    margin-top: auto;
+    height: auto;
     color: #fff;
+
 }
 
-.login-main-text h2{
-    font-weight: 300;
+.img-bg{
+    height: auto;
+    width: auto;
+    
 }
 
-.btn-black{
-    background-color: #000 !important;
-    color: #fff;
+.img-logo{
+
+	height: auto;
+	width: 350px;
+	max-height: 100%;
+	max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }

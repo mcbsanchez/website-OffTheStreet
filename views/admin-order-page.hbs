@@ -34,11 +34,43 @@
 							<a href="#" class="text-white">Mr. Man</a>
 						</div>
 						<ul class="navbar-nav flex-column mt-4">
+
+						
+
 							<li class="nav-item"><a href="adminHome" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
-							<li class="nav-item"><a href="adminProduct" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-box text-light fa-lg mr-3"></i>Product</a></li>
-							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a></li>
-							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
-						</ul>
+							<li class="nav-item"><a href="adminProduct" class="nav-link text-white p-3 mb-2"><i class="fas fa-home text-white fa-lg mr-3"></i>Product</a></li>
+							<li class="nav-item"><a href="#collapseOrder" data-toggle="collapse" class="nav-link text-white p-3 mb-2 sidebar-link current" aria-expanded="false" aria-controls="collapseOrder"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a>
+								<div class="collapse show" id="collapseOrder">
+									<div class="sidebar-sub">
+									  <ul class="navbar-nav flex-column">
+											<li class="nav-item ">
+												<a class="nav-link text-white sidebar-link sidebar-subtext current" href="adminOrder">View All Orders</a>
+											</li>
+										 	 <li class="nav-item">
+												  <a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrderPending">View Pending Orders</a>
+											  </li>
+											  <li class="nav-item ">
+												<a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrderConfirmed">View Confirmed Orders</a>
+											  </li>
+									  </ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item"><a href="#collapseSettings" data-toggle="collapse" class="nav-link text-white p-3 mb-2 sidebar-link" aria-expanded="false" aria-controls="collapseSettings"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a>
+							<div class="collapse" id="collapseSettings">
+								<div class="sidebar-sub">
+									<ul class="navbar-nav flex-column">
+										  <li class="nav-item ">
+											  <a class="nav-link text-white sidebar-link sidebar-subtext" href="adminSettings">Account</a>
+										  </li>
+											<li class="nav-item">
+												<a class="nav-link text-white sidebar-link sidebar-subtext" href="#">Logout</a>
+											</li>
+										
+									</ul>
+								  </div>
+							</li></ul>
+
 					</div>
 					
 					
