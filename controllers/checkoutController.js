@@ -113,7 +113,7 @@ const checkoutController = {
 							numitems: numItems,
 							products: productNamesQ,
 							modeofdelivery: modeofdelivery,
-							modeofpayment: modeofdelivery,
+							modeofpayment: modeofpayment,
 							total: total
 						}
 						res.render('confirmation', values)
