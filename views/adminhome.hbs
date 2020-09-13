@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+	<script src="javascript/script.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="css/adminhome-styles.css">
+
+</head>
+
+<body>
+	<!--navbar-->
+	<nav class="navbar navbar-expand-md navbar-light">
+		<button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<div class="container-fluid">
+				<div class="row">
+					<!--sidebar-->
+					<div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+						<a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"><img src="images/FINAL_LOGO W- CIRCLE B.png" class="img-logo"></a>
+						<div class="bottom-border pb-3">
+							<img src="images/icon.png" width="50" class="rounded-circle mr-3">
+							<a href="#" class="text-white">Mr. Man</a>
+						</div>
+						<ul class="navbar-nav flex-column mt-4">
+							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-white fa-lg mr-3"></i>Dashboard</a></li>
+							<li class="nav-item"><a href="adminProduct" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-box text-light fa-lg mr-3"></i>Product</a></li>
+							<li class="nav-item"><a href="adminOrder" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a></li>
+							<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
+						</ul>
+					</div>
+					
+					
+					<!--sidebar end-->
+					
+					<!--top-nav-->
+					<div class="col-xl-10 col-lg-9 col-md-8 ml-auto fixed-top py-2 top-navbar">
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<h4 class="text-light text-uppercase mb-0">OFF THE STREET</h4>
+							</div>
+							<div class="col-md-5">
+							  <form>
+								<div class="input-group">
+									<!--SEARCHBAR-->
+									<!--<input type="text" class="form-control search-input" placeholder="Search...">-->
+									<!--<button type="button" class="btn btn-white search-button"><i class="fas fa-search text-danger"></i></button>-->
+								</div>
+							  </form>
+							</div>
+							<div class="col-md-3">
+							  <ul class="navbar-nav">
+								<!--COMMENTS AND NOTIF BELL-->
+								<!--<li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-comments text-muted fa-lg"></i></a></li>-->
+								<!--<li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-bell text-white fa-lg"></i></a></li>-->
+								<li class="nav-item ml-md-auto"><a href="#" class="nav-link text-white" data-toggle="modal" data-target="#sign-out">Logout<i class="fas fa-sign-out-alt text-white fa-lg ml-3"></i></a></li>
+							  </ul>
+							</div>
+						</div>
+					<!--top-nav end-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<section>
+		<div class="container-fluid">
+			<div class="row mb-5">
+				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+					<div class="row align-items-center">
+						<div class="col-xl-12 col-12 mt-5">
+							<h3 class="text-muted text-center mb-3 mt-2">Pending Orders</h3>
+							<table class="table table-dark table-hover text-center">
+								<thead>
+									<tr class="text-muted">
+										<th>#</th>
+										<th>Name</th>
+										<th>Product</th>
+										<th>Price</th>
+										<th>Date</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<th>1</th>
+									<td>Nice</td>
+									<td>Jeans</td>
+									<td>PHP 2000</td>
+									<td>31/08/2020</td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
+									</tr>
+									
+									<tr>
+									<th>2</th>
+									<td>Chris</td>
+									<td>Pants</td>
+									<td>PHP 3000</td>
+									<td>31/08/2020</td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
+									</tr>
+									
+									<tr>
+									<th>3</th>
+									<td>Martine</td>
+									<td>Shirt</td>
+									<td>PHP 4000</td>
+									<td>31/08/2020</td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
+									</tr>
+									
+									<tr>
+									<th>4</th>
+									<td>Trisha</td>
+									<td>Shoe</td>
+									<td>PHP 5000</td>
+									<td>31/08/2020</td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
+									</tr>
+									
+									<tr>
+									<th>5</th>
+									<td>Jan</td>
+									<td>Polo</td>
+									<td>PHP 6000</td>
+									<td>31/08/2020</td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
+									</tr>
+									
+									<tr>
+									<th>6</th>
+									<td>Mica</td>
+									<td>Hat</td>
+									<td>PHP 7000</td>
+									<td>31/08/2020</td>
+									<td>
+										<div class="dropdown show">
+											<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  	Pending
+											</a>
+										  
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+												<a class="dropdown-item" href="#">Pending</a>
+												<a class="dropdown-item" href="#">Confirmed</a>
+												<a class="dropdown-item" href="#">Completed</a>
+												<a class="dropdown-item" href="#">Cancelled</a>
+											</div>
+										</div>
+									</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							<nav>
+							  <ul class="pagination justify-content-center">
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									<span>Previous</span>
+								  </a>
+								</li>
+								<li class="page-item active">
+								  <a href="#" class="page-link py-2 px-3">
+									1
+								  </a>
+								</li>
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									2
+								  </a>
+								</li>
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									3
+								  </a>
+								</li>
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									<span>Next</span>
+								  </a>
+								</li>
+							  </ul>
+							</nav>
+						</div>
+						<!--Products-->
+						<div class="col-xl-12 col-12 mt-5">
+							<h3 class="text-muted text-center mb-3">All Products</h3>
+							<table class="table table-dark table-hover text-center">
+								<thead>
+									<tr class="text-muted">
+										<th>#</th>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+										<th>Stock</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<th>1</th>
+									<td>Nice Shorts</td>
+									<td>Very nice</td>
+									<td>PHP 2000</td>
+									<td>20</td>
+									</tr>
+									
+									<tr>
+									<th>2</th>
+									<td>Comfy Shoe</td>
+									<td>Comfortable</td>
+									<td>PHP 3000</td>
+									<td>1</td>
+									</tr>
+									
+									<tr>
+									<th>3</th>
+									<td>Cool Shirt</td>
+									<td>Very cool</td>
+									<td>PHP 4000</td>
+									<td>45</td>
+									</tr>
+									
+									<tr>
+									<th>4</th>
+									<td>Good Polo</td>
+									<td>Super good</td>
+									<td>PHP 5000</td>
+									<td>55</td>
+									</tr>
+									
+									<tr>
+									<th>5</th>
+									<td>Inspiring Hat</td>
+									<td>Motivational</td>
+									<td>PHP 6000</td>
+									<td>67</td>
+									</tr>
+									
+									<tr>
+									<th>6</th>
+									<td>Interesting Jeans</td>
+									<td>Hmmmm..</td>
+									<td>PHP 7000</td>
+									<td>9</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							<nav>
+							  <ul class="pagination justify-content-center">
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									<span>Previous</span>
+								  </a>
+								</li>
+								<li class="page-item active">
+								  <a href="#" class="page-link py-2 px-3">
+									1
+								  </a>
+								</li>
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									2
+								  </a>
+								</li>
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									3
+								  </a>
+								</li>
+								<li class="page-item">
+								  <a href="#" class="page-link py-2 px-3">
+									<span>Next</span>
+								  </a>
+								</li>
+							  </ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--navbar end-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+                document.getElementById("pending").onclick = function () {
+					var buttontype = document.getElementById("pending");
+					buttontype.classList.remove("btn-danger");
+					buttontype.classList.add("btn-success");
+					buttontype.innerHTML = "Approved";
+					buttontype.id = "approved";
+                };
+    </script>
+	<!--<script type="text/javascript">
+                document.getElementById("approved").onclick = function () {
+					var buttontype = document.getElementById("approved");
+					buttontype.classList.remove("btn-success");
+					buttontype.classList.add("btn-danger");
+					buttontype.innerHTML = "Pending";
+					buttontype.id = "pending";
+                };
+    </script>-->
+</body>
+</html>
