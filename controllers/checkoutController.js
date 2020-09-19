@@ -29,6 +29,7 @@ const checkoutController = {
 		var city = req.body.city;
 		var barangay = req.body.barangay;
 		var street = req.body.street;
+		var pointsUsed = req.body.points;
 
 		var id = "5f5cafd29b5a4d5e90534dfa";
 
@@ -69,6 +70,7 @@ const checkoutController = {
 						total += productsres[i].price * quantity[i]
 						productNamesQ.push(productsres[i].name + ": " + quantity[i] + " pcs\n")
 					}
+					total -= pointsUsed;
 					var order = {
 						numitems: numItems,
 						products: products,
@@ -76,7 +78,7 @@ const checkoutController = {
 						modedelivery: modeofdelivery,
 						address: addressId,
 						total: total,
-						pointsused: 0,
+						pointsused: pointsUsed,
 						status: status,
 						timeordered: dateordered,
 						timecompleted: null,
@@ -87,7 +89,7 @@ const checkoutController = {
 					db.insertOne(Order, order, function(result){
 						db.updateOne(UserModel,
 							{_id:id},
-							{$push: {orders: result._id}})
+							{$push: {orders: result._id}, $inc: {points: -pointsUsed}})
 						db.deleteMany(ProductOrdersModel, {user: id})
 						var toEmail = "offthestreetbusiness@gmail.com";
 						var message = "Name: " + firstname + " " + lastname + "\n";

@@ -90,4 +90,16 @@ $(document).ready(function(){
     $('#street').keyup(function () {
         validateField($('#street'));
     });
+
+    $('#points').on('input', function() {
+        var input = parseFloat($(this).val())
+        var max = parseFloat($(this).attr('max'))
+        
+        if(input > max) {
+            $(this).val(max)
+        }
+        if(input < 0) {
+            $(this).val(0)
+        }
+    })
 })
