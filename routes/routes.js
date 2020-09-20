@@ -21,7 +21,7 @@ const shoppingCartController = require('../controllers/shoppingCartController.js
 const sizeChartController = require('../controllers/sizeChartController.js');
 const termsController = require('../controllers/termsController.js');
 const checkoutController = require('../controllers/checkoutController.js');
-
+const logoutController = require('../controllers/logoutController.js');
 
 const adminOrderPendingController = require('../controllers/adminOrderPendingController.js');
 const adminOrderConfirmedController = require('../controllers/adminOrderConfirmedController.js');
@@ -29,6 +29,16 @@ const adminSettingsController = require('../controllers/adminSettingsController.
 const app = express();
 
 module.exports = app;
+
+var storage = multer.diskStorage({
+    destination:'views/uploads/',
+    filename: function(req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '-';
+        cb(null, uniqueSuffix + file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage });
 
 app.get('/about', aboutController.about);
 app.get('/adminOrder', adminOrderController.adminOrder);
@@ -46,14 +56,14 @@ app.get('/privacy', privacyController.privacy);
 app.get('/productDetails', productDetailsController.productDetails);
 app.post('/addToCart',shoppingCartController.addToCart);
 app.post('/postDetails', shoppingCartController.postDetails);
-// app.post('/removeItem/:id',shoppingCartController.removeItem);
 app.get('/search', searchController.search);
 app.get('/shippingDetails', shippingDetailsController.shippingDetails);
 app.get('/shoppingCart', shoppingCartController.shoppingCart);
 app.get('/sizeChart', sizeChartController.sizeChart);
 app.get('/terms', termsController.terms);
 app.post('/confirmation', checkoutController.checkout);
-
+app.post('/postLogin', loginController.postLogin);
+app.get('/logout', logoutController.getLogout);
 app.get('/adminOrderPending', adminOrderPendingController.adminOrderPending);
 app.get('/adminOrderConfirmed', adminOrderConfirmedController.adminOrderConfirmed);
 app.get('/adminSettings', adminSettingsController.adminSettings);
