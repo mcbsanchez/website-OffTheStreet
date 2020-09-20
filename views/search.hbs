@@ -84,6 +84,94 @@
                         <img src="images/heading.png" class="img-heading">
 
                         <div class="col d-flex justify-content-center flex-wrap mt-4">
+                            {{#if products}}
+                            {{#each products}}
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="/productDetails?id={{this._id}}"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">{{price}} php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">{{this.name}}</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            {{/each}}
+                            {{else}}
+                                <p>No products found</p>
+                            {{/if}}
+                            {{!-- <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">100php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
+                                        </div>
+                                        <div class="sale d-flex justify-content-center">
+                                            <h1 class="salepercent">10%off</h1>
+                                        </div>
+                                    </div>
+                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
+                                        <li class="fa fa-heart"></li>
+                                    </button>
+                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
                             <a class="item">
                                 <div class="card" data-aos="fade-up" data-aos-duration="500">
                                     <div class="card item" style="width: 14rem;height:100%">
@@ -124,89 +212,7 @@
                                         <li class="fa fa-plus"></li>
                                     </button>
                                 </div>
-                            </a>
-                            <a class="item">
-                                <div class="card" data-aos="fade-up" data-aos-duration="500">
-                                    <div class="card item" style="width: 14rem;height:100%">
-                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                        <div class="price d-flex justify-content-center">
-                                            <h1 class="priceval">100php</h1>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                                        </div>
-                                    </div>
-                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                                        <li class="fa fa-heart"></li>
-                                    </button>
-                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
-                                        <li class="fa fa-plus"></li>
-                                    </button>
-                                </div>
-                            </a>
-                            <a class="item">
-                                <div class="card" data-aos="fade-up" data-aos-duration="500">
-                                    <div class="card item" style="width: 14rem;height:100%">
-                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                        <div class="price d-flex justify-content-center">
-                                            <h1 class="priceval">100php</h1>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                                        </div>
-                                        <div class="sale d-flex justify-content-center">
-                                            <h1 class="salepercent">10%off</h1>
-                                        </div>
-                                    </div>
-                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                                        <li class="fa fa-heart"></li>
-                                    </button>
-                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
-                                        <li class="fa fa-plus"></li>
-                                    </button>
-                                </div>
-                            </a>
-                            <a class="item">
-                                <div class="card" data-aos="fade-up" data-aos-duration="500">
-                                    <div class="card item" style="width: 14rem;height:100%">
-                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                        <div class="price d-flex justify-content-center">
-                                            <h1 class="priceval">100php</h1>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                                        </div>
-                                        <div class="sale d-flex justify-content-center">
-                                            <h1 class="salepercent">10%off</h1>
-                                        </div>
-                                    </div>
-                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                                        <li class="fa fa-heart"></li>
-                                    </button>
-                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
-                                        <li class="fa fa-plus"></li>
-                                    </button>
-                                </div>
-                            </a>
-                            <a class="item">
-                                <div class="card" data-aos="fade-up" data-aos-duration="500">
-                                    <div class="card item" style="width: 14rem;height:100%">
-                                        <a href="productDetails"><img src="images/icon.png" class="card-img-top itemphoto"></a>
-                                        <div class="price d-flex justify-content-center">
-                                            <h1 class="priceval">100php</h1>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="productDetails" class="cardname"><p class="card-text itemname">item name</p></a>
-                                        </div>
-                                    </div>
-                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                                        <li class="fa fa-heart"></li>
-                                    </button>
-                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
-                                        <li class="fa fa-plus"></li>
-                                    </button>
-                                </div>
-                            </a>
+                            </a> --}}
                         </div>
                         
                     </div>
