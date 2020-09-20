@@ -9,6 +9,19 @@ const searchController = {
 		db.findMany(Product, query, null, function(result) {
 			res.render('search', {products: result})
 		})
+	},
+
+	filter: function(req,res){
+		var categories = req.body.categories
+		var query = {category: {$in: categories}}
+		
+		db.findMany(Product, query, null, function(result) {
+
+			// does not reflect in the webpage pero nakukuha yung output
+			console.log(result)
+			
+			res.render('search', {products: result})
+		})
 	}
 }
 

@@ -60,6 +60,7 @@ app.get('/productDetails', productDetailsController.productDetails);
 app.post('/addToCart',shoppingCartController.addToCart);
 app.post('/postDetails', shoppingCartController.postDetails);
 app.get('/search', searchController.search);
+app.post('/filter', searchController.filter);
 app.get('/shippingDetails', shippingDetailsController.shippingDetails);
 app.get('/shoppingCart', shoppingCartController.shoppingCart);
 app.get('/sizeChart', sizeChartController.sizeChart);
@@ -70,3 +71,4 @@ app.get('/logout', logoutController.getLogout);
 app.get('/adminOrderPending', adminOrderPendingController.adminOrderPending);
 app.get('/adminOrderConfirmed', adminOrderConfirmedController.adminOrderConfirmed);
 app.get('/adminSettings', adminSettingsController.adminSettings);
+app.post('/changeStatus', adminOrderController.changeStatus)
