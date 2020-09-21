@@ -28,6 +28,7 @@ const checkoutController = {
 		var city = req.body.city;
 		var barangay = req.body.barangay;
 		var street = req.body.street;
+		var pointsUsed = req.body.points;
 
 		var id = "5f5cafd29b5a4d5e90534dfa";
 
@@ -59,15 +60,16 @@ const checkoutController = {
 					numItems += results[i].quantity
 					products.push(results[i].product)
 					quantity.push(results[i].quantity)
-				}	
-				
+				}
+
 				db.findMany(ProductModel, {_id: { $in: products }}, null, function(productsres){
 					var total = 0;
-					
+
 					for(var i=0; i< productsres.length ; i++) {
 						total += productsres[i].price * quantity[i]
 						productNamesQ.push(productsres[i].name + ": " + quantity[i] + " pcs\n")
 					}
+					total -= pointsUsed;
 					var order = {
 						numitems: numItems,
 						products: products,
@@ -75,24 +77,18 @@ const checkoutController = {
 						modedelivery: modeofdelivery,
 						address: addressId,
 						total: total,
-						pointsused: 0,
+						pointsused: pointsUsed,
 						status: status,
 						timeordered: dateordered,
 						timecompleted: null,
 						timecancelled: null,
 						timeconfirmed: null
 					}
-					
+
 					db.insertOne(Order, order, function(result){
 						db.updateOne(UserModel,
 							{_id:id},
-							{$push: {orders: result._id}})
-						//check for session
-						//find one here
-						//get the points
-						//computer for points to be added
-						//add the point to the current points
-						//update
+							{$push: {orders: result._id}, $inc: {points: -pointsUsed}})
 						db.deleteMany(ProductOrdersModel, {user: id})
 						var toEmail = "offthestreetbusiness@gmail.com";
 						var message = "Name: " + firstname + " " + lastname + "\n";
@@ -133,9 +129,9 @@ const checkoutController = {
 								res.send(true);
 							}
 						});
-						
+
 					})
-				})				
+				})
 			})
 		})
     }

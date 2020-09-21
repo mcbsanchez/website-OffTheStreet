@@ -86,13 +86,13 @@
                         <input type="text" class="form-control" id="street" name="street" required>
                     </div>
                 </div>
-                {{!-- <div class="form-group row">
+                <div class="form-group row">
                     <div class="col">
                         <label for="points">Apply Points</label>
-                        <input type="text" class="form-control" id="inputWebsite">
-                        <label>Available Points: 100</label>
+                        <input type="number" class="form-control" id="points" name="points" min=0 max={{points}}>
+                        <label>Available Points: {{points}}</label>
                     </div>
-                </div> --}}
+                </div>
                 <div class="form-group row">
                     <div class="col d-flex justify-content-end">
                         <button type="submit" class="btn btn-dark checkoutbtn" id="checkout" disabled>checkout</button>

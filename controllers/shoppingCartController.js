@@ -65,15 +65,21 @@ const shoppingCartController = {
 	},
 
 	postDetails: function(req,res) {
-		var payment = req.body.payment
-		var delivery = req.body.delivery
-		
-		var details = {
-			modeofpayment: payment,
-			modeofdelivery: delivery
-		}
-
-		res.render('shipping-details', details)
+		var query = {_id: '5f5cafd29b5a4d5e90534dfa'}
+	
+		db.findOne(UserModel, query, null, function(result) {
+			var payment = req.body.payment
+			var delivery = req.body.delivery
+			
+			var details = {
+				modeofpayment: payment,
+				modeofdelivery: delivery,
+				points: result.points
+			}
+	
+			res.render('shipping-details', details)
+	
+		})
 	},
 
 	removeItem: function(req,res) {

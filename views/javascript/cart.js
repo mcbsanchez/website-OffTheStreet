@@ -22,6 +22,25 @@ $(document).ready(function() {
         }
     });
 
+    $('.input-number').on('input', function() {
+        var input = parseFloat($(this).val())
+        var max = 99
+
+        console.log(input)
+
+        if(!isNaN(input)) {
+            if(input > max) {
+                $(this).val(max)
+            }
+            if(input < 1) {
+                $(this).val(1)
+            }
+        }
+        else {
+            $(this).val(1)
+        }
+    })
+
     $(".add").click(function() {
         var link = $(this).val()
         $.post('/addToCart', {id: link}, function(){
