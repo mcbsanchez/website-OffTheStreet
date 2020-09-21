@@ -13,6 +13,14 @@ html,body{
     align-content: center;
 }
 
+#msg{
+    color: white;
+    font-size: 15px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
 .card{
     height: 370px;
     margin-top: auto;

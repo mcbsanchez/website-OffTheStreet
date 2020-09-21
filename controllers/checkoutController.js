@@ -13,7 +13,6 @@ var transporter = nodemailer.createTransport({
 		user: 'offthestreetbusiness@gmail.com',
 		pass:'otsb.098'
 	}
-
 });
 
 const checkoutController = {
@@ -88,6 +87,12 @@ const checkoutController = {
 						db.updateOne(UserModel,
 							{_id:id},
 							{$push: {orders: result._id}})
+						//check for session
+						//find one here
+						//get the points
+						//computer for points to be added
+						//add the point to the current points
+						//update
 						db.deleteMany(ProductOrdersModel, {user: id})
 						var toEmail = "offthestreetbusiness@gmail.com";
 						var message = "Name: " + firstname + " " + lastname + "\n";

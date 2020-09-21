@@ -3,14 +3,13 @@ const Product = require('../models/ProductModel.js')
 
 const homeController = {
 	home: function(req,res){
-		var projection = 'name price'
+		var projection = 'name price _id'
 
 		db.findMany(Product, null, projection, function(results) {
 			if(results != null) {
 				res.render('home', {products: results})
 			}
 		})
-
 		// res.render('home');
 	}
 }

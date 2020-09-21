@@ -12,8 +12,7 @@ $(document).ready(function() {
     function isValidUser(callback) {
         var email = validator.trim($('#email').val());
         var password = validator.trim($('#password').val());
-
-
+        
         $.get('/getCheckLogin', {email: email, password: password}, function (result) {
             return callback(result);
         });
@@ -22,21 +21,21 @@ $(document).ready(function() {
     function validateField(field){
         var value = validator.trim(field.val());
         var empty = validator.isEmpty(value);
-        if(empty){
-            $("#msg").text("The username or password is not valid");
+        if(!empty){
+            isValidUser(function (validUser){
+                if(validUser && isFilled()){
+                    $("#submitlogin").prop('disabled', false);
+                    $("#msg").text("");
+                }
+                else {
+                    $("#submitlogin").prop('disabled', true);
+                    $("#msg").text("The username or password is not valid");
+                }
+            })
         }
-        else
-            $("#msg").text("");
-
-        isValidUser(function (validUser){
-            if(validUser && isFilled()){
-                $("#submitlogin").prop('disabled', false);
-            }
-            else {
-                $("#submitlogin").prop('disabled', true);
-                
-            }
-        })
+        else{
+            $("#msg").text("Username or password should not be empty");
+        }
     }
 
     $("#email").keyup(function(){
@@ -44,7 +43,7 @@ $(document).ready(function() {
     })
 
     $("#password").keyup(function(){
-        validateField($('#password'));
+        validateField($('#password'))
     })
 });
 

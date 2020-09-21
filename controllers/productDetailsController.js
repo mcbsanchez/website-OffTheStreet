@@ -5,7 +5,7 @@ const ProductVariation = require('../models/ProductVariationModel.js')
 
 const productDetailsController = {
 	productDetails: function(req,res){
-		var productId = req.query.id;
+		var productId = req.query.id; 
 		var query = {_id: productId};
 		var projection = 'name description color price variations';
 		
