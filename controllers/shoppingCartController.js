@@ -17,15 +17,22 @@ const shoppingCartController = {
 			}
 			db.findMany(ProductModel, {_id: { $in: ids }}, null, function(results){
 				var x = []
+				console.log(ids)
 				for(var i = 0; i < results.length ; i++){
-					var y = {
-						name: results[i].name,
-						_id: result[i]._id,
-						quantity: quantity[i],
-						price: results[i].price
+					for(var j = 0; j< ids.length; j++){
+						if(ids[j]==results[i].id) {
+							var y = {
+								name: results[i].name,
+								_id: ids[j],
+								quantity: quantity[j],
+								price: results[i].price
+							}
+							x.push(y)
+							j = ids.length
+						}
 					}
-					x.push(y)
 				}
+				console.log(x)
 				res.render('shopping-cart', {products: x});
 			})
 		})
@@ -36,7 +43,7 @@ const shoppingCartController = {
 
 		var userId = '5f5cafd29b5a4d5e90534dfa';
 		var productId = req.body.id;
-
+		console.log(productId)
 		var newProduct = {
 			product: productId,
 			user: userId,
