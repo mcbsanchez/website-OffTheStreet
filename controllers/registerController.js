@@ -13,21 +13,22 @@ const registerController = {
         var email = req.body.email
         var password = req.body.password
 
-        var user = {
-            firstname: firstname,
-            lastname: lastname,
-            email: email,
-            type: "customer",
-            password: password,
-            points: 0,
-            address: [],
-            orders: [],
-            cart: [],
-            wishlist: []
-        }
-
-        db.insertOne(User, user, function(){
-            res.render('home')
+        bcrypt.hash(password, saltRounds, function(err, hash) {
+            var user = {
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                type: "customer",
+                password: hash,
+                points: 0,
+                address: [],
+                orders: [],
+                cart: [],
+                wishlist: []
+            }
+            db.insertOne(User, user, function(){
+                res.render('home')
+            })
         })
     }
 }
