@@ -10,7 +10,7 @@ const Order = require("../models/OrderModel");
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-		user: 'offthestreetbusiness@gmail.com',
+		user:'offthestreetbusiness@gmail.com',
 		pass:'otsb.098'
 	}
 });

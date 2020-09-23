@@ -27,6 +27,7 @@ const logoutController = require('../controllers/logoutController.js');
 const adminOrderPendingController = require('../controllers/adminOrderPendingController.js');
 const adminOrderConfirmedController = require('../controllers/adminOrderConfirmedController.js');
 const adminSettingsController = require('../controllers/adminSettingsController.js');
+const navbarController = require('../controllers/navbarController.js');
 const app = express();
 
 module.exports = app;
@@ -74,3 +75,5 @@ app.get('/adminSettings', adminSettingsController.adminSettings);
 app.post('/changeStatus', adminOrderController.changeStatus);
 app.get('/getCheckLogin', loginController.getCheckLogin);
 app.post('/login', loginController.postLogin);
+app.get('/getNavbar', navbarController.getNavbar);
+app.get('/getName', navbarController.getName);
