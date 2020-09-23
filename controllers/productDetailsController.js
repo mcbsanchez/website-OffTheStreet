@@ -10,6 +10,7 @@ const productDetailsController = {
 		var projection = 'name description color price variations';
 		
 		db.findOne(Product, query , projection, function(result) {
+			result.variations
 			db.findMany(ProductVariation,  {_id: { $in: result.variations }}, null, function(variations){
 				var vars = [];
 				for(var i=0; i<variations.length ; i++){
