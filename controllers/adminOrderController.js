@@ -5,12 +5,23 @@ const User = require("../models/UserModel")
 const adminOrderController = {
 	adminOrder: function(req,res){
 		db.findMany(Order, null, null, function(orders) {
+			var x = orders
+			
+			// get user from each order
+			for(var i = 0; i < x.length; i++) {
+				orderId = x[i]._id
+			}
 
-			// get user from each order for 'ordered by'
-
-			// status column displays pending even if the status is not pending
-
-			res.render('admin-order-page', {orders: orders});
+			db.findMany(User, null, null, function(results) {
+				for(var i = 0; i < x.length; i++) {
+					for(var j = 0; j < results.length; j++) {
+						if(results[j].orders.includes(x[i]._id)) {
+							x[i].name = results[j].firstname + " " + results[j].lastname
+						}
+					}
+				}
+				res.render('admin-order-page', {orders: orders});
+			})
 		})
 	},
 

@@ -1,11 +1,7 @@
 .filter-heading {
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.choices {
-    margin-left: 10px;
-    font-weight: 600;
+    margin: 20 0 10 5;
+    border-bottom: 1px solid black;
 }
 
 .img-heading {
@@ -59,6 +55,12 @@
     display: none;
 }
 
+button {
+    border: none;
+    background-color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 
 .card:hover .add, .card:hover .wishlist {
     display: block;

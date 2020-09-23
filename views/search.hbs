@@ -35,53 +35,48 @@
             <div class="col-10">
                 <div class="row mt-5">
                     <!-- filter tab -->
-                    <form class="col-3" method="post" action="/filter">
-                        <input type="hidden" id="categories" name="categories" value={{categories}}>
+                    <form class="col-3" method="get" action="/filter">
+
                         <!-- upper -->
                         <div class="row">
-                            <p class="filter-heading mt-4">UPPER</p>
+                            <p class="filter-heading">UPPER</p>
                         </div>
-                        <div class="row choices">
-                            <input type="checkbox" class="form-check-input filter" value="shirt">
-                            <label for="tshirts">T-SHIRTS</label>
+                        <div class="row">
+                            <button id="category" name="category" value="shirt">T-SHIRTS</button>
                         </div>
-                        <div class="row choices">
-                            <input type="checkbox" class="form-check-input filter" value="hoodie">
-                            <label for="hoodies">HOODIES</label>
+                        <div class="row">
+                            <button id="category" name="category" value="hoodie">HOODIES</button>
                         </div>
-                        <div class="row choices mb-4">
-                            <input type="checkbox" class="form-check-input filter" value="longsleeve">
-                            <label for="longsleeves">LONG SLEEVES</label>
+                        <div class="row">
+                            <button id="category" name="category" value="longsleeve">LONG SLEEVES</button>
                         </div>
+                        
                         <!-- lower -->
                         <div class="row">
                             <p class="filter-heading">LOWER</p>
                         </div>
-                        <div class="row choices">
-                            <input type="checkbox" class="form-check-input filter" value="shorts">
-                            <label for="shorts">SHORTS</label>
+                        <div class="row">
+                            <button id="category" name="category" value="shorts">SHORTS</button>
                         </div>
-                        <div class="row choices mb-4">
-                            <input type="checkbox" class="form-check-input filter" value="pants">
-                            <label for="pants">PANTS</label>
+                        <div class="row">
+                            <button id="category" name="category" value="pants">PANTS</button>
                         </div>
+                        
                         <!-- accessories -->
                         <div class="row">
                             <p class="filter-heading">ACCESSORIES</p>
                         </div>
-                        <div class="row choices">
-                            <input type="checkbox" class="form-check-input filter" value="hat">
-                            <label for="hats">HATS</label>
+                        <div class="row">
+                            <button id="category" name="category" value="hat">HATS</button>
                         </div>
-                        <div class="row choices">
-                            <input type="checkbox" class="form-check-input filter" value="beanie">
-                            <label for="beanies">BEANIES</label>
+                        <div class="row">
+                            <button id="category" name="category" value="beanie">BEANIES</button>
                         </div>
-                        <div class="row choices">
-                            <input type="checkbox" class="form-check-input filter" value="bag">
-                            <label for="bags">BAGS</label>
+                        <div class="row">
+                            <button id="category" name="category" value="bag">BAGS</button>
                         </div>
                     </form>
+
                     <!-- content -->
                     <div class="col-9">
                         <img src="images/heading.png" class="img-heading">
@@ -103,9 +98,6 @@
                                             <h1 class="salepercent">10%off</h1>
                                         </div>
                                     </div>
-                                    <button class="wishlist" data-toggle="modal" data-target="#wishlist-modal">
-                                        <li class="fa fa-heart"></li>
-                                    </button>
                                     <button class="add" data-toggle="modal" data-target="#cart-modal">
                                         <li class="fa fa-plus"></li>
                                     </button>
@@ -131,22 +123,6 @@
                 <div class="modal-body">
                     <div class="row d-flex justify-content-center align-items-center">
                         <p class="pt-3 pr-2">Added to Cart</p>
-                    </div>
-                    <div class="row d-flex justify-content-center align-items-center">
-                        <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add to Wishlist Modal -->
-    <div class="modal fade top" id="wishlist-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="true">
-        <div class="modal-dialog modal-frame modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row d-flex justify-content-center align-items-center">
-                        <p class="pt-3 pr-2">Added to Wishlist</p>
                     </div>
                     <div class="row d-flex justify-content-center align-items-center">
                         <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok</a>
