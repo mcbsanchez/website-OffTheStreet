@@ -71,4 +71,6 @@ app.get('/logout', logoutController.getLogout);
 app.get('/adminOrderPending', adminOrderPendingController.adminOrderPending);
 app.get('/adminOrderConfirmed', adminOrderConfirmedController.adminOrderConfirmed);
 app.get('/adminSettings', adminSettingsController.adminSettings);
-app.post('/changeStatus', adminOrderController.changeStatus)
+app.post('/changeStatus', adminOrderController.changeStatus);
+app.get('/getCheckLogin', loginController.getCheckLogin);
+app.post('/login', loginController.postLogin);

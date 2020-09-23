@@ -3,6 +3,8 @@ const ProductModel = require("../models/ProductModel")
 const ProductOrdersModel = require("../models/ProductOrdersModel");
 const UserModel = require("../models/UserModel");
 const ProductVariationModel = require("../models/ProductVariationModel");
+const bcrypt = require('bcrypt')
+const saltRounds = 10;
 
 const loginController = {
 	login: function(req,res){
@@ -24,8 +26,9 @@ const loginController = {
 						req.session.id = result._id;
 						if(result.type=='admin')
 							res.redirect('/adminHome');
-						else
+						else{
 							res.redirect('/');
+						}
 					}
                     else {
                     }

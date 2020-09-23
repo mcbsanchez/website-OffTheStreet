@@ -1,6 +1,8 @@
 
 const db = require("../models/db");
 const User = require("../models/UserModel")
+const bcrypt = require('bcrypt')
+const saltRounds = 10;
 
 const registerController = {
 	register: function(req,res){
