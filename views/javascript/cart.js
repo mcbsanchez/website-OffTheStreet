@@ -26,7 +26,6 @@ $(document).ready(function() {
         var input = parseFloat($(this).val())
         var max = 99
 
-        console.log(input)
 
         if(!isNaN(input)) {
             if(input > max) {

@@ -115,3 +115,14 @@ margin-left: 4px;
     margin-left: auto;
     margin-right: auto;
 }
+
+#register{
+    margin-left: 20px;
+    color: white;
+}
+
+#register:hover{
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(92, 91, 91);
+}

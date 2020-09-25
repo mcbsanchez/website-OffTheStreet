@@ -1,13 +1,10 @@
 <script>
     $(document).ready(function() {
-    console.log('hello')
     $.get('/getNavbar', null, function (result) {
-        console.log(result)
         if(result){
             $("#navNoSession").prop('hidden', true);
             $("#navSession").prop('hidden', false);
             $.get('/getName', null, function (result) {
-                console.log(result)
                 $("#navName").text(result);
             });
         }
