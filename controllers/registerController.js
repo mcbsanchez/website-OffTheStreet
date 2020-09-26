@@ -25,7 +25,6 @@ const registerController = {
                 points: 0,
                 address: [],
                 orders: [],
-                cart: [],
                 wishlist: []
             }
             db.insertOne(User, user, function(){

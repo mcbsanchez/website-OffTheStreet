@@ -49,13 +49,13 @@ $(document).ready(function() {
     
     $(".cancel").click(function(){
         var id = $(this).parent().parent().attr("id")
-
+        var string = '#' + id;
+        $(string).remove();
         $.ajax({
             type: "POST",
             url: "/removeItem/?id="+ id,  
         }).done(function (data) {
-            var string = '#' + id;
-            $(string).remove();
+            
         })
         .fail(function()  {
             alert("Sorry. Server unavailable.");

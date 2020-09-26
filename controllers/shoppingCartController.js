@@ -83,9 +83,6 @@ const shoppingCartController = {
 				// create product order
 				db.insertOne(ProductOrdersModel, newProduct, function(result) {
 					// add to user's cart
-					db.updateOne(UserModel,
-						{_id:userId},
-						{$push: {cart: result._id}})
 				});
 			}
 		})
