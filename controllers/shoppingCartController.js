@@ -7,7 +7,8 @@ const ProductVariationModel = require("../models/ProductVariationModel");
 const shoppingCartController = {
 	
 	shoppingCart: function(req,res){
-		var userId = '5f5cafd29b5a4d5e90534dfa';
+		var userId = req.session.idUser;
+
 		db.findMany(ProductOrdersModel, {user: userId}, null, function(result){
 			var ids = [];
 			var quantity = [];
@@ -39,11 +40,10 @@ const shoppingCartController = {
 	},
 
 	addToCart: function(req,res) {
-		// var userId = req.session.passport.user;
-
-		var userId = '5f5cafd29b5a4d5e90534dfa';
+		var userId = req.session.idUser;
 		var productId = req.body.id;
 		console.log(productId)
+
 		var newProduct = {
 			product: productId,
 			user: userId,
@@ -72,7 +72,7 @@ const shoppingCartController = {
 	},
 
 	postDetails: function(req,res) {
-		var query = {_id: '5f5cafd29b5a4d5e90534dfa'}
+		var query = {_id: req.session.idUser}
 	
 		db.findOne(UserModel, query, null, function(result) {
 			var payment = req.body.payment
