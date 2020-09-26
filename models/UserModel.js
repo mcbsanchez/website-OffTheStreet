@@ -31,9 +31,6 @@ var UserSchema = new mongoose.Schema({
     orders: [{
         type: String
     }],
-    cart: [{
-        type: String
-    }],
     wishlist: [{
         type: String
     }]
