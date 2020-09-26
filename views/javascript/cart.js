@@ -6,6 +6,7 @@ $(document).ready(function() {
         type = $(this).attr('data-type');
         var input = $("input[name='"+fieldName+"']");
         var currentVal = parseInt(input.val());
+        var max = $(this).attr('max');
 
         if (!isNaN(currentVal)) {
             if(type == 'minus') {
@@ -13,7 +14,7 @@ $(document).ready(function() {
                     input.val(currentVal - 1).change();
                 }
             }
-            else if(type == 'plus') {
+            else if(type == 'plus' && currentVal < max) {
                 input.val(currentVal + 1).change();
             }
         }
@@ -24,8 +25,7 @@ $(document).ready(function() {
 
     $('.input-number').on('input', function() {
         var input = parseFloat($(this).val())
-        var max = 99
-
+        var max = $(this).attr('max')
 
         if(!isNaN(input)) {
             if(input > max) {

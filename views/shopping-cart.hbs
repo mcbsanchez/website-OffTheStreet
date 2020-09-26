@@ -44,9 +44,9 @@
                                         </svg>
                                     </button>
                                 </span>
-                                <input type="number" name="{{_id}}" class="form-control input-number" value={{quantity}} style="width: 40px;">
+                                <input type="number" name="{{_id}}" class="form-control input-number" value={{quantity}} max={{max}} style="width: 40px;">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="{{_id}}" value={{_id}}>
+                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="{{_id}}" value={{_id}} max={{max}}>
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
                                         </svg>
@@ -69,119 +69,6 @@
                 <p>No products yet</p>
                 {{/if}}
                 
-                {{!-- <div class="item d-flex align-items-center" id="item1">
-                    <div class="p-2">
-                        <img src="images/icon.png" class="item-pic">
-                    </div>
-                    <div class="p-2  mr-auto">
-                        Item name
-                    </div>
-                    <div class="p-4">
-                        <div class="row">
-                            <div class="input-group align-items-center">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[2]">
-                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                                <input type="text" name="quant[2]" class="form-control input-number" value="1" style="width: 40px;">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">Php 100.00</div>
-                    <div class="p-2">
-                        <button class="btn btn-link cancel">
-                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.906429L8.09357 0L4.5 3.59357L0.906429 0L0 0.906429L3.59357 4.5L0 8.09357L0.906429 9L4.5 5.40643L8.09357 9L9 8.09357L5.40643 4.5L9 0.906429Z" fill="black" fill-opacity="0.54"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="item d-flex align-items-center" id="item2">
-                    <div class="p-2">
-                        <img src="images/icon.png" class="item-pic">
-                    </div>
-                    <div class="p-2  mr-auto">
-                        Item name
-                    </div>
-                    <div class="p-4">
-                        <div class="row">
-                            <div class="input-group align-items-center">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[3]">
-                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                                <input type="text" name="quant[3]" class="form-control input-number" value="1" style="width: 40px;">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[3]">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">Php 100.00</div>
-                    <div class="p-2">
-                        <button class="btn btn-link cancel">
-                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.906429L8.09357 0L4.5 3.59357L0.906429 0L0 0.906429L3.59357 4.5L0 8.09357L0.906429 9L4.5 5.40643L8.09357 9L9 8.09357L5.40643 4.5L9 0.906429Z" fill="black" fill-opacity="0.54"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="item d-flex align-items-center" id="item3">
-                    <div class="p-2">
-                        <img src="images/icon.png" class="item-pic">
-                    </div>
-                    <div class="p-2  mr-auto">
-                        Item name
-                    </div>
-                    <div class="p-4">
-                        <div class="row">
-                            <div class="input-group align-items-center">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[4]">
-                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                                <input type="text" name="quant[4]" class="form-control input-number" value="1" style="width: 40px;">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[4]">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4">Php 100.00</div>
-                    <div class="p-2">
-                        <button class="btn btn-link cancel">
-                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.906429L8.09357 0L4.5 3.59357L0.906429 0L0 0.906429L3.59357 4.5L0 8.09357L0.906429 9L4.5 5.40643L8.09357 9L9 8.09357L5.40643 4.5L9 0.906429Z" fill="black" fill-opacity="0.54"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div> --}}
             </div>   
 
             <!-- Order Summary -->
