@@ -6,7 +6,14 @@ var OrderSchema = new mongoose.Schema({
         required: true
     },
     products: [{
-        type: String
+        product: {
+            type: String,
+            required: true
+        },
+        quantity: {
+            type: Number,
+            required: true
+        }
     }],
     modepayment: {
         type: String,

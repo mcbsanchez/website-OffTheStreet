@@ -5,7 +5,6 @@ const Address = require('./AddressModel.js')
 const Order = require('./OrderModel.js')
 const Product = require('./ProductModel.js')
 const ProductOrders = require('./ProductOrdersModel.js')
-const ProductVariation = require('./ProductVariationModel.js')
 const User = require('./UserModel.js')
 
 //connect to database
@@ -37,9 +36,9 @@ const database = {
 
     insertMany: function(model, docs) {
         model.insertMany(docs, function(error, result) {
-            if(error) return callback(false);
+            if(error) return false;
             //console.log('Added ' + result);
-            return callback(true);
+            return true;
         });
     },
 

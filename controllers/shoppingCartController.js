@@ -2,10 +2,9 @@ const db = require("../models/db");
 const ProductModel = require("../models/ProductModel")
 const ProductOrdersModel = require("../models/ProductOrdersModel");
 const UserModel = require("../models/UserModel");
-const ProductVariationModel = require("../models/ProductVariationModel");
 
 const shoppingCartController = {
-	
+
 	shoppingCart: function(req,res){
 		var userId = req.session.idUser;
 
@@ -54,7 +53,7 @@ const shoppingCartController = {
 			if(res != null) {
 				// update quantity
 				var quantity = res.quantity + 1;
-				
+
 				db.updateOne(ProductOrdersModel,
 					{_id:res._id},
 					{quantity: quantity})
@@ -73,19 +72,19 @@ const shoppingCartController = {
 
 	postDetails: function(req,res) {
 		var query = {_id: req.session.idUser}
-	
+
 		db.findOne(UserModel, query, null, function(result) {
 			var payment = req.body.payment
 			var delivery = req.body.delivery
-			
-			var details = {
-				modeofpayment: payment,
-				modeofdelivery: delivery,
-				points: result.points
-			}
-	
+
+				var details = {
+					modeofpayment: payment,
+					modeofdelivery: delivery,
+					points: result.points
+				}
+
 			res.render('shipping-details', details)
-	
+
 		})
 	},
 
@@ -94,7 +93,7 @@ const shoppingCartController = {
 		var productId = "5f5caedfa2b57c256cb4889e";
 
 		UserModel.updateOne(
-			{_id: userId}, 
+			{_id: userId},
 			{$pull: {cart: productId}}
 		)
 	}
