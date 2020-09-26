@@ -127,12 +127,9 @@ const shoppingCartController = {
 		else{
 			userId = "5f6f098c4fe52644c028e1e1";
 		}
-		var productId = "5f5caedfa2b57c256cb4889e";
-
-		UserModel.updateOne(
-			{_id: userId},
-			{$pull: {cart: productId}}
-		)
+		var productId = req.query.id;
+		console.log(productId)
+		db.deleteOne(ProductOrdersModel, {product: productId, user: userId})
 	}
 }
 

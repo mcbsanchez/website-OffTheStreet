@@ -52,7 +52,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "/removeItem/"+ id,  
+            url: "/removeItem/?id="+ id,  
         }).done(function (data) {
             var string = '#' + id;
             $(string).remove();

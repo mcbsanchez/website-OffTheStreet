@@ -28,7 +28,7 @@ const adminOrderPendingController = require('../controllers/adminOrderPendingCon
 const adminOrderConfirmedController = require('../controllers/adminOrderConfirmedController.js');
 const adminSettingsController = require('../controllers/adminSettingsController.js');
 const navbarController = require('../controllers/navbarController.js');
-const orderSummaryController = require('../controllers/orderSummaryController.js');
+//const orderSummaryController = require('../controllers/orderSummaryController.js');
 const app = express();
 
 module.exports = app;
@@ -57,7 +57,7 @@ app.get('/orderCancelled', orderCancelledController.orderCancelled);
 app.get('/orderCompleted', orderCompletedController.orderCompleted);
 app.get('/orderConfirmed', orderConfirmedController.orderConfirmed);
 app.get('/orderPending', orderPendingController.orderPending);
-app.get('/orderSummary', orderSummaryController.orderSummary);
+//app.get('/orderSummary', orderSummaryController.orderSummary);
 app.get('/privacy', privacyController.privacy);
 app.get('/productDetails', productDetailsController.productDetails);
 app.post('/addToCart',shoppingCartController.addToCart);
@@ -80,3 +80,4 @@ app.post('/login', loginController.postLogin);
 app.get('/getNavbar', navbarController.getNavbar);
 app.get('/getName', navbarController.getName);
 app.get('/isSession', checkoutController.isSession);
+app.post('/removeItem', shoppingCartController.removeItem);
