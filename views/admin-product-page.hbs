@@ -48,12 +48,12 @@
 											<li class="nav-item ">
 												<a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrder">View All Orders</a>
 											</li>
-										 	 <li class="nav-item">
+										 	<li class="nav-item">
 												  <a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrderPending">View Pending Orders</a>
-											  </li>
-											  <li class="nav-item ">
-												<a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrderConfirmed">View Confirmed Orders</a>
-											  </li>
+											</li>
+											<li class="nav-item ">
+											<a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrderConfirmed">View Confirmed Orders</a>
+											</li>
 									  </ul>
 									</div>
 								</div>
@@ -72,7 +72,6 @@
 									</ul>
 								  </div>
 							</li></ul>
-
 					</div>
 					
 					
@@ -117,6 +116,7 @@
 						<!--Products-->
 						<div class="col-xl-12 col-12 mt-5">
 							<h4 class="text-black text-center mb-3 mt-2">All Products</h4>
+							<button type="button" class="btn btn-dark" data-toggle="modal" id="addproduct" data-target="#newProductModal">Add a New Product</button>
 							<table class="table table-dark table-hover text-center">
 								<thead>
 									<tr class="text-muted">
@@ -124,28 +124,21 @@
 										<th>Name</th>
 										<th>Description</th>
 										<th>Price</th>
-										<th>S</th>
-										<th>M</th>
-										<th>L</th>
-										<th>XL</th>
-										<th>2XL</th>
-										<th>3XL</th>
+										<th>Variation</th>
+										<th>Quantity</th>
 										<th>Edit</th>
 										<th>Remove</th>
 									</tr>
 								</thead>
 								<tbody>
+									{{#each products}}
 									<tr>
-									<th>1</th>
-									<td><a href="#" class="text-white">Nice</a></td>
-									<td>Very nice</td>
-									<td>PHP 2000</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
+									<th>{{number}}</th>
+									<td><a href="/productDetails?id={{_id}}" class="text-white">{{name}}</a></td>
+									<td>{{description}}</td>
+									<td>PHP {{price}}</td>
+									<td>{{variation}}</td>
+									<td>{{quantity}}</td>
 									<td><button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#editProductModal"><i class="fas fa-edit"></i></button></td>
 									<div class="modal fade bd-example-modal-xl" id="editProductModal" tabindex="- 1" role="dialog" aria-labelledby="editProductModal" aria-hidden="true">
 										<div class="modal-dialog modal-xl">
@@ -154,55 +147,24 @@
 													<h5 class="modal-title h4">Editing Product</h5>
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 												</div>
-				
 												<div class="modal-body">
-													<form>
-														
+													<form method="post" action="/edit">	
+															<input type="hidden" value={{_id}} name="id">
 														<div class="form-group">
 															<label for="product-name" class="col-form-label">Name</label>
-															<input type="text" class="form-control" placeholder="Nice">
+															<input type="text" class="form-control" placeholder={{name}} name="name">
 															<label for="product-description" class="col-form-label">Description</label>
-															<input type="text" class="form-control" placeholder="Very Nice">
-															
+															<input type="text" class="form-control" placeholder={{description}} name="description">
+															<label for="product-description" class="col-form-label">Variation</label>
+															<input type="text" class="form-control" placeholder={{variation}} name="variation">
+															<label for="product-description" class="col-form-label">Quantity</label>
+															<input type="text" class="form-control" placeholder={{quantity}} name="quantity">
 														</div>
 														
-														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="smallCheck">
-															<label class="form-check-label" for="smallCheck">S</label>
-															
-															<input type="text" class="form-control" id="smallQuantity" type="text" placeholder="20">
-															
-											
-														</div>
-														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="mediumCheck">
-															<label class="form-check-label" for="mediumCheck">M</label>
-															<input type="text" class="form-control" id="mediumQuantity" type="text" placeholder="1">
-														</div>
-														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="largeCheck">
-															<label class="form-check-label" for="largeCheck">L</label>
-															<input type="text" class="form-control" id="largeQuantity" type="text" placeholder="45">
-														</div>
-														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="extralargeCheck">
-															<label class="form-check-label" for="extralargeCheck">XL</label>
-															<input type="text" class="form-control" id="extralargeQuantity" type="text" placeholder="5">
-														</div>
-														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="doubleextralargeCheck">
-															<label class="form-check-label" for="doubleextralargeCheck">2XL</label>
-															<input type="text" class="form-control" id="doubleextralargeQuantity" type="text" placeholder="67">
-														</div>
-														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="tripleextralargeCheck">
-															<label class="form-check-label" for="tripleextralargeCheck">3XL</label>
-															<input type="text" class="form-control" id="tripleextralargeQuantity" type="text" placeholder="94">
-														</div>
 														<div class="form-row mt-2">
 															<div class="col">
 																<label for="price">Price</label>
-																<input type="text" class="form-control" placeholder="2000">
+																<input type="text" class="form-control" placeholder={{price}} name="price">
 															</div>
 															
 														</div>
@@ -271,117 +233,11 @@
 									
 									</div>
 									</tr>
-									
-									<tr>
-									<th>2</th>
-									<td><a href="#" class="text-white">Nice</a></td>
-									<td>Comfortable</td>
-									<td>PHP 3000</td>
-									<td>1</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
-									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-									</tr>
-									
-									<tr>
-									<th>3</th>
-									<td><a href="#" class="text-white">Nice</a></td>
-									<td>Very cool</td>
-									<td>PHP 4000</td>
-									<td>45</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
-									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-									</tr>
-									
-									<tr>
-									<th>4</th>
-									<td><a href="#" class="text-white">Nice</a></td>
-									<td>Super good</td>
-									<td>PHP 5000</td>
-									<td>55</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
-									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-									</tr>
-									
-									<tr>
-									<th>5</th>
-									<td><a href="#" class="text-white">Nice</a></td>
-									<td>Motivational</td>
-									<td>PHP 6000</td>
-									<td>67</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
-									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-									</tr>
-									
-									<tr>
-									<th>6</th>
-									<td><a href="#" class="text-white">Nice</a></td>
-									<td>Hmmmm..</td>
-									<td>PHP 7000</td>
-									<td>9</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td>20</td>
-									<td><button type="button" class="btn btn-warning text-white"><i class="fas fa-edit"></i></button></td>
-									<td><button type="button" class="btn btn-danger text-white"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-									</tr>
-
-									
-									
+									{{/each}}
 								</tbody>
 							</table>
-							<nav>
-							  <ul class="pagination justify-content-center">
-								<li class="page-item">
-								  <a href="#" class="page-link py-2 px-3">
-									<span>Previous</span>
-								  </a>
-								</li>
-								<li class="page-item active">
-								  <a href="#" class="page-link py-2 px-3">
-									1
-								  </a>
-								</li>
-								<li class="page-item">
-								  <a href="#" class="page-link py-2 px-3">
-									2
-								  </a>
-								</li>
-								<li class="page-item">
-								  <a href="#" class="page-link py-2 px-3">
-									3
-								  </a>
-								</li>
-								<li class="page-item">
-								  <a href="#" class="page-link py-2 px-3">
-									<span>Next</span>
-								  </a>
-								</li>
-							  </ul>
-							</nav>
+
 							<!--Add Product Modal Start-->
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductModal">Add a New Product</button>
 					<div class="modal fade bd-example-modal-xl" id="newProductModal" tabindex="- 1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-xl">
 							<div class="modal-content">
@@ -395,49 +251,19 @@
                                         
 										<div class="form-group">
 											<label for="product-name" class="col-form-label">Name</label>
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="name">
 											<label for="product-description" class="col-form-label">Description</label>
-											<input type="text" class="form-control">
-											
+											<input type="text" class="form-control" name="description">
+											<label for="product-description" class="col-form-label">Variation</label>
+											<input type="text" class="form-control" name="variation">
+											<label for="product-description" class="col-form-label">Quantity</label>
+											<input type="text" class="form-control" name="quantity">
                                         </div>
                                         
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="smallCheck">
-                                            <label class="form-check-label" for="smallCheck">S</label>
-                                            
-                                            <input type="text" class="form-control" id="smallQuantity" type="text">
-                                            
-                            
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="mediumCheck">
-                                            <label class="form-check-label" for="mediumCheck">M</label>
-                                            <input type="text" class="form-control" id="mediumQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="largeCheck">
-                                            <label class="form-check-label" for="largeCheck">L</label>
-                                            <input type="text" class="form-control" id="largeQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="extralargeCheck">
-                                            <label class="form-check-label" for="extralargeCheck">XL</label>
-                                            <input type="text" class="form-control" id="extralargeQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="doubleextralargeCheck">
-                                            <label class="form-check-label" for="doubleextralargeCheck">2XL</label>
-                                            <input type="text" class="form-control" id="doubleextralargeQuantity" type="text">
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value="" id="tripleextralargeCheck">
-                                            <label class="form-check-label" for="tripleextralargeCheck">3XL</label>
-                                            <input type="text" class="form-control" id="tripleextralargeQuantity" type="text">
-										</div>
 										<div class="form-row mt-2">
 											<div class="col">
 												<label for="price">Price</label>
-												<input type="text" class="form-control">
+												<input type="text" class="form-control" name="price">
 											</div>
 											
 										</div>
@@ -474,7 +300,7 @@
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
+									<button type="button" class="btn btn-dark">Save changes</button>
 								</div>
 								
 							</div>
@@ -492,50 +318,6 @@
 		</div>
 	</section>
 	<!--navbar end-->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<script src="script.js"></script>
 </body>
 </html>
