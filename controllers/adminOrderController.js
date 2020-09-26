@@ -6,6 +6,9 @@ const adminOrderController = {
 	adminOrder: function(req,res){
 		db.findMany(Order, null, null, function(orders) {
 			var x = orders
+			var num = [];
+			for(var i = 1; i <= orders.length; i++)
+				num.push(i)
 			
 			// get user from each order
 			for(var i = 0; i < x.length; i++) {
@@ -17,10 +20,11 @@ const adminOrderController = {
 					for(var j = 0; j < results.length; j++) {
 						if(results[j].orders.includes(x[i]._id)) {
 							x[i].name = results[j].firstname + " " + results[j].lastname
+							x[i].quantity = num[i]
 						}
 					}
 				}
-				res.render('admin-order-page', {orders: orders});
+				res.render('admin-order-page', {orders: x});
 			})
 		})
 	},

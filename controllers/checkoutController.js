@@ -43,7 +43,7 @@ const checkoutController = {
 		db.findMany(ProductOrdersModel, {user: id}, null, function(results){
 			var addressId;
 			var numItems = 0;
-			var status = "pending";
+			var status = "Pending";
 			var date = new Date();
 			var dateordered = date.getTime()
 			var products = [];
