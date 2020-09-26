@@ -1,7 +1,6 @@
 const db = require("../models/db");
 const User = require("../models/UserModel");
 const Order = require("../models/OrderModel");
-// const session = require("express-session");
 
 const orderPendingController = {
 	orderPending: function(req,res){
