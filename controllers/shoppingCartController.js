@@ -6,11 +6,19 @@ const UserModel = require("../models/UserModel");
 const shoppingCartController = {
 
 	shoppingCart: function(req,res){
-		var userId = req.session.idUser;
+		var userId;
+		if(req.session.email){
+			userId = req.session.idUser;
+		}
+		else{
+			userId = "5f6f098c4fe52644c028e1e1";
+		}
 
 		db.findMany(ProductOrdersModel, {user: userId}, null, function(result){
 			var ids = [];
 			var quantity = [];
+			var total = 0;
+			var numItems = 0;
 			for (var i = 0 ; i<result.length ; i++){
 				ids.push(result[i].product);
 				quantity.push(result[i].quantity);
@@ -27,19 +35,32 @@ const shoppingCartController = {
 								quantity: quantity[j],
 								price: results[i].price
 							}
+							total += quantity[j] * results[i].price;
+							numItems += quantity[j];
 							x.push(y)
 							j = ids.length
 						}
 					}
 				}
-				console.log(x)
-				res.render('shopping-cart', {products: x});
+				var z = {
+					products: x,
+					total: total,
+					numItems: numItems
+				}
+				res.render('shopping-cart', {products: z});
 			})
 		})
 	},
 
 	addToCart: function(req,res) {
-		var userId = req.session.idUser;
+		var userId;
+		if(req.session.email){
+			userId = req.session.idUser;
+		}
+		else{
+			userId = "5f6f098c4fe52644c028e1e1";
+		}
+		
 		var productId = req.body.id;
 		console.log(productId)
 
@@ -71,17 +92,27 @@ const shoppingCartController = {
 	},
 
 	postDetails: function(req,res) {
-		var query = {_id: req.session.idUser}
+		var userId;
+		if(req.session.email){
+			userId = req.session.idUser;
+		}
+		else{
+			userId = "5f6f098c4fe52644c028e1e1";
+		}
+		var query = {_id: userId}
 
 		db.findOne(UserModel, query, null, function(result) {
-			var payment = req.body.payment
-			var delivery = req.body.delivery
-
-				var details = {
-					modeofpayment: payment,
-					modeofdelivery: delivery,
-					points: result.points
-				}
+			var payment = req.body.payment;
+			var delivery = req.body.delivery;
+			var total = req.body.total;
+			var numItems = req.body.numItems;
+			var details = {
+				total: total,
+				numItems: numItems,
+				modeofpayment: payment,
+				modeofdelivery: delivery,
+				points: result.points
+			}
 
 			res.render('shipping-details', details)
 
@@ -89,7 +120,13 @@ const shoppingCartController = {
 	},
 
 	removeItem: function(req,res) {
-		var userId = "5f5cafd29b5a4d5e90534dfa";
+		var userId;
+		if(req.session.email){
+			userId = req.session.idUser;
+		}
+		else{
+			userId = "5f6f098c4fe52644c028e1e1";
+		}
 		var productId = "5f5caedfa2b57c256cb4889e";
 
 		UserModel.updateOne(

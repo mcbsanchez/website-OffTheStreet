@@ -6,6 +6,7 @@ const ProductOrdersModel = require("../models/ProductOrdersModel");
 const UserModel = require("../models/UserModel");
 const Address = require("../models/AddressModel");
 const Order = require("../models/OrderModel");
+const session = require('express-session');
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
@@ -30,8 +31,15 @@ const checkoutController = {
 		var street = req.body.street;
 		var pointsUsed = req.body.points;
 
-		var id = req.session.idUser;
+		var id;
 
+		if(req.session.email){
+			id = req.session.idUser;
+		}
+		else{
+			id = "5f6f098c4fe52644c028e1e1";
+		}
+		
 		db.findMany(ProductOrdersModel, {user: id}, null, function(results){
 			var addressId;
 			var numItems = 0;
@@ -69,13 +77,9 @@ const checkoutController = {
 
 				db.findMany(ProductModel, {_id: { $in: products }}, null, function(productsres){
 					var total = 0;
-					console.log(productsres)
-					console.log("products")
-					console.log(products)
 					for(var i=0; i< productsres.length; i++) {
 						for(var j=0; j<products.length; j++){
 							if(products[j]==productsres[i]._id){
-								console.log(products[j])
 								total += productsres[i].price * quantity[j]
 									db.updateOne(ProductModel,
 										{_id:productsres[i]._id},
@@ -103,9 +107,11 @@ const checkoutController = {
 					}
 
 					db.insertOne(Order, order, function(result){
-						db.updateOne(UserModel,
-							{_id:id},
-							{$push: {orders: result._id}, $inc: {points: -pointsUsed}})
+						if(req.session.email){
+							db.updateOne(UserModel,
+								{_id:id},
+								{$push: {orders: result._id}, $inc: {points: -pointsUsed}, $inc: {points: total/100}})
+						}
 						db.deleteMany(ProductOrdersModel, {user: id})
 						var toEmail = "offthestreetbusiness@gmail.com";
 						var message = "Name: " + firstname + " " + lastname + "\n";
@@ -151,7 +157,16 @@ const checkoutController = {
 				})
 			})
 		})
-    }
+	},
+	
+	isSession: function(req,res){
+		if(req.session.email){
+			res.send(true);
+		}
+		else{
+			res.send(false);
+		}
+	}
 }
 
 module.exports = checkoutController;

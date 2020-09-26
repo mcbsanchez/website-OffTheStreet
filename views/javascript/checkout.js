@@ -1,4 +1,12 @@
 $(document).ready(function(){
+    $.get('/isSession', null, function(res){
+        if(res){
+            $("#userPoints").prop('hidden', false);
+        }
+        else{
+            $("#userPoints").prop('hidden', true);
+        }
+    })
     function isFilled() {
         var firstname = validator.trim($("#firstname").val());
         var lastname = validator.trim($("#lastname").val());

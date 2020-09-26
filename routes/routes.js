@@ -77,3 +77,4 @@ app.get('/getCheckLogin', loginController.getCheckLogin);
 app.post('/login', loginController.postLogin);
 app.get('/getNavbar', navbarController.getNavbar);
 app.get('/getName', navbarController.getName);
+app.get('/isSession', checkoutController.isSession);
