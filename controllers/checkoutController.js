@@ -30,7 +30,7 @@ const checkoutController = {
 		var street = req.body.street;
 		var pointsUsed = req.body.points;
 
-		var id = "5f5cafd29b5a4d5e90534dfa";
+		var id = "5f6f098c4fe52644c028e1e1";
 
 		db.findMany(ProductOrdersModel, {user: id}, null, function(results){
 			var addressId;
@@ -55,24 +55,41 @@ const checkoutController = {
 				addressId = result._id
 
 				var quantity = []
-				var productids = []
+				var orderitem = []
 				for(var i=0; i<results.length ; i++){
 					numItems += results[i].quantity
 					products.push(results[i].product)
 					quantity.push(results[i].quantity)
+					var oneorder = {
+						product: results[i].product,
+						quantity: results[i].quantity
+					}
+					orderitem.push(oneorder)
 				}
 
 				db.findMany(ProductModel, {_id: { $in: products }}, null, function(productsres){
 					var total = 0;
-
-					for(var i=0; i< productsres.length ; i++) {
-						total += productsres[i].price * quantity[i]
-						productNamesQ.push(productsres[i].name + ": " + quantity[i] + " pcs\n")
+					console.log(productsres)
+					console.log("products")
+					console.log(products)
+					for(var i=0; i< productsres.length; i++) {
+						for(var j=0; j<products.length; j++){
+							if(products[j]==productsres[i]._id){
+								console.log(products[j])
+								total += productsres[i].price * quantity[j]
+									db.updateOne(ProductModel,
+										{_id:productsres[i]._id},
+										{$inc: {quantity: -quantity[j]}})
+								productNamesQ.push(productsres[i].name + ": " + quantity[j] + " pcs\n")
+								j = products.length
+							}
+						}
 					}
+
 					total -= pointsUsed;
 					var order = {
 						numitems: numItems,
-						products: products,
+						products: orderitem,
 						modepayment: modeofpayment,
 						modedelivery: modeofdelivery,
 						address: addressId,

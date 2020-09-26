@@ -2,12 +2,11 @@ const db = require("../models/db");
 const ProductModel = require("../models/ProductModel")
 const ProductOrdersModel = require("../models/ProductOrdersModel");
 const UserModel = require("../models/UserModel");
-const ProductVariationModel = require("../models/ProductVariationModel");
 
 const shoppingCartController = {
 	
 	shoppingCart: function(req,res){
-		var userId = '5f5cafd29b5a4d5e90534dfa';
+		var userId = '5f6f098c4fe52644c028e1e1';
 		db.findMany(ProductOrdersModel, {user: userId}, null, function(result){
 			var ids = [];
 			var quantity = [];
@@ -41,7 +40,7 @@ const shoppingCartController = {
 	addToCart: function(req,res) {
 		// var userId = req.session.passport.user;
 
-		var userId = '5f5cafd29b5a4d5e90534dfa';
+		var userId = '5f6f098c4fe52644c028e1e1';
 		var productId = req.body.id;
 		console.log(productId)
 		var newProduct = {
@@ -72,17 +71,20 @@ const shoppingCartController = {
 	},
 
 	postDetails: function(req,res) {
-		var query = {_id: '5f5cafd29b5a4d5e90534dfa'}
+		var query = {_id: '5f6f098c4fe52644c028e1e1'}
+		if(req.session.email){
+
+		}
 	
 		db.findOne(UserModel, query, null, function(result) {
 			var payment = req.body.payment
 			var delivery = req.body.delivery
 			
-			var details = {
-				modeofpayment: payment,
-				modeofdelivery: delivery,
-				points: result.points
-			}
+				var details = {
+					modeofpayment: payment,
+					modeofdelivery: delivery,
+					points: result.points
+				}
 	
 			res.render('shipping-details', details)
 	

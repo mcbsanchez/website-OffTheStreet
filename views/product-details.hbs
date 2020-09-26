@@ -32,14 +32,11 @@
                 <p class="item-price">Php {{price}}</p>
                 <div class="sizes">
                     <ul>
-                        {{#each variations}}
                         <li>
                             <label>
-                                <input type="radio" name="size" value={{this}}>
-                                <span class="options">{{this}}</span>
+                                <span class="options">{{variation}}</span>
                             </label>
                         </li>
-                        {{/each}} 
                     </ul> 
                 </div> 
                 <div>
