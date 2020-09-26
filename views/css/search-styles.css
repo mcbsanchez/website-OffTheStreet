@@ -43,6 +43,22 @@
     display: none;
 }
 
+.var2{
+    position: absolute;
+    background-color: black;
+    width: 75px;
+    height: 25px;
+    margin-top: 150px;
+    margin-left: 145px;
+ }
+ 
+.variation2{
+    margin-left: 13px;
+    font-size: 18px;
+    color: white;
+    font-weight: 50;
+}
+
 .add {
     position: absolute;
     width: 40px;
