@@ -25,7 +25,6 @@ const shoppingCartController = {
 			}
 			db.findMany(ProductModel, {_id: { $in: ids }}, null, function(results){
 				var x = []
-				console.log(ids)
 				for(var i = 0; i < results.length ; i++){
 					for(var j = 0; j< ids.length; j++){
 						if(ids[j]==results[i].id) {
@@ -33,7 +32,8 @@ const shoppingCartController = {
 								name: results[i].name,
 								_id: ids[j],
 								quantity: quantity[j],
-								price: results[i].price
+								price: results[i].price,
+								max: results[i].quantity
 							}
 							total += quantity[j] * results[i].price;
 							numItems += quantity[j];
@@ -62,7 +62,6 @@ const shoppingCartController = {
 		}
 		
 		var productId = req.body.id;
-		console.log(productId)
 
 		var newProduct = {
 			product: productId,
@@ -86,6 +85,20 @@ const shoppingCartController = {
 				});
 			}
 		})
+	},
+
+	changeQuantity: function(req,res) {
+		var userId;
+		if(req.session.email){
+			userId = req.session.idUser;
+		}
+		else{
+			userId = "5f6f098c4fe52644c028e1e1";
+		}
+		var productId = req.query.id;
+		var quantity = req.query.quantity;
+
+		db.updateOne(ProductOrdersModel, {product: productId, user: userId}, {quantity: quantity})
 	},
 
 	postDetails: function(req,res) {
@@ -125,7 +138,6 @@ const shoppingCartController = {
 			userId = "5f6f098c4fe52644c028e1e1";
 		}
 		var productId = req.query.id;
-		console.log(productId)
 		db.deleteOne(ProductOrdersModel, {product: productId, user: userId})
 	}
 }

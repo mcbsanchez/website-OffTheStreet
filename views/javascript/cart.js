@@ -2,9 +2,9 @@ $(document).ready(function() {
     $('.btn-number').click(function(e){
         e.preventDefault();
         
-        fieldName = $(this).attr('data-field');
+        var id = $(this).attr('data-field');
         type = $(this).attr('data-type');
-        var input = $("input[name='"+fieldName+"']");
+        var input = $("input[name='"+id+"']");
         var currentVal = parseInt(input.val());
         var max = $(this).attr('max');
 
@@ -12,18 +12,32 @@ $(document).ready(function() {
             if(type == 'minus') {
                 if(currentVal > 1) {
                     input.val(currentVal - 1).change();
+                    currentVal -= 1;
                 }
             }
             else if(type == 'plus' && currentVal < max) {
                 input.val(currentVal + 1).change();
+                currentVal += 1;
             }
         }
         else {
-            input.val(0);
+            input.val(1);
         }
+
+        $.ajax({
+            type: "POST",
+            url: "/changeQuantity/?id=" + id + "&quantity=" + currentVal,
+        }).done(function(data) {
+
+        }).fail(function() {
+            alert("Sorry. Server unavailable.");
+        });
+
+        return false;
     });
 
     $('.input-number').on('input', function() {
+        var id = $(this).attr('name')
         var input = parseFloat($(this).val())
         var max = $(this).attr('max')
 
@@ -38,6 +52,17 @@ $(document).ready(function() {
         else {
             $(this).val(1)
         }
+
+        $.ajax({
+            type: "POST",
+            url: "/changeQuantity/?id=" + id + "&quantity=" + $(this).val(),
+        }).done(function(data) {
+
+        }).fail(function() {
+            alert("Sorry. Server unavailable.");
+        });
+
+        return false;
     })
 
     $(".add").click(function() {
