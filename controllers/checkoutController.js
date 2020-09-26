@@ -30,7 +30,7 @@ const checkoutController = {
 		var street = req.body.street;
 		var pointsUsed = req.body.points;
 
-		var id = "5f6f098c4fe52644c028e1e1";
+		var id = req.session.idUser;
 
 		db.findMany(ProductOrdersModel, {user: id}, null, function(results){
 			var addressId;
