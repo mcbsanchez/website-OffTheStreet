@@ -21,7 +21,7 @@
         <h1 id="od-history">order history</h1>
         <div class="order-tabs">
             <a href="orderPending" class="order-tab" title = "pending">pending</a>
-            <a href="orderDelivering" class="order-tab" title = "delivering">confirmed</a>
+            <a href="orderConfirmed" class="order-tab" title = "delivering">confirmed</a>
             <a href="orderCompleted" class="order-tab selected-tab" title = "completed">completed</a>
             <a href="orderCancelled" class="order-tab" title = "cancelled">cancelled</a>
         </div>
@@ -30,7 +30,31 @@
     <div class="container">
         <div class="order-list">
 
+            {{#each orders}}
             <div class="order">
+                <div class="row d-flex align-items-center">
+                    <div class="col-2">
+                        <img src="images/icon.png" class="product-icon">
+                    </div>
+                    <div class="col-7 order-details">
+                        <div class="row">
+                            <a class="product-name" href="/orderSummary?id={{_id}}">Order#{{_id}}</a>
+                        </div>
+                        <div class="row">
+                            <p class="product-total"><span class="bold">total: </span> {{total}} PHP</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
+                            <p class="delivery-details">Delivered on: <span class="date">{{timecompleted}}</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+            {{!-- <div class="order">
                 <div class="row">
                     <div class="col">
                         <h3 class="order-num">Order#123467890</h3>
@@ -109,7 +133,7 @@
                         
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>

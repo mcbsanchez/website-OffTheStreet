@@ -12,7 +12,7 @@ const loginController = require('../controllers/loginController.js');
 const registerController = require('../controllers/registerController.js');
 const orderCancelledController = require('../controllers/orderCancelledController.js');
 const orderCompletedController = require('../controllers/orderCompletedController.js');
-const orderDeliveringController = require('../controllers/orderDeliveringController.js');
+const orderConfirmedController = require('../controllers/orderConfirmedController.js');
 const orderPendingController = require('../controllers/orderPendingController.js');
 const privacyController = require('../controllers/privacyController.js');
 const productDetailsController = require('../controllers/productDetailsController.js');
@@ -28,6 +28,7 @@ const adminOrderPendingController = require('../controllers/adminOrderPendingCon
 const adminOrderConfirmedController = require('../controllers/adminOrderConfirmedController.js');
 const adminSettingsController = require('../controllers/adminSettingsController.js');
 const navbarController = require('../controllers/navbarController.js');
+const orderSummaryController = require('../controllers/orderSummaryController.js');
 const app = express();
 
 module.exports = app;
@@ -54,8 +55,9 @@ app.get('/register', registerController.register);
 app.post('/home', registerController.postRegister);
 app.get('/orderCancelled', orderCancelledController.orderCancelled);
 app.get('/orderCompleted', orderCompletedController.orderCompleted);
-app.get('/orderDelivering', orderDeliveringController.orderDelivering);
+app.get('/orderConfirmed', orderConfirmedController.orderConfirmed);
 app.get('/orderPending', orderPendingController.orderPending);
+app.get('/orderSummary', orderSummaryController.orderSummary);
 app.get('/privacy', privacyController.privacy);
 app.get('/productDetails', productDetailsController.productDetails);
 app.post('/addToCart',shoppingCartController.addToCart);
