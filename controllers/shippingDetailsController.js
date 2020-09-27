@@ -6,8 +6,6 @@ const shippingDetailsController = {
 			total: total,
 			numItems: numItems
 		}
-		console.log(req.body.total)
-		console.log("hello")
 		res.render('shipping-details', {details: details});
 	}
 }

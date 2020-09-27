@@ -1,3 +1,4 @@
+const session = require("express-session");
 const db = require("../models/db");
 const ProductModel = require("../models/ProductModel")
 const ProductOrdersModel = require("../models/ProductOrdersModel");
@@ -116,14 +117,28 @@ const shoppingCartController = {
 			var delivery = req.body.delivery;
 			var total = req.body.total;
 			var numItems = req.body.numItems;
-			var details = {
-				total: total,
-				numItems: numItems,
-				modeofpayment: payment,
-				modeofdelivery: delivery,
-				points: result.points
+			if(req.session.email){
+				var details = {
+					total: total,
+					numItems: numItems,
+					modeofpayment: payment,
+					modeofdelivery: delivery,
+					points: result.points,
+					firstname: result.firstname,
+					lastname: result.lastname,
+					email: result.email
+				}
 			}
-
+			else{
+				var details = {
+					total: total,
+					numItems: numItems,
+					modeofpayment: payment,
+					modeofdelivery: delivery,
+					points: result.points
+				}
+			}
+			
 			res.render('shipping-details', details)
 
 		})

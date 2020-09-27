@@ -12,6 +12,12 @@ const adminProductController = {
 				res.render('admin-product-page', {products: products})
 			}
 		})
+	},
+
+	addProduct: function(req,res){
+		var name = req.body.name;
+		
+		res.redirect('/adminProduct')
 	}
 }
 

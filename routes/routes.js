@@ -82,3 +82,4 @@ app.get('/getName', navbarController.getName);
 app.get('/isSession', checkoutController.isSession);
 app.post('/removeItem', shoppingCartController.removeItem);
 app.post('/changeQuantity', shoppingCartController.changeQuantity);
+app.post('/addProduct', adminProductController.addProduct);
