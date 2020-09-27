@@ -10,4 +10,26 @@ $(document).ready(function() {
 
         $.post('/changeStatus', details, function() {})
     });
+
+    $('.del-btn').click(function() {
+        var id = $(this).attr('id')
+        var string = '#' + id;
+        $(string).remove();
+
+        $.ajax({
+            type: "POST",
+            url: "/deleteProduct/?id="+ id,  
+        }).done(function (data) {
+            
+        })
+        .fail(function()  {
+            alert("Sorry. Server unavailable.");
+        }); 
+
+        return false;
+    })
+
+    // $('.delete-button').click(function() {
+        
+    // })
 })

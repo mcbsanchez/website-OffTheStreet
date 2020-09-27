@@ -44,6 +44,12 @@ const adminProductController = {
 		})
 
 		
+		res.redirect('/adminProduct')
+	},
+	
+	deleteProduct: function(req,res){
+		var productId = req.query.id
+		db.deleteOne(Product, {_id:productId})
 	}
 }
 
