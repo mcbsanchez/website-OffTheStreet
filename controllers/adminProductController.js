@@ -15,9 +15,35 @@ const adminProductController = {
 	},
 
 	addProduct: function(req,res){
+
 		var name = req.body.name;
+		var description = req.body.description;
+		var color = req.body.color;
+		var pictures = null;
+		var date = new Date();
+		var postingdate = date.getTime();
+		var price = req.body.price;
+		var category = req.body.category;
+		var variation = req.body.variation;
+		var quantity = req.body.quantity;
+
+		var fullproduct = {
+			name: name,
+			description: description,
+			color: color,
+			pictures: pictures,
+			postingdate: postingdate,
+			price: price,
+			category: category,
+			variation: variation,
+			quantity: quantity
+		}
+
+		db.insertOne(Product, fullproduct, function(){
+			res.redirect('/adminProduct')
+		})
+
 		
-		res.redirect('/adminProduct')
 	}
 }
 
