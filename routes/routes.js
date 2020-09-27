@@ -84,3 +84,4 @@ app.post('/removeItem', shoppingCartController.removeItem);
 app.post('/changeQuantity', shoppingCartController.changeQuantity);
 app.post('/addProduct', adminProductController.addProduct);
 app.post('/deleteProduct', adminProductController.deleteProduct);
+app.post('/editProduct', adminProductController.editProduct);

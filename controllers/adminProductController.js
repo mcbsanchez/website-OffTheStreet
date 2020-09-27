@@ -49,6 +49,38 @@ const adminProductController = {
 	deleteProduct: function(req,res){
 		var productId = req.query.id
 		db.deleteOne(Product, {_id:productId})
+	},
+
+	editProduct: function(req,res){
+
+		var id = req.query.id
+		var name = req.query.name;
+		var description = req.query.description;
+		var color = req.query.color;
+		var pictures = null;
+		var date = new Date();
+		var postingdate = date.getTime();
+		var price = req.query.price;
+		var category = req.query.category;
+		var variation = req.query.variation;
+		var quantity = req.query.quantity;
+
+		/**var fullproduct = {
+			name: name,
+			description: description,
+			color: color,
+			pictures: pictures,
+			postingdate: postingdate,
+			price: price,
+			category: category,
+			variation: variation,
+			quantity: quantity
+		}**/
+
+		db.updateOne(Product, {_id:id}, {name: name}, {description: description}, {color: color}, {pictures: pictures},
+		{postingdate: postingdate}, {price: price}, {category: category}, {variation: variation}, {quantity: quantity})
+
+		
 	}
 }
 
