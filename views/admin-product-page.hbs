@@ -258,16 +258,30 @@
 										<input type="text" class="form-control" name="name">
 										<label for="product-description" class="col-form-label">Description</label>
 										<input type="text" class="form-control" name="description">
+										<label for="product-description" class="col-form-label">Color</label>
+										<input type="text" class="form-control" name="color">
 										<label for="product-description" class="col-form-label">Variation</label>
 										<input type="text" class="form-control" name="variation">
 										<label for="product-description" class="col-form-label">Quantity</label>
-										<input type="text" class="form-control" name="quantity">
+										<input type="number" class="form-control" name="quantity">
 									</div>
-									
+									<div class="form-group">
+										<label for="inputState">Category</label>
+										<select id="inputState" class="form-control" name="category">
+											<option selected value="shirt">Shirt</option>
+											<option value="hoodie">Hoodie</option>
+											<option value="longsleeve">Longsleece</option>
+											<option value="shorts">Shorts</option>
+											<option value="pants">Pants</option>
+											<option value="hat">Hat</option>
+											<option value="beanie">Beanie</option>
+											<option value="bag">Bag</option>
+										</select>
+									</div>
 									<div class="form-row mt-2">
 										<div class="col">
 											<label for="price">Price</label>
-											<input type="text" class="form-control" name="price">
+											<input type="number" class="form-control" name="price">
 										</div>
 										
 									</div>

@@ -38,9 +38,8 @@ const adminProductController = {
 			variation: variation,
 			quantity: quantity
 		}
-
+		console.log(fullproduct)
 		db.insertOne(Product, fullproduct, function(){
-			res.redirect('/adminProduct')
 		})
 
 		
