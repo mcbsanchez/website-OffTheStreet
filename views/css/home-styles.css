@@ -7,6 +7,10 @@
 }
 
 .logo {
+    width:auto;
+    height:150%;
+    /* margin-top:-50px;
+    margin-left:-100px; */
     font-size: 80px;
     font-weight: 900;
     line-height: 90%;

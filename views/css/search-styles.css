@@ -53,8 +53,9 @@
  }
  
 .variation2{
-    margin-left: 13px;
+    padding:1px;
     font-size: 18px;
+    text-align: center;
     color: white;
     font-weight: 50;
 }
