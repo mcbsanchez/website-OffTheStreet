@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="details col-md">
-                    <h1 class="foodtitle ship">Shipping Address</h1>
+                    <h1 class="ship">Shipping Address</h1>
                     <p class="addr">{{address.firstname}} {{address.lastname}}</p>
                     <p class="addr">{{address.addressline}}</p>
                     <p class="addr">{{address.barangay}}, {{address.province}}, {{address.postalcode}}</p>
@@ -69,8 +69,8 @@
                     <div class="row">
                         <div class="col-2"><img src="https://i0.wp.com/www.astigvegan.com/wp-content/uploads/2013/07/vegan-isaw-coiled-spiral-shape.jpg" class="foodicon" alt="..."></div>
                         <div class="col-7">
-                            <div class="row"><h1 class="foodtitle">{{product.name}}</h1></div>
-                            <div class="row"><h1 class="fooddesc">{{product.description}}</h1></div>
+                            <div class="row"><a href="/productDetails?id={{product._id}}" target="_blank"><h1 class="foodtitle">{{product.name}}</h1></a></div>
+                            <div class="row"><h1 class="var">Variation: ({{product.variation}}) {{product.color}}</h1></div>
                         </div>
                         <div class="col-3">
                             <div class="row pricerow d-flex justify-content-center">

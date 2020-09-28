@@ -40,7 +40,6 @@ const orderSummaryController = {
                                 details.products.push(prod);
                             }
                         }
-
                     }
                     res.render('order-summary', details);
                 })

@@ -23,6 +23,10 @@
     background-color: white;
 }
 
+.var{
+    font-size: 23px;
+}
+
 #branding{
     padding-bottom: 5px;
 }
@@ -196,6 +200,12 @@
 }
 
 .ship{
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 39px;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -301,4 +311,12 @@
 #store-name {
     margin-top: 30px;
     text-align: center;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.foodtitle:hover{
+    color: rgb(124, 124, 124);
 }

@@ -117,3 +117,12 @@ button:visited{
 .top-nav-title{
 	font-family: 'Montserrat', sans-serif;;
 }
+
+a{
+	color:white;
+}
+
+a:hover{
+	text-decoration: none;
+	color: rgb(150, 150, 150);
+}
