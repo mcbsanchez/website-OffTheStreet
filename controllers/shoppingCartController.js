@@ -101,6 +101,8 @@ const shoppingCartController = {
 		var quantity = req.query.quantity;
 
 		db.updateOne(ProductOrdersModel, {product: productId, user: userId}, {quantity: quantity})
+
+		res.redirect('shopping-cart')
 	},
 
 	postDetails: function(req,res) {
@@ -155,6 +157,8 @@ const shoppingCartController = {
 		}
 		var productId = req.query.id;
 		db.deleteOne(ProductOrdersModel, {product: productId, user: userId})
+
+		res.redirect('shopping-cart')
 	}
 }
 

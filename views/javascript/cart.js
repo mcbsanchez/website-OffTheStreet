@@ -28,7 +28,7 @@ $(document).ready(function() {
             type: "POST",
             url: "/changeQuantity/?id=" + id + "&quantity=" + currentVal,
         }).done(function(data) {
-
+            location.reload()
         }).fail(function() {
             alert("Sorry. Server unavailable.");
         });
@@ -36,34 +36,34 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.input-number').on('input', function() {
-        var id = $(this).attr('name')
-        var input = parseFloat($(this).val())
-        var max = $(this).attr('max')
+    // $('.input-number').on('input', function() {
+    //     var id = $(this).attr('name')
+    //     var input = parseFloat($(this).val())
+    //     var max = $(this).attr('max')
+        
+    //     if(!isNaN(input)) {
+    //         if(input > max) {
+    //             $(this).val(max)
+    //         }
+    //         if(input < 1) {
+    //             $(this).val(1)
+    //         }
+    //     }
+    //     else {
+    //         $(this).val(1)
+    //     }
 
-        if(!isNaN(input)) {
-            if(input > max) {
-                $(this).val(max)
-            }
-            if(input < 1) {
-                $(this).val(1)
-            }
-        }
-        else {
-            $(this).val(1)
-        }
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/changeQuantity/?id=" + id + "&quantity=" + $(this).val(),
+    //     }).done(function(data) {
+    //         location.reload()
+    //     }).fail(function() {
+    //         alert("Sorry. Server unavailable.");
+    //     });
 
-        $.ajax({
-            type: "POST",
-            url: "/changeQuantity/?id=" + id + "&quantity=" + $(this).val(),
-        }).done(function(data) {
-
-        }).fail(function() {
-            alert("Sorry. Server unavailable.");
-        });
-
-        return false;
-    })
+    //     return false;
+    // })
 
     $(".add").click(function() {
         var link = $(this).val()
@@ -80,7 +80,7 @@ $(document).ready(function() {
             type: "POST",
             url: "/removeItem/?id="+ id,  
         }).done(function (data) {
-            
+            location.reload()
         })
         .fail(function()  {
             alert("Sorry. Server unavailable.");
