@@ -37,10 +37,17 @@ const adminOrderController = {
 	changeStatus: function(req,res) {
 		var id = req.body.id
 		var status = req.body.status
+		var date = new Date();
+		var time = date.getTime();
 
-		db.updateOne(Order,
-			{_id: id},
-			{status: status})
+		db.updateOne(Order, {_id: id}, {status: status})
+
+		if(status == "Completed")
+			db.updateOne(Order, {_id:id}, {timecompleted:time})
+		if(status == "Cancelled")
+			db.updateOne(Order, {_id:id}, {timecancelled:time})
+		if(status == "Confirmed")
+			db.updateOne(Order, {_id:id}, {timeconfirmed:time})
 	}
 }
 

@@ -18,8 +18,9 @@ const orderPendingController = {
 	cancel: function(req,res) {
 		var userId = req.session.idUser;
 		var orderId = req.query.id;
-
-		db.updateOne(Order, {_id:orderId}, {status:"Cancelled"})
+		var date = new Date();
+		
+		db.updateOne(Order, {_id:orderId}, {status:"Cancelled", timecancelled:date.getTime()})
 
 		res.render('order-history-pending');
 	}
