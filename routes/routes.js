@@ -31,8 +31,6 @@ const navbarController = require('../controllers/navbarController.js');
 const orderSummaryController = require('../controllers/orderSummaryController.js');
 const app = express();
 
-module.exports = app;
-
 var storage = multer.diskStorage({
     destination:'views/uploads/',
     filename: function(req, file, cb) {
@@ -41,7 +39,9 @@ var storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage});
+
+module.exports = app;
 
 app.get('/about', aboutController.about);
 app.get('/adminOrder', adminOrderController.adminOrder);

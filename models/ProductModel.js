@@ -13,10 +13,10 @@ var ProductSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    pictures: [{
+    pictures: {
         type: String,
         required: true
-    }],
+    },
     postingdate: {
         type: Date,
         required: true

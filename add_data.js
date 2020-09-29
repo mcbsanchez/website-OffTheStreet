@@ -8,39 +8,39 @@ const Product = require('./models/ProductModel.js')
 const ProductOrder = require('./models/ProductOrdersModel.js')
 const User = require('./models/UserModel.js')
 
-// var blackShirt = {
-//     name: "Black Shirt",
-//     description: "This is a black shirt.",
-//     color: "black",
-//     pictures: [],
-//     postingdate: new Date(2020, 9, 13),
-//     price: 100,
-//     category: "shirt",
-//     variation: "M",
-//     quantity: 100
-// }
-// var whiteShirt = {
-//     name: "White Shirt",
-//     description: "This is a white shirt.",
-//     color: "white",
-//     pictures: [],
-//     postingdate: new Date(2020, 9, 13),
-//     price: 100,
-//     category: "shirt",
-//     variation: "S",
-//     quantity: 100
-// }
-// var blueJeans = {
-//     name: "Blue Jeans",
-//     description: "This is a pair of blue jeans.",
-//     color: "blue",
-//     pictures: [],
-//     postingdate: new Date(2020, 9, 13),
-//     price: 100,
-//     category: "pants",
-//     variation: "L",
-//     quantity: 100
-// }
+var blackShirt = {
+    name: "Black Shirt",
+    description: "This is a black shirt.",
+    color: "black",
+    pictures: null,
+    postingdate: new Date(2020, 9, 13),
+    price: 100,
+    category: "shirt",
+    variation: "M",
+    quantity: 100
+}
+var whiteShirt = {
+    name: "White Shirt",
+    description: "This is a white shirt.",
+    color: "white",
+    pictures: null,
+    postingdate: new Date(2020, 9, 13),
+    price: 100,
+    category: "shirt",
+    variation: "S",
+    quantity: 100
+}
+var blueJeans = {
+    name: "Blue Jeans",
+    description: "This is a pair of blue jeans.",
+    color: "blue",
+    pictures: null,
+    postingdate: new Date(2020, 9, 13),
+    price: 100,
+    category: "pants",
+    variation: "L",
+    quantity: 100
+}
 
 // db.insertMany(Product, [blackShirt, whiteShirt, blueJeans])
 

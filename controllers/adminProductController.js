@@ -20,11 +20,14 @@ const adminProductController = {
 	},
 
 	addProduct: function(req,res){
-
+		if(req.file != null)
+			var profilePic =  'uploads/'+req.file.filename;
+		console.log(req.file)
+		console.log(req.body)
 		var name = req.body.name;
 		var description = req.body.description;
 		var color = req.body.color;
-		var pictures = null;
+		var pictures = profilePic;
 		var date = new Date();
 		var postingdate = date.getTime();
 		var price = req.body.price;

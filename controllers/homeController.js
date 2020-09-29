@@ -3,7 +3,7 @@ const Product = require('../models/ProductModel.js')
 
 const homeController = {
 	home: function(req,res){
-		var projection = 'name price _id variation'
+		var projection = 'name price _id variation pictures'
 
 		db.findMany(Product, null, projection, function(results) {
 			if(results != null) {
