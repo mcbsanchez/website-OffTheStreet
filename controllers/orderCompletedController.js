@@ -9,7 +9,7 @@ const orderCompletedController = {
 		db.findOne(User, {_id:userId}, null, function(result) {
 			var orders = result.orders;
 
-			db.findMany(Order, {_id: orders, status:"completed"}, null, function(results) {
+			db.findMany(Order, {_id: orders, status:"Completed"}, null, function(results) {
 				res.render('order-history-completed', {orders: results});
 			})
 		})

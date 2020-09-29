@@ -9,10 +9,20 @@ const orderPendingController = {
 		db.findOne(User, {_id:userId}, null, function(result) {
 			var orders = result.orders;
 
-			db.findMany(Order, {_id: orders, status:"pending"}, null, function(results) {
+			db.findMany(Order, {_id: orders, status:"Pending"}, null, function(results) {
 				res.render('order-history-pending', {orders: results});
 			})
 		})
+	},
+
+	cancel: function(req,res) {
+		var userId = req.session.idUser;
+		var orderId = req.query.id;
+
+		db.updateOne(User, {_id:userId}, {$pull:{orders:orderId}})
+		db.updateOne(Order, {_id:orderId}, {status:"Cancelled"})
+
+		res.render('order-history-pending');
 	}
 }
 
