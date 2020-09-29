@@ -46,8 +46,14 @@ const adminOrderController = {
 			db.updateOne(Order, {_id:id}, {timecompleted:time})
 		if(status == "Cancelled")
 			db.updateOne(Order, {_id:id}, {timecancelled:time})
-		if(status == "Confirmed")
+		if(status == "Confirmed"){
 			db.updateOne(Order, {_id:id}, {timeconfirmed:time})
+			db.findOne(User, {orders: id}, null, function(user){
+				db.findOne(Order, {_id: id},null, function(order){
+					db.updateOne(User, {_id:user._id}, {$inc: {points: order.total/100}})
+				})
+			})
+		}
 	}
 }
 

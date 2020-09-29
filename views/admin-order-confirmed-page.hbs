@@ -101,11 +101,11 @@
 									<td>{{timeordered}}</td>
 									<td>
 										<select class="form-control summaryselect btn btn-secondary status" id={{_id}} name="status">
-											<option value="" hidden>{{status}}</option>
-											<option value="Pending">Pending</option>
-											<option value="Confirmed">Confirmed</option>
-											<option value="Completed">Completed</option>
-											<option value="Cancelled">Cancelled</option>
+											<option hidden selected>{{status}}</option>
+											<option value="Pending" id="pending{{_id}}">Pending</option>
+											<option value="Confirmed" id="confirmed{{_id}}">Confirmed</option>
+											<option value="Completed" id="completed{{_id}}">Completed</option>
+											<option value="Cancelled" id="cancelled{{_id}}">Cancelled</option>
 										</select>
 									</td>
 								</tr>
