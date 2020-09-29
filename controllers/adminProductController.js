@@ -59,7 +59,6 @@ const adminProductController = {
 			var profilePic =  'uploads/'+req.file.filename;
 		else
 			var profilePic = req.body.prevpic;
-		console.log(profilePic)
 		var id = req.body.id
 		var name = req.body.name;
 		var description = req.body.description;
