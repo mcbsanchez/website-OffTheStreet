@@ -1,6 +1,11 @@
 const adminSettingsController = {
 	adminSettings: function(req,res){
-		res.render('admin-settings-page');
+		if(req.session.type=="admin"){
+			res.render('admin-settings-page');
+		}
+		else{
+			res.redirect('/')
+		}	
 	}
 }
 

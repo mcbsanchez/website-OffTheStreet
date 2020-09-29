@@ -21,6 +21,7 @@ const loginController = {
 						req.session.email = req.body.email;
 						req.session.firstname = result.firstname;
 						req.session.idUser = result._id;
+						req.session.type = result.type;
 						if(result.type=='admin')
 							res.redirect('/adminHome');
 						else{

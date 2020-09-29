@@ -82,6 +82,7 @@ app.get('/getName', navbarController.getName);
 app.get('/isSession', checkoutController.isSession);
 app.post('/removeItem', shoppingCartController.removeItem);
 app.post('/changeQuantity', shoppingCartController.changeQuantity);
-app.post('/addProduct', adminProductController.addProduct);
+app.post('/addProduct', upload.single('images'), adminProductController.addProduct);
 app.post('/deleteProduct', adminProductController.deleteProduct);
 app.post('/editProduct', adminProductController.editProduct);
+app.get('/getCheckEmail', registerController.getCheckEmail);

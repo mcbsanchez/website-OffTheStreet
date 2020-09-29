@@ -3,15 +3,20 @@ const Product = require('../models/ProductModel.js')
 
 const adminProductController = {
 	adminProduct: function(req,res){
-		db.findMany(Product, null, null, function(results) {
-			products = results;
-			for(var i=0 ; i<results.length ; i++){
-				products[i].number = i+1;
-			}
-			if(results != null) {
-				res.render('admin-product-page', {products: products})
-			}
-		})
+		if(req.session.type=="admin"){
+			db.findMany(Product, null, null, function(results) {
+				products = results;
+				for(var i=0 ; i<results.length ; i++){
+					products[i].number = i+1;
+				}
+				if(results != null) {
+					res.render('admin-product-page', {products: products})
+				}
+			})
+		}
+		else{
+			res.redirect('/')
+		}	
 	},
 
 	addProduct: function(req,res){
@@ -53,17 +58,15 @@ const adminProductController = {
 
 	editProduct: function(req,res){
 
-		var id = req.query.id
-		var name = req.query.name;
-		var description = req.query.description;
-		var color = req.query.color;
+		var id = req.body.id
+		var name = req.body.name;
+		var description = req.body.description;
+		var color = req.body.color;
 		var pictures = null;
-		var date = new Date();
-		var postingdate = date.getTime();
-		var price = req.query.price;
-		var category = req.query.category;
-		var variation = req.query.variation;
-		var quantity = req.query.quantity;
+		var price = req.body.price;
+		var category = req.body.category;
+		var variation = req.body.variation;
+		var quantity = req.body.quantity;
 
 		/**var fullproduct = {
 			name: name,
@@ -76,11 +79,20 @@ const adminProductController = {
 			variation: variation,
 			quantity: quantity
 		}**/
-
-		db.updateOne(Product, {_id:id}, {name: name}, {description: description}, {color: color}, {pictures: pictures},
-		{postingdate: postingdate}, {price: price}, {category: category}, {variation: variation}, {quantity: quantity})
-
+		var product = {
+			name: name,
+			description: description,
+			color: color,
+			pictures: pictures,
+			price: price,
+			category: category,
+			variation: variation,
+			quantity: quantity
+		}
+		console.log(product)
+		db.updateOne(Product, {_id:id}, product)
 		
+		res.redirect('/adminProduct')
 	}
 }
 

@@ -13,6 +13,52 @@ $(document).ready(function() {
         return !emailEmpty && !passwordEmpty && !firstnameEmpty && !lastnameEmpty;
     }
 
+    function isValidEmail(field, callback) {
+        var email = validator.trim($('#email').val());
+        var isValidEmail = validator.isEmail(email);
+     
+        if(isValidEmail) {
+            $.get('/getCheckEmail', {email: email}, function (result) {
+                console.log(result)
+                if(result.email != email && !validator.isEmpty(email)) {
+
+                    if(field.is($('#email'))) {
+                        $('#email').removeClass('is-invalid');
+                        $('#email').addClass('is-valid');
+                        console
+                    }
+                   return callback(true);
+                   
+                }
+                else {
+                    if(field.is($('#email'))) {
+                        $('#email').removeClass('is-valid');
+                        $('#email').addClass('is-invalid');
+
+                    }
+
+                    return callback(false);
+                }
+            });
+        }
+        else {
+            if(field.is($('#email'))) {
+
+               if(validator.isEmpty(email)) {
+                    if(field.is($('#email'))) {
+                        $('#email').removeClass('is-valid');
+                        $('#email').addClass('is-invalid');
+                    }
+                }
+                else {
+                    $('#email').removeClass('is-valid');
+                    $('#email').addClass('is-invalid');
+                }
+            }
+            return callback(false);
+        }
+    }
+
     function isValidPassword(field) {
         var password = validator.trim($('#password').val());
         var confirmpassword = validator.trim($('#cpassword').val());
@@ -22,6 +68,7 @@ $(document).ready(function() {
                 $('#password').addClass('is-valid');
                 $('#cpassword').removeClass('is-invalid');
                 $('#cpassword').addClass('is-valid');
+                $("#submitbtn").prop('disabled', false);
             }
             return true;
         }
@@ -31,6 +78,7 @@ $(document).ready(function() {
                 $('#password').addClass('is-invalid');
                 $('#cpassword').removeClass('is-valid');
                 $('#cpassword').addClass('is-invalid');
+                $("#submitbtn").prop('disabled', true);
             }
             return false;
         }
@@ -43,13 +91,14 @@ $(document).ready(function() {
             field.removeClass('is-invalid');
             field.addClass('is-valid');
             var pass = isValidPassword(field);
-            if(isFilled() && pass){
-                $("#submitbtn").prop('disabled', false);
-            }
-            else {
-                $("#submitbtn").prop('disabled', true);
-            }
-
+            isValidEmail(field, function(validEmail) {
+                if(isFilled() && pass && validEmail){
+                    $("#submitbtn").prop('disabled', false);
+                }
+                else {
+                    $("#submitbtn").prop('disabled', true);
+                }
+            })
         }
         else{
             field.removeClass('is-valid');
@@ -66,16 +115,6 @@ $(document).ready(function() {
     })
     $("#email").keyup(function(){
         validateField($('#email'));
-        var email = validator.trim($('#email').val());
-        var isValidEmail = validator.isEmail(email);
-        if(isValidEmail){
-            $('#email').removeClass('is-invalid');
-            $('#email').addClass('is-valid');
-        }
-        else{
-            $('#email').removeClass('is-valid');
-            $('#email').addClass('is-invalid');
-        }
     })
 
     $("#password").keyup(function(){

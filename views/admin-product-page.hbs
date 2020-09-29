@@ -114,8 +114,8 @@
 									<td>PHP {{price}}</td>
 									<td>{{variation}}</td>
 									<td>{{quantity}}</td>
-									<td><button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#editProductModal"><i class="fas fa-edit"></i></button></td>
-									<div class="modal fade bd-example-modal-xl" id="editProductModal" tabindex="- 1" role="dialog" aria-labelledby="editProductModal" aria-hidden="true">
+									<td><button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#edit{{_id}}"><i class="fas fa-edit"></i></button></td>
+									<div class="modal fade bd-example-modal-xl" id="edit{{_id}}" tabindex="- 1" role="dialog" aria-labelledby="editProductModal" aria-hidden="true">
 										<div class="modal-dialog modal-xl">
 											<div class="modal-content">
 												<div class="modal-header">
@@ -127,19 +127,43 @@
 															<input type="hidden" value={{_id}} name="id">
 														<div class="form-group">
 															<label for="product-name" class="col-form-label">Name</label>
-															<input type="text" class="form-control" value={{name}} name="name">
+															<input type="text" class="form-control" value="{{name}}" name="name" required>
 															<label for="product-description" class="col-form-label">Description</label>
-															<input type="text" class="form-control" value={{description}} name="description">
-															<label for="product-description" class="col-form-label">Variation</label>
-															<input type="text" class="form-control" value={{variation}} name="variation">
+															<input type="text" class="form-control" value="{{description}}" name="description">
+															<label for="product-color" class="col-form-label">Color</label>
+															<input type="text" class="form-control" value="{{color}}" name="color" required>
+															<div class="form-group">
+																<label for="inputStateVar{{_id}}">Variation</label>
+																<select id="inputStateVar{{_id}}" class="form-control addVariation" name="variation">
+																	<option value={{variation}} selected hidden>{{variation}}</option>
+																	<option value="XS">XS</option>
+																	<option value="S">S</option>
+																	<option value="M">M</option>
+																	<option value="L">L</option>
+																	<option value="XL">XL</option>
+																</select>
+															</div>
 															<label for="product-description" class="col-form-label">Quantity</label>
-															<input type="text" class="form-control" value={{quantity}} name="quantity">
+															<input type="text" class="form-control" value={{quantity}} name="quantity" required>
 														</div>
-														
+														<div class="form-group">
+															<label for="inputState{{_id}}">Category</label>
+															<select id="inputState{{_id}}" class="form-control" name="category">
+																<option value={{category}} selected hidden>{{category}}</option>
+																<option value="shirt">Shirt</option>
+																<option value="hoodie">Hoodie</option>
+																<option value="longsleeve">Longsleece</option>
+																<option value="shorts">Shorts</option>
+																<option value="pants">Pants</option>
+																<option value="hat">Hat</option>
+																<option value="beanie">Beanie</option>
+																<option value="bag">Bag</option>
+															</select>
+														</div>
 														<div class="form-row mt-2">
 															<div class="col">
 																<label for="price">Price</label>
-																<input type="text" class="form-control" value={{price}} name="price">
+																<input type="text" class="form-control" value={{price}} name="price" required>
 															</div>
 															
 														</div>
@@ -173,16 +197,10 @@
 													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 													<button type="submit" class="btn btn-primary">Save changes</button>
 												</div>
-													
 													</form>
-				
 												</div>
-												
-												
 											</div>
-										
 										</div>
-									
 									</div>
 									<td>
 										{{!-- <button type="button" class="btn btn-danger text-white" data-toggle="modal" data-target="#removeProductModal"><i class="fa fa-trash" aria-hidden="true"></i></button> --}}
@@ -214,7 +232,6 @@
 									{{/each}}
 								</tbody>
 							</table>
-
 							<!--Add Product Modal Start-->
 					<div class="modal fade bd-example-modal-xl" id="newProductModal" tabindex="- 1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-xl">
@@ -226,15 +243,15 @@
 								<form method="post" action="/addProduct">
 								<div class="modal-body">
 									<div class="form-group">
-										<label for="product-name" class="col-form-label">Name</label>
-										<input type="text" class="form-control" name="name">
-										<label for="product-description" class="col-form-label">Description</label>
-										<input type="text" class="form-control" name="description">
-										<label for="product-description" class="col-form-label">Color</label>
-										<input type="text" class="form-control" name="color">
+										<label for="product-name" class="col-form-label addName">Name</label>
+										<input type="text" class="form-control" name="name" required>
+										<label for="product-description" class="col-form-label addDescription">Description</label>
+										<input type="text" class="form-control" name="description" required>
+										<label for="product-description" class="col-form-label addColor">Color</label>
+										<input type="text" class="form-control" name="color" required>
 										<div class="form-group">
 											<label for="inputState">Variation</label>
-											<select id="inputState" class="form-control" name="variation">
+											<select id="inputState" class="form-control addVariation" name="variation">
 												<option selected value="XS">XS</option>
 												<option value="S">S</option>
 												<option value="M">M</option>
@@ -243,14 +260,14 @@
 											</select>
 										</div>
 										<label for="product-description" class="col-form-label">Quantity</label>
-										<input type="number" class="form-control" name="quantity">
+										<input type="number" class="form-control" name="quantity" required>
 									</div>
 									<div class="form-group">
 										<label for="inputState">Category</label>
 										<select id="inputState" class="form-control" name="category">
 											<option selected value="shirt">Shirt</option>
 											<option value="hoodie">Hoodie</option>
-											<option value="longsleeve">Longsleece</option>
+											<option value="longsleeve">Longsleeve</option>
 											<option value="shorts">Shorts</option>
 											<option value="pants">Pants</option>
 											<option value="hat">Hat</option>
@@ -261,33 +278,14 @@
 									<div class="form-row mt-2">
 										<div class="col">
 											<label for="price">Price</label>
-											<input type="number" class="form-control" name="price">
+											<input type="number" class="form-control" name="price" required>
 										</div>
-										
 									</div>
-								
 									<div class="container-fluid">
 										<div class="form-group mt-3">
 											<div class="custom-file">
-												<input type="file" class="custom-file-input" id="pro-image" multiple>
 												<label class="custom-file-label" for="pro-image">Choose Images</label>
-											</div>
-										</div>
-										<div class="preview-images-zone">
-											<div class="preview-image preview-show-1">
-												<div class="image-cancel" data-no="1">x</div>
-												<div class="image-zone"><img id="pro-img-1" src="images/heading.png"></div>
-												<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="1" class="btn btn-light btn-edit-image">edit</a></div>-->
-											</div>
-											<div class="preview-image preview-show-2">
-												<div class="image-cancel" data-no="2">x</div>
-												<div class="image-zone"><img id="pro-img-2" src="images/facebook.png"></div>
-												<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="2" class="btn btn-light btn-edit-image">edit</a></div>-->
-											</div>
-											<div class="preview-image preview-show-3">
-												<div class="image-cancel" data-no="3">x</div>
-												<div class="image-zone"><img id="pro-img-3" src="images/instagram.png"></div>
-												<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="3" class="btn btn-light btn-edit-image">edit</a></div>-->
+												<input type="file" class="form-control custom-file-input" id="pro-image" name="images" accept='image/x-ong,image/gif,image/jpeg' required>
 											</div>
 										</div>
 									</div>
