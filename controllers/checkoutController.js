@@ -37,7 +37,7 @@ const checkoutController = {
 			id = req.session.idUser;
 		}
 		else{
-			id = "5f6f098c4fe52644c028e1e1";
+			id = "5f732730aa6e0c58d0a8f0c1";
 		}
 		
 		db.findMany(ProductOrdersModel, {user: id}, null, function(results){

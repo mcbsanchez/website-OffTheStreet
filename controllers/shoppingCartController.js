@@ -12,7 +12,7 @@ const shoppingCartController = {
 			userId = req.session.idUser;
 		}
 		else{
-			userId = "5f6f098c4fe52644c028e1e1";
+			userId = "5f732730aa6e0c58d0a8f0c1";
 		}
 
 		db.findMany(ProductOrdersModel, {user: userId}, null, function(result){
@@ -60,7 +60,7 @@ const shoppingCartController = {
 			userId = req.session.idUser;
 		}
 		else{
-			userId = "5f6f098c4fe52644c028e1e1";
+			userId = "5f732730aa6e0c58d0a8f0c1";
 		}
 		
 		var productId = req.body.id;
@@ -95,7 +95,7 @@ const shoppingCartController = {
 			userId = req.session.idUser;
 		}
 		else{
-			userId = "5f6f098c4fe52644c028e1e1";
+			userId = "5f732730aa6e0c58d0a8f0c1";
 		}
 		var productId = req.query.id;
 		var quantity = req.query.quantity;
@@ -111,7 +111,7 @@ const shoppingCartController = {
 			userId = req.session.idUser;
 		}
 		else{
-			userId = "5f6f098c4fe52644c028e1e1";
+			userId = "5f732730aa6e0c58d0a8f0c1";
 		}
 		var query = {_id: userId}
 
@@ -153,7 +153,7 @@ const shoppingCartController = {
 			userId = req.session.idUser;
 		}
 		else{
-			userId = "5f6f098c4fe52644c028e1e1";
+			userId = "5f732730aa6e0c58d0a8f0c1";
 		}
 		var productId = req.query.id;
 		db.deleteOne(ProductOrdersModel, {product: productId, user: userId})
