@@ -115,11 +115,11 @@
  }
  
 .variation{
-    margin-left: 10px;
-    font-size: 20px;
+    padding:1px;
+    font-size: 18px;
+    text-align: center;
     color: white;
     font-weight: 50;
-    align-content: center;
 }
  
 
