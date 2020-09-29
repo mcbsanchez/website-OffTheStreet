@@ -17,7 +17,8 @@
 }
 
 .desc {
-    font-size: 30px;
+    line-height: 100%;
+    font-size: 47px;
     color: #888888;
 }
 
@@ -153,4 +154,11 @@
     object-position: center; 
     width: 100%;
     height: 275px;
+}
+
+.carousel-pos-img{
+    object-fit: cover;
+    object-position: center; 
+    width: 100%;
+    height: 500px;
 }

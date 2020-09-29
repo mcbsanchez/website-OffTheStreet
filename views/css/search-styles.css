@@ -47,14 +47,14 @@
     position: absolute;
     background-color: black;
     width: 75px;
-    height: 25px;
-    margin-top: 150px;
+    height: 20px;
+    margin-top: 145px;
     margin-left: 145px;
  }
  
 .variation2{
     padding:1px;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     color: white;
     font-weight: 50;
@@ -81,4 +81,12 @@ button {
 
 .card:hover .add, .card:hover .wishlist {
     display: block;
+}
+
+
+.itemphoto2{
+    object-fit: cover;
+    object-position: center; 
+    width: 100%;
+    height: 200;
 }

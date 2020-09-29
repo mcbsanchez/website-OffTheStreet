@@ -23,7 +23,10 @@
 }
 
 .pic {
-    width: 320px;
+    object-fit: cover;
+    object-position: center; 
+    width: 300px;
+    height: 300px;
 }
 
 .right {
