@@ -35,26 +35,26 @@
                     <div class="p-2 col-4">
                         {{name}}
                     </div>
-                    <div class="p-2 col-2">
-                        <div class="row d-flex">
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="{{_id}}" >
-                                        <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                                <input type="number" name="{{_id}}" class="form-control input-number" value={{quantity}} max={{max}} style="width: 40px;" disabled>
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="{{_id}}" value={{_id}} max={{max}}>
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
+                    <div class="p-1 col">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="{{_id}}" >
+                                <svg width="14" height="14" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0832 8.125H2.9165V6.875H11.0832V8.125Z" fill="black" fill-opacity="0.54"/>
+                                </svg>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="p-2 col">
+                        <input type="number" name="{{_id}}" class="form-control input-number" value={{quantity}} max={{max}} style="width: 40px;" disabled>
+                    </div>
+                    <div class="p-1 col">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="{{_id}}" value={{_id}} max={{max}}>
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0832 7.58317H7.58317V11.0832H6.4165V7.58317H2.9165V6.4165H6.4165V2.9165H7.58317V6.4165H11.0832V7.58317Z" fill="black" fill-opacity="0.54"/>
+                                </svg>
+                            </button>
+                        </span>
                     </div>
                     <div class="p-4 col">Php {{price}}</div>
                     <div class="p-2 col">
