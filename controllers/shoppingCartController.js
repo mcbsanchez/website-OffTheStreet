@@ -34,6 +34,7 @@ const shoppingCartController = {
 								_id: ids[j],
 								quantity: quantity[j],
 								price: results[i].price,
+								pictures: results[i].pictures,
 								max: results[i].quantity
 							}
 							total += quantity[j] * results[i].price;
