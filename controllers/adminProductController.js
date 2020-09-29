@@ -59,6 +59,9 @@ const adminProductController = {
 	editProduct: function(req,res){
 		if(req.file != null)
 			var profilePic =  'uploads/'+req.file.filename;
+		else
+			var profilePic = req.body.prevpic;
+		console.log(req.body.prevpic)
 		var id = req.body.id
 		var name = req.body.name;
 		var description = req.body.description;

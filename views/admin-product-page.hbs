@@ -174,7 +174,8 @@
 															<div class="form-group mt-3">
 																<div class="custom-file">
 																	<label class="custom-file-label" for="pro-image{{_id}}">Choose Images</label>
-																	<input type="file" class="form-control custom-file-input" id="pro-image{{_id}}" name="images" accept='image/x-ong,image/gif,image/jpeg' required>
+																	<input type="hidden" name="prevpic" value={{pictures}}>
+																	<input type="file" class="form-control custom-file-input" id="pro-image{{_id}}" name="images" accept='image/x-ong,image/gif,image/jpeg'>
 																</div>
 															</div>
 														</div>
