@@ -84,6 +84,6 @@ app.post('/removeItem', shoppingCartController.removeItem);
 app.post('/changeQuantity', shoppingCartController.changeQuantity);
 app.post('/addProduct', upload.single('images'), adminProductController.addProduct);
 app.post('/deleteProduct', adminProductController.deleteProduct);
-app.post('/editProduct', adminProductController.editProduct);
+app.post('/editProduct', upload.single('images'), adminProductController.editProduct);
 app.get('/getCheckEmail', registerController.getCheckEmail);
 app.post('/cancelOrder', orderPendingController.cancel);

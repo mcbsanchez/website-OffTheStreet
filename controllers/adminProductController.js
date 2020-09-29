@@ -22,8 +22,6 @@ const adminProductController = {
 	addProduct: function(req,res){
 		if(req.file != null)
 			var profilePic =  'uploads/'+req.file.filename;
-		console.log(req.file)
-		console.log(req.body)
 		var name = req.body.name;
 		var description = req.body.description;
 		var color = req.body.color;
@@ -60,12 +58,13 @@ const adminProductController = {
 	},
 
 	editProduct: function(req,res){
-
+		if(req.file != null)
+			var profilePic =  'uploads/'+req.file.filename;
 		var id = req.body.id
 		var name = req.body.name;
 		var description = req.body.description;
 		var color = req.body.color;
-		var pictures = null;
+		var pictures = profilePic;
 		var price = req.body.price;
 		var category = req.body.category;
 		var variation = req.body.variation;

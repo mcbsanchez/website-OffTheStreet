@@ -123,7 +123,7 @@
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 												</div>
 												<div class="modal-body">
-													<form method="post" action="/editProduct">	
+													<form method="post" action="/editProduct"  enctype="multipart/form-data">	
 															<input type="hidden" value={{_id}} name="id">
 														<div class="form-group">
 															<label for="product-name" class="col-form-label">Name</label>
@@ -171,25 +171,8 @@
 														<div class="container-fluid">
 															<div class="form-group mt-3">
 																<div class="custom-file">
-																	<input type="file" class="custom-file-input" id="pro-image" multiple>
-																	<label class="custom-file-label" for="pro-image">Choose Images</label>
-																</div>
-															</div>
-															<div class="preview-images-zone">
-																<div class="preview-image preview-show-1">
-																	<div class="image-cancel" data-no="1">x</div>
-																	<div class="image-zone"><img id="pro-img-1" src="images/heading.png"></div>
-																	<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="1" class="btn btn-light btn-edit-image">edit</a></div>-->
-																</div>
-																<div class="preview-image preview-show-2">
-																	<div class="image-cancel" data-no="2">x</div>
-																	<div class="image-zone"><img id="pro-img-2" src="images/facebook.png"></div>
-																	<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="2" class="btn btn-light btn-edit-image">edit</a></div>-->
-																</div>
-																<div class="preview-image preview-show-3">
-																	<div class="image-cancel" data-no="3">x</div>
-																	<div class="image-zone"><img id="pro-img-3" src="images/instagram.png"></div>
-																	<!--<div class="tools-edit-image"><a href="javascript:void(0)" data-no="3" class="btn btn-light btn-edit-image">edit</a></div>-->
+																	<label class="custom-file-label" for="pro-image{{_id}}">Choose Images</label>
+																	<input type="file" class="form-control custom-file-input" id="pro-image{{_id}}" name="images" accept='image/x-ong,image/gif,image/jpeg' required>
 																</div>
 															</div>
 														</div>
