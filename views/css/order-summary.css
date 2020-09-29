@@ -187,6 +187,12 @@
     margin-top: 40px;
 }
 
+.item-pic {
+    object-fit: cover;
+    width: 95px;
+    height: 95px;
+}
+
 .addr{
     font-family: "Open Sans";
     font-style: normal;
