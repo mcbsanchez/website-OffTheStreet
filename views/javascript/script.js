@@ -7,7 +7,6 @@ $(document).ready(function() {
     
     $(document).on('click', '.image-cancel', function() {
         let no = $(this).data('no');
-        console.log(no);
         $(".preview-image.preview-show-"+no).remove();
     });
 });
@@ -42,7 +41,6 @@ function readImage() {
         }
         $("#pro-image").val('');
     } else {
-        console.log('Browser not support');
     }
 }
 

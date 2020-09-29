@@ -44,7 +44,6 @@ const adminProductController = {
 			variation: variation,
 			quantity: quantity
 		}
-		console.log(fullproduct)
 		db.insertOne(Product, fullproduct, function(){
 		})
 
@@ -91,7 +90,7 @@ const adminProductController = {
 			variation: variation,
 			quantity: quantity
 		}
-		console.log(product)
+
 		db.updateOne(Product, {_id:id}, product)
 		
 		res.redirect('/adminProduct')

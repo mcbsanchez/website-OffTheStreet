@@ -19,7 +19,6 @@ $(document).ready(function() {
      
         if(isValidEmail) {
             $.get('/getCheckEmail', {email: email}, function (result) {
-                console.log(result)
                 if(result.email != email && !validator.isEmpty(email)) {
 
                     if(field.is($('#email'))) {

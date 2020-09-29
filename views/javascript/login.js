@@ -14,7 +14,6 @@ $(document).ready(function() {
         var password = validator.trim($('#password').val());
         
         $.get('/getCheckLogin', {email: email, password: password}, function (result) {
-            console.log(result)
             return callback(result);
         });
     }

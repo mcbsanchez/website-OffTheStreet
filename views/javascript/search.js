@@ -9,8 +9,6 @@ $(document).ready(function() {
         //         categories.push(input[i].value)
         //     }
         // }
-        
-        // // console.log(categories)
         // $.post('/filter', {categories: categories}, function(){
         //     window.location.reload()
         // })
