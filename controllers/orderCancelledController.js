@@ -9,7 +9,7 @@ const orderCancelledController = {
 		db.findOne(User, {_id:userId}, null, function(result) {
 			var orders = result.orders;
 
-			db.findMany(Order, {_id: orders, status:"cancelled"}, null, function(results) {
+			db.findMany(Order, {_id: orders, status:"Cancelled"}, null, function(results) {
 				res.render('order-history-cancelled', {orders: results});
 			})
 		})

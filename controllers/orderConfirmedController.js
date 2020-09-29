@@ -9,7 +9,7 @@ const orderConfirmedController = {
 		db.findOne(User, {_id:userId}, null, function(result) {
 			var orders = result.orders;
 
-			db.findMany(Order, {_id: orders, status:"confirmed"}, null, function(results) {
+			db.findMany(Order, {_id: orders, status:"Confirmed"}, null, function(results) {
 				res.render('order-history-confirmed', {orders: results});
 			})
 		})

@@ -86,3 +86,4 @@ app.post('/addProduct', upload.single('images'), adminProductController.addProdu
 app.post('/deleteProduct', adminProductController.deleteProduct);
 app.post('/editProduct', adminProductController.editProduct);
 app.get('/getCheckEmail', registerController.getCheckEmail);
+app.post('/cancelOrder', orderPendingController.cancel);
