@@ -7,10 +7,12 @@ $(document).ready(function() {
         var value = $(path).text();
         if(value == "Pending"){
             $(status[i]).find('option:contains("Pending")').hide(); 
+            $(status[i]).find('option:contains("Completed")').hide(); 
         }
         else if(value == "Confirmed"){
             $(status[i]).find('option:contains("Pending")').hide(); 
             $(status[i]).find('option:contains("Cancelled")').hide(); 
+            $(status[i]).find('option:contains("Confirmed")').hide(); 
         }
         else if(value == "Cancelled"){
             $(status[i]).prop('disabled', true);
