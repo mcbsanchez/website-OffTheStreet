@@ -107,11 +107,9 @@ const checkoutController = {
 					}
 
 					db.insertOne(Order, order, function(result){
-						if(req.session.email){
-							db.updateOne(UserModel,
-								{_id:id},
-								{$push: {orders: result._id}, $inc: {points: -pointsUsed}})
-						}
+						db.updateOne(UserModel,
+							{_id:id},
+							{$push: {orders: result._id}, $inc: {points: -pointsUsed}})
 						db.deleteMany(ProductOrdersModel, {user: id})
 						var toEmail = "offthestreetbusiness@gmail.com";
 						var message = "Name: " + firstname + " " + lastname + "\n";

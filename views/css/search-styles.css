@@ -87,6 +87,6 @@ button {
 .itemphoto2{
     object-fit: cover;
     object-position: center; 
-    width: 100%;
-    height: 200;
+    width: 223px;
+    height: 200px;
 }

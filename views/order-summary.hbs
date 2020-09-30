@@ -1,6 +1,4 @@
-
-
-<html>
+<!DOCTYPE html>
 <head>
     <title>Off The Street</title>
 
@@ -58,8 +56,9 @@
                 <div class="details col-md">
                     <h1 class="ship">Shipping Address</h1>
                     <p class="addr">{{address.firstname}} {{address.lastname}}</p>
+                    <p class="addr">{{address.email}} 0{{address.phonenum}}</p>
                     <p class="addr">{{address.addressline}}</p>
-                    <p class="addr">{{address.barangay}}, {{address.province}}, {{address.postalcode}}</p>
+                    <p class="addr">{{address.barangay}}, {{address.city}}, {{address.province}}, {{address.postalcode}}</p>
                 </div>
 
                 {{!-- {{#if products}} --}}
