@@ -88,18 +88,6 @@
     margin-left: 200px;
 }
 
-.report{
-    font-weight: 300px;
-    line-height: 0.5rem;
-    font-size: 18px;
-    color: black;
-}
-
-.report:hover {
-    color: #888888;
-    text-decoration: none;
-}
-
 .cancel-button {
     width: 180px;
     height: 40px;

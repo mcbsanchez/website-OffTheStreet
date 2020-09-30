@@ -83,54 +83,8 @@
     line-height: 0.5rem;
 }
 
-.report{
-    font-weight: 300px;
-    line-height: 0.5rem;
-    font-size: 18px;
-    color: black;
-}
-
-.report:hover {
-    color: #888888;
-    text-decoration: none;
-}
-
-.rate-button {
-    width: 180px;
-    height: 40px;
-    font-size: 18px;
-    color: white;
-    background: #000000;
-    border: 0px;
-    border-radius: 30px;
-}
-
 .selected-tab{
     text-decoration: none;
     color: black;
     font-weight: bold;
-}
-
-.submit-rating{
-    width: 180px;
-    height: 40px;
-    font-size: 18px;
-    color: white;
-    background: #000000;
-    border: 0px;
-    border-radius: 30px;
-}
-.stars{
-    line-height: 0.5rem;
-}
-
-.rate-pop {
-    margin-top: 30px;
-}
-
-.rating-title {
-    font-weight: bold;
-    font-size: 36px;
-    text-align: center;
-    color: #767676;
 }
