@@ -34,10 +34,13 @@ $(document).ready(function() {
 
         if(status == "Pending"){
             $(this).find('option:contains("Pending")').hide(); 
+            $(this).find('option:contains("Completed")').hide(); 
         }
         else if(status == "Confirmed"){
             $(this).find('option:contains("Pending")').hide(); 
             $(this).find('option:contains("Cancelled")').hide(); 
+            $(this).find('option:contains("Confirmed")').hide(); 
+            $(this).find('option:contains("Completed")').show(); 
         }
         else if(status == "Cancelled"){
             $(this).prop('disabled', true);
