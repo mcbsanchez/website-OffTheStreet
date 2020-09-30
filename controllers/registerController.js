@@ -33,7 +33,7 @@ const registerController = {
                 wishlist: []
             }
             db.insertOne(User, user, function(){
-                res.render('home')
+                res.redirect('/')
             })
         })
     }
