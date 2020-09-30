@@ -157,7 +157,7 @@ const checkoutController = {
 		})
 	},
 	
-	isSession: function(req,res){
+	isSession: function(req, res){
 		if(req.session.email){
 			res.send(true);
 		}
