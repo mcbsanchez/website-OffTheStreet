@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/home-styles.css">
     <link rel="stylesheet" href="css/search-styles.css">
     <script src="javascript/search.js"></script>
-
+    <script src="javascript/cart.js"></script>
     <!-- Animation-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -99,7 +99,7 @@
                                             <a href="productDetails" class="cardname"><p class="card-text itemname">{{this.name}}</p></a>
                                         </div>
                                     </div>
-                                    <button class="add" data-toggle="modal" data-target="#cart-modal">
+                                    <button class="add" data-toggle="modal" data-target="#cart-modal" value={{_id}}>
                                         <li class="fa fa-plus"></li>
                                     </button>
                                 </div>
