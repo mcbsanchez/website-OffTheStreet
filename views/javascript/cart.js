@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    if(parseInt($('#numItems').text())==0){
+        $('#myButton').prop('disabled', true);
+    }
     $('.btn-number').click(function(e){
         e.preventDefault();
         
