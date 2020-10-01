@@ -135,7 +135,7 @@ const checkoutController = {
 							modeofpayment: modeofpayment,
 							total: total
 						}
-						res.render('confirmation', values)
+						res.redirect('/orderSummary?id=' + result._id)
 						var mailOptions = {
 							from: 'offthestreetbusiness@gmail.com',
 							to: toEmail,
