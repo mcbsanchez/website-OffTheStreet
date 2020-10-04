@@ -70,25 +70,33 @@ $(document).ready(function() {
 
     $(".add").click(function() {
         var link = $(this).val()
-        $.post('/addToCart', {id: link}, function(){
-            $('#cart-modal').modal('toggle');
-        })
+        var name = $(this).attr('name')
+
+        var r = confirm("Are you sure you want to add " + name + " to your cart?")
+        if(r) {
+            $.post('/addToCart', {id: link}, function(){})
+        }
     });
     
     $(".cancel").click(function(){
         var id = $(this).parent().parent().attr("id")
         var string = '#' + id;
-        $(string).remove();
-        $.ajax({
-            type: "POST",
-            url: "/removeItem/?id="+ id,  
-        }).done(function (data) {
-            location.reload()
-        })
-        .fail(function()  {
-            alert("Sorry. Server unavailable.");
-        }); 
+        var name = $(this).parent().parent().attr("name")
 
-        return false;
+        var r = confirm("Are you sure you want to remove " + name + " from your cart?")
+        if(r) {
+            $(string).remove();
+            $.ajax({
+                type: "POST",
+                url: "/removeItem/?id="+ id,  
+            }).done(function (data) {
+                location.reload()
+            })
+            .fail(function()  {
+                alert("Sorry. Server unavailable.");
+            }); 
+    
+            return false;
+        }
     });
 })

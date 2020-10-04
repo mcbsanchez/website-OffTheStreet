@@ -51,24 +51,24 @@ $(document).ready(function() {
     });
 
     $('.del-btn').click(function() {
-        var id = $(this).attr('id')
-        var string = '#' + id;
-        $(string).remove();
-
-        $.ajax({
-            type: "POST",
-            url: "/deleteProduct/?id="+ id,  
-        }).done(function (data) {
-            
-        })
-        .fail(function()  {
-            alert("Sorry. Server unavailable.");
-        }); 
-
-        return false;
+        var name = $(this).attr('name')
+        var r = confirm("Are you sure you want to delete " + name + "?")
+        if(r) {
+            var id = $(this).attr('id')
+            var string = '#' + id;
+            $(string).remove();
+    
+            $.ajax({
+                type: "POST",
+                url: "/deleteProduct/?id="+ id,  
+            }).done(function (data) {
+                $('#removeProductModal').show()
+            })
+            .fail(function()  {
+                alert("Sorry. Server unavailable.");
+            }); 
+    
+            return false;
+        }
     })
-
-    // $('.delete-button').click(function() {
-        
-    // })
 })
